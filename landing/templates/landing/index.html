@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>BeONG</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://use.typekit.net/iib6qmc.css">
+        <link href="https://fonts.googleapis.com/css?family=Work+Sans&display=swap" rel="stylesheet">
+        <style id="applicationStylesheet" type="text/css">
+            body {
+                width: 80%;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            #Header {
+                position: relative;
+                width: 100%;
+                height: 170px;
+                background-color: white;
+            }
+            #beong-logo {
+                position: absolute;
+                top: 55%;
+                margin-left: auto;
+                margin-right: auto;
+                height: 120px;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+            #Intro {
+                position: relative;
+                background-color: rgba(70, 90, 132, 1);
+                width: 100%;
+                display: block;
+                text-align: center;
+                font-family: 'Work Sans', sans-serif;
+                font-weight: 100;
+            }
+            #volunteers {
+                opacity: 0.40;
+                background-color: rgba(70, 90, 132, 1);
+                position: relative;
+                width: 100%;
+                height: 672px;
+                left: 0px;
+                top: 0px;
+                overflow: visible;
+            }
+            #introTitle {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                text-align: center;
+                color: white;
+            }
+            #introDesc {
+                position: absolute;
+                top: 70%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                text-align: center;
+                color: white;
+            }
+            #SubscribeSec {
+                position: relative;
+                background-color: white;
+                width: 100%;
+                height: 275px;
+                text-align: center;
+            }
+            #subtitSus {
+                color: rgba(70, 90, 132, 1);
+            }
+            #inputContainer {
+                position: absolute;
+                top: 60%;
+                left: 45%;
+                transform: translate(-50%, -50%);
+                width: 20%;
+                margin-left: auto;
+                margin-right: 20px;
+                align-self: auto;
+            }
+            #btnContainer {
+                position: absolute;
+                top: 60%;
+                left: 60%;
+                transform: translate(-50%, -50%);
+                margin-right: auto;
+                margin-left: 20px;
+            }
+            #divBtnPage {
+                position: relative;
+                text-align: center;
+                width: 100%;
+                height: 300px;
+                background-color: lightgray;
+            }
+            #subtitPage {
+                color: rgba(70, 90, 132, 1);
+            }
+            #btnPage {
+                width: 100%;
+                position: absolute;
+                top: 70%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+            #btnPage > .btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
+                background-color: rgba(70, 90, 132, 1) !important;
+            }
+        #Footer {
+            position: relative;
+            width: 100%;
+            height: 300px;
+            margin-left: auto;
+            margin-right: auto;
+            bottom: 0px;
+            overflow: hidden;
+        }
+        .Rectangle_203 {
+            position: absolute;
+            overflow: visible;
+            width: 100%;
+            height: 300px;
+            margin-left: auto;
+            margin-right: auto;
+            top: 0px;
+        }
+        #Group_154 {
+            position: absolute;
+            width: 100%;
+            height: 118px;
+            left: 448px;
+            top: 94px;
+            overflow: visible;
+        }
+        .Rectangle_236 {
+            position: absolute;
+            overflow: visible;
+            width: 160px;
+            height: 1px;
+            left: 0px;
+            top: 27px;
+        }
+        .Rectangle_237 {
+            position: absolute;
+            overflow: visible;
+            width: 160px;
+            height: 1px;
+            left: 192px;
+            top: 27px;
+        }
+        .Rectangle_238 {
+            position: absolute;
+            overflow: visible;
+            width: 160px;
+            height: 1px;
+            left: 330px;
+            top: 27px;
+        }
+        #_BeTheChange {
+            position: absolute;
+            left: 609px;
+            top: 46.413px;
+            overflow: visible;
+            width: 100px;
+            white-space: nowrap;
+            line-height: 46px;
+            margin-top: -1px;
+            text-align: right;
+            font-family: Flood Std;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 44px;
+            color: rgba(53,68,99,1);
+        }
+        #Facebook_Twitter_Instagram {
+            position: absolute;
+            left: 330px;
+            top: 39px;
+            overflow: visible;
+            width: 58px;
+            white-space: nowrap;
+            line-height: 20px;
+            margin-top: -3px;
+            text-align: left;
+            font-family: Komet;
+            font-style: normal;
+            font-weight: lighter;
+            font-size: 14px;
+            color: rgba(53,68,99,1);
+            letter-spacing: -0.1px;
+        }
+        #Universidad_de_los_Andes_Bogot {
+            position: absolute;
+            left: 0px;
+            top: 39px;
+            overflow: visible;
+            width: 146px;
+            white-space: nowrap;
+            line-height: 20px;
+            margin-top: -3px;
+            text-align: left;
+            font-family: Komet;
+            font-style: normal;
+            font-weight: lighter;
+            font-size: 14px;
+            color: rgba(53,68,99,1);
+            letter-spacing: -0.1px;
+        }
+        #CONT_CTANOS {
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            overflow: visible;
+            width: 104px;
+            white-space: nowrap;
+            text-align: left;
+            font-family: Komet;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 14px;
+            color: rgba(53,68,99,1);
+            letter-spacing: 0.4px;
+        }
+        #S_GUENOS {
+            position: absolute;
+            left: 330px;
+            top: 0px;
+            overflow: visible;
+            width: 71px;
+            white-space: nowrap;
+            text-align: left;
+            font-family: Komet;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 14px;
+            color: rgba(53,68,99,1);
+            letter-spacing: 0.4px;
+        }
+        #BeONG {
+            position: absolute;
+            margin-left: auto;
+            margin-right: auto;
+            top: 130px;
+            overflow: visible;
+            width: 228px;
+            white-space: nowrap;
+            line-height: 76px;
+            margin-top: -2px;
+            text-align: center;
+            font-family: flood-std;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 72px;
+            color: rgba(53,68,99,1);
+        }
+        </style>
+    </head>
+    <body>
+        <div id="Header">
+            {% load static %}
+            <img src="{% static "/images/BeONG.png" %}" class="img" id="beong-logo" alt="BeONG">
+        </div>
+        <div id="Intro" class="row">
+            {% load static %}
+                <img id="volunteers" class="img-responsive w-100" src="{% static "/images/volunteers.webp" %}">
+            <div id="introTitle">
+                <h1 class="display-1">Sé parte del cambio</h1>
+            </div>
+            <div id="introDesc">
+                <h4 >El mundo te necesita! Encuentra cómo puedes ayudar.</h4>
+            </div>
+        </div>
+        <div id="SubscribeSec">
+            <h1 class="display-3 mt-5" id="subtitSus">Déjanos tu correo para informarte!</h1>
+            <div id="inputContainer">
+                <input id="emailInput" type="email" class="form-control w-100" placeholder="Ingresa tu correo">
+            </div>
+            <div class="input-group-append" id="btnContainer">
+                <button class="btn btn-outline-info" type="button" id="inputGroupFileAddon04" onclick="subscribe()">Inscríbeme</button>
+              </div>
+        </div>
+        <div id="divBtnPage">
+            <h1 class="display-3 pt-5" id="subtitPage">¿Quieres ver cómo va?</h1>
+            <div id="btnPage">
+                <button class="btn btn-primary" type="button" id="inputGroupFileAddon04" onclick="openPage()">Muéstrame</button>
+            </div>
+        </div>
+        <div id="Footer" class="Footer">
+            <svg class="Rectangle_203">
+                <rect fill="rgba(255,255,255,1)" id="Rectangle_203" rx="0" ry="0" x="0" y="0" width="100%" height="331">
+                </rect>
+            </svg>
+            <div id="Group_154">
+                <svg class="Rectangle_236">
+                    <rect fill="rgba(53,68,99,1)" id="Rectangle_236" rx="0" ry="0" x="0" y="0" width="160" height="1">
+                    </rect>
+                </svg>
+                <svg class="Rectangle_238">
+                    <rect fill="rgba(53,68,99,1)" id="Rectangle_238" rx="0" ry="0" x="0" y="0" width="160" height="1">
+                    </rect>
+                </svg>
+                <div id="_BeTheChange">
+                    <span>#Be<br/>The<br/>Change</span>
+                </div>
+                <div id="Facebook_Twitter_Instagram">
+                    <span>Facebook<br/>Twitter<br/>Instagram</span>
+                </div>
+                <div id="Universidad_de_los_Andes_Bogot">
+                    <span>Universidad de los Andes<br/>Bogotá<br/>317 211 7192<br/>info@beong.me</span>
+                </div>
+                <div id="CONT_CTANOS">
+                    <span>CONTÁCTANOS</span>
+                </div>
+                <div id="S_GUENOS">
+                    <span>SÍGUENOS</span>
+                </div>
+            </div>
+            <div id="BeONG">
+                <span>BeONG</span>
+            </div>
+        </div>
+        <script>
+            function subscribe() {
+                var email = document.getElementById("emailInput").value;
+                var parts = email.split("@");
+                if(parts.length == 2 && parts[1].split(".").length >= 2){
+                    //Code to save mail
+                    const Http = new XMLHttpRequest();
+                    const url='http://127.0.0.1:8000/add';
+                    console.log(url);
+                    Http.open("POST", url);
+                    Http.setRequestHeader("Content-type", "application/json;charset=UTF-8");
+                    Http.send(JSON.stringify({
+                        "email": email
+                    }));
+
+                    Http.onreadystatechange = (e) => {
+                      if(Http.responseText == "OK"){
+                        alert("Registrado exitosamente. Gracias!");
+                      } else if(this.status != "") {
+                          alert(Http.responseText);
+                      }
+                    }
+                    
+                    document.getElementById("emailInput").value = "";
+                } else {
+                    alert("El email no es correcto. Por favor revise.");
+                }
+            }
+            function openPage() {
+                window.open("https://xd.adobe.com/view/22ce8d00-570f-4b98-74b5-c7353c9d6034-54ff/?fullscreen&hints=off")
+            }
+        </script>
+    </body>
+</html>

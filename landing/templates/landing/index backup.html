@@ -1,0 +1,1001 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BeONG</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.typekit.net/iib6qmc.css">
+    <style id="applicationStylesheet" type="text/css">
+        .mediaViewInfo {
+            --web-view-name: Home;
+            --web-view-id: Home;
+            --web-scale-on-resize: true;
+            --web-enable-deep-linking: true;
+        }
+        :root {
+            --web-view-ids: Home;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            border: none;
+        }
+        #Home {
+            position: absolute;
+            width: 100%;
+            height: 6581px;
+            overflow: hidden;
+            --web-view-name: Home;
+            --web-view-id: Home;
+            --web-scale-on-resize: true;
+            --web-enable-deep-linking: true;
+        }
+        @keyframes fadein {
+        
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        
+        }
+        .Rectangle_170 {
+            position: absolute;
+            overflow: visible;
+            width: 1440px;
+            height: 1056px;
+            left: 0px;
+            top: 1040px;
+        }
+        .Rectangle_349 {
+            position: absolute;
+            overflow: visible;
+            width: 1440px;
+            height: 824px;
+            left: 0px;
+            top: 3392px;
+        }
+        .Rectangle_343 {
+            position: absolute;
+            overflow: visible;
+            width: 1440px;
+            height: 1831px;
+            left: 0px;
+            top: 4216px;
+        }
+        #Banner_1_Desktop {
+            position: absolute;
+            width: 100%;
+            height: 672px;
+            left: 0px;
+            top: 128px;
+            overflow: visible;
+            background-color: rgba(70, 90, 132, 1);
+        }
+        #volunteers {
+            opacity: 0.55;
+            background-color: rgba(70, 90, 132, 1);
+            position: absolute;
+            width: 100%;
+            height: 672px;
+            left: 0px;
+            top: 0px;
+            overflow: visible;
+        }
+        .Rectangle_134 {
+            position: absolute;
+            overflow: visible;
+            width: 544px;
+            height: 416px;
+            left: 160px;
+            top: 128px;
+        }
+        .Rectangle_137 {
+            position: absolute;
+            overflow: visible;
+            width: 160px;
+            height: 40px;
+            left: 224px;
+            top: 112px;
+        }
+        #Repeat_Grid_2_3 {
+            position: absolute;
+            width: 544px;
+            height: 232px;
+            left: 0px;
+            top: 792px;
+            overflow: visible;
+        }
+        .Rectangle_178_cz {
+            position: absolute;
+            overflow: visible;
+            width: 544px;
+            height: 232px;
+            left: 0px;
+            top: 0px;
+        }
+        #ID67_ {
+            position: absolute;
+            left: 64px;
+            top: 35px;
+            overflow: visible;
+            width: 122px;
+            white-space: nowrap;
+            text-align: left;
+            font-family: PoynterOSDisp;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 60px;
+            color: rgba(53,68,99,1);
+        }
+        #Header {
+            position: absolute;
+            width: 100%;
+            height: 200px;
+            left: 0px;
+            top: 0px;
+            overflow: visible;
+        }
+        .Rectangle_171 {
+            position: absolute;
+            overflow: visible;
+            width: 100%;
+            height: 150px;
+            left: 0px;
+            top: 0px;
+        }
+        .Rectangle_177_c {
+            position: absolute;
+            overflow: visible;
+            width: 160px;
+            height: 48px;
+            left: 0px;
+            top: 0px;
+        }
+        #Reg_strate {
+            position: absolute;
+            left: 0px;
+            top: 13px;
+            overflow: hidden;
+            width: 161px;
+            height: 22px;
+            text-align: center;
+            font-family: PoynterOSDisp;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 18px;
+            color: rgba(53,68,99,1);
+        }
+        .Rectangle_139 {
+            position: absolute;
+            overflow: visible;
+            width: 1440px;
+            height: 240px;
+            left: 0px;
+            top: 22px;
+        }
+        #Section_Header {
+            position: absolute;
+            width: 160px;
+            height: 40px;
+            left: 640px;
+            top: 0px;
+            overflow: visible;
+        }
+        .Rectangle_174 {
+            position: absolute;
+            overflow: visible;
+            width: 160px;
+            height: 40px;
+            left: 0px;
+            top: 0px;
+        }
+        #ACT_A {
+            position: absolute;
+            left: 2px;
+            top: 11px;
+            overflow: hidden;
+            width: 159px;
+            height: 18px;
+            text-align: center;
+            font-family: Komet;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 14px;
+            color: rgba(255,255,255,1);
+            letter-spacing: 0.4px;
+        }
+        #Repeat_Grid_3 {
+            position: absolute;
+            width: 1120px;
+            height: 122px;
+            left: 160px;
+            top: 97px;
+            overflow: hidden;
+        }
+        #Repeat_Grid_3_0 {
+            position: absolute;
+            width: 232px;
+            height: 115px;
+            left: 0px;
+            top: -4px;
+            overflow: visible;
+        }
+        #Group_130 {
+            position: absolute;
+            width: 232px;
+            height: 115px;
+            left: 0px;
+            top: 0px;
+            overflow: visible;
+        }
+        #Encuentra {
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            overflow: visible;
+            width: 132px;
+            white-space: nowrap;
+            line-height: 36px;
+            margin-top: -4px;
+            text-align: left;
+            font-family: PoynterOSDisp;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 28px;
+            color: rgba(53,68,99,1);
+        }
+        #Conoce_acerca_de_distintos_vol {
+            position: absolute;
+            left: 0px;
+            top: 45px;
+            overflow: visible;
+            width: 233px;
+            height: 70px;
+            line-height: 24px;
+            margin-top: -4px;
+            text-align: left;
+            font-family: Komet;
+            font-style: normal;
+            font-weight: lighter;
+            font-size: 16px;
+            color: rgba(53,68,99,1);
+            letter-spacing: -0.1px;
+        }
+        #Repeat_Grid_3_1 {
+            position: absolute;
+            width: 232px;
+            height: 115px;
+            left: 288px;
+            top: -4px;
+            overflow: visible;
+        }
+        #Group_130_dm {
+            position: absolute;
+            width: 232px;
+            height: 115px;
+            left: 0px;
+            top: 0px;
+            overflow: visible;
+        }
+        #Repeat_Grid_3_2 {
+            position: absolute;
+            width: 232px;
+            height: 115px;
+            left: 576px;
+            top: -4px;
+            overflow: visible;
+        }
+        #Group_130_dq {
+            position: absolute;
+            width: 232px;
+            height: 115px;
+            left: 0px;
+            top: 0px;
+            overflow: visible;
+        }
+        #Repeat_Grid_3_3 {
+            position: absolute;
+            width: 232px;
+            height: 115px;
+            left: 864px;
+            top: -4px;
+            overflow: visible;
+        }
+        #Group_130_du {
+            position: absolute;
+            width: 232px;
+            height: 115px;
+            left: 0px;
+            top: 0px;
+            overflow: visible;
+        }
+        #Repeat_Grid_3_4 {
+            position: absolute;
+            width: 232px;
+            height: 115px;
+            left: 0px;
+            top: 117px;
+            overflow: visible;
+        }
+        #Group_130_dy {
+            position: absolute;
+            width: 232px;
+            height: 115px;
+            left: 0px;
+            top: 0px;
+            overflow: visible;
+        }
+        #Repeat_Grid_3_5 {
+            position: absolute;
+            width: 232px;
+            height: 115px;
+            left: 288px;
+            top: 117px;
+            overflow: visible;
+        }
+        #Group_130_d {
+            position: absolute;
+            width: 232px;
+            height: 115px;
+            left: 0px;
+            top: 0px;
+            overflow: visible;
+        }
+        #conten-img {
+            background-color: rgba(70, 90, 132, 1);
+        }
+        #Volunteer {
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            overflow: visible;
+            width: 129px;
+            white-space: nowrap;
+            line-height: 36px;
+            margin-top: -4px;
+            text-align: left;
+            font-family: PoynterOSDisp;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 28px;
+            color: rgba(53,68,99,1);
+        }
+        #Footer {
+            position: absolute;
+            width: 100%;
+            height: 331px;
+            margin-left: auto;
+            margin-right: auto;
+            bottom: 0px;
+            overflow: visible;
+        }
+        .Rectangle_203 {
+            position: absolute;
+            overflow: visible;
+            width: 100%;
+            height: 331px;
+            margin-left: auto;
+            margin-right: auto;
+            top: 0px;
+        }
+        #Group_154 {
+            position: absolute;
+            width: 930px;
+            height: 118px;
+            left: 448px;
+            top: 94px;
+            overflow: visible;
+        }
+        .Rectangle_236 {
+            position: absolute;
+            overflow: visible;
+            width: 160px;
+            height: 1px;
+            left: 0px;
+            top: 27px;
+        }
+        .Rectangle_237 {
+            position: absolute;
+            overflow: visible;
+            width: 160px;
+            height: 1px;
+            left: 192px;
+            top: 27px;
+        }
+        .Rectangle_238 {
+            position: absolute;
+            overflow: visible;
+            width: 160px;
+            height: 1px;
+            left: 384px;
+            top: 27px;
+        }
+        #_BeTheChange {
+            position: absolute;
+            left: 609px;
+            top: 46.413px;
+            overflow: visible;
+            width: 322px;
+            white-space: nowrap;
+            line-height: 46px;
+            margin-top: -1px;
+            text-align: right;
+            font-family: Flood Std;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 44px;
+            color: rgba(53,68,99,1);
+        }
+        #Noticias_y_eventos_Historias_R {
+            position: absolute;
+            left: 192px;
+            top: 39px;
+            overflow: visible;
+            width: 111px;
+            white-space: nowrap;
+            line-height: 20px;
+            margin-top: -3px;
+            text-align: left;
+            font-family: Komet;
+            font-style: normal;
+            font-weight: lighter;
+            font-size: 14px;
+            color: rgba(53,68,99,1);
+            letter-spacing: -0.1px;
+        }
+        #Facebook_Twitter_Instagram {
+            position: absolute;
+            left: 384px;
+            top: 39px;
+            overflow: visible;
+            width: 58px;
+            white-space: nowrap;
+            line-height: 20px;
+            margin-top: -3px;
+            text-align: left;
+            font-family: Komet;
+            font-style: normal;
+            font-weight: lighter;
+            font-size: 14px;
+            color: rgba(53,68,99,1);
+            letter-spacing: -0.1px;
+        }
+        #Universidad_de_los_Andes_Bogot {
+            position: absolute;
+            left: 0px;
+            top: 39px;
+            overflow: visible;
+            width: 146px;
+            white-space: nowrap;
+            line-height: 20px;
+            margin-top: -3px;
+            text-align: left;
+            font-family: Komet;
+            font-style: normal;
+            font-weight: lighter;
+            font-size: 14px;
+            color: rgba(53,68,99,1);
+            letter-spacing: -0.1px;
+        }
+        #CONT_CTANOS {
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            overflow: visible;
+            width: 104px;
+            white-space: nowrap;
+            text-align: left;
+            font-family: Komet;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 14px;
+            color: rgba(53,68,99,1);
+            letter-spacing: 0.4px;
+        }
+        #LINKS {
+            position: absolute;
+            left: 192px;
+            top: 0px;
+            overflow: visible;
+            width: 40px;
+            white-space: nowrap;
+            text-align: left;
+            font-family: Komet;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 14px;
+            color: rgba(53,68,99,1);
+            letter-spacing: 0.4px;
+        }
+        #S_GUENOS {
+            position: absolute;
+            left: 384px;
+            top: 0px;
+            overflow: visible;
+            width: 71px;
+            white-space: nowrap;
+            text-align: left;
+            font-family: Komet;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 14px;
+            color: rgba(53,68,99,1);
+            letter-spacing: 0.4px;
+        }
+        #BeONG {
+            position: absolute;
+            margin-left: auto;
+            margin-right: auto;
+            top: 130px;
+            overflow: visible;
+            width: 228px;
+            white-space: nowrap;
+            line-height: 76px;
+            margin-top: -2px;
+            text-align: center;
+            font-family: flood-std;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 72px;
+            color: rgba(53,68,99,1);
+        }
+        #Call_to_Action_Desktop_es {
+            position: absolute;
+            width: 197px;
+            height: 61px;
+            left: 114px;
+            top: 2595px;
+            overflow: visible;
+            --web-animation: fadein 0.3s ease-out;
+            --web-action-type: page;
+            --web-action-target: News_and_Events.html;
+            cursor: pointer;
+        }
+        .Rectangle_177_et {
+            position: absolute;
+            overflow: visible;
+            width: 197px;
+            height: 61px;
+            left: 0px;
+            top: 0px;
+        }
+        #Act_a {
+            position: absolute;
+            left: 0px;
+            top: 15px;
+            overflow: visible;
+            width: 198px;
+            height: 32px;
+            text-align: center;
+            font-family: PoynterOSDisp;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 22px;
+            color: rgba(255,255,255,1);
+        }
+        .Rectangle_174_ew {
+            position: absolute;
+            overflow: visible;
+            width: 160px;
+            height: 40px;
+            left: 0px;
+            top: 0px;
+        }
+        .Ellipse_6 {
+            position: absolute;
+            overflow: visible;
+            width: 13px;
+            height: 13px;
+            left: 21px;
+            top: 0px;
+        }
+        .Ellipse_9 {
+            position: absolute;
+            overflow: visible;
+            width: 13px;
+            height: 13px;
+            left: 0px;
+            top: 0px;
+        }
+        .Ellipse_7 {
+            position: absolute;
+            overflow: visible;
+            width: 13px;
+            height: 13px;
+            left: 42px;
+            top: 0px;
+        }
+        .Ellipse_8 {
+            position: absolute;
+            overflow: visible;
+            width: 13px;
+            height: 13px;
+            left: 63px;
+            top: 0px;
+        }
+        #Section_Header_e {
+            position: absolute;
+            width: 160px;
+            height: 40px;
+            left: 544px;
+            top: 0px;
+            overflow: visible;
+        }
+        .Rectangle_174_e {
+            position: absolute;
+            overflow: visible;
+            width: 160px;
+            height: 40px;
+            left: 0px;
+            top: 0px;
+        }
+        #Historias {
+            position: absolute;
+            left: 2px;
+            top: 11px;
+            overflow: hidden;
+            width: 159px;
+            height: 18px;
+            text-align: center;
+            font-family: Komet;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 14px;
+            color: rgba(255,255,255,1);
+            letter-spacing: 0.4px;
+        }
+        #Call_to_Action_Desktop_fb {
+            position: absolute;
+            width: 183px;
+            height: 48px;
+            left: 0px;
+            top: 540px;
+            overflow: visible;
+            --web-animation: fadein 0.3s ease-out;
+            --web-action-type: page;
+            --web-action-target: Our_Stories.html;
+            cursor: pointer;
+        }
+        .Rectangle_177_fc {
+            position: absolute;
+            overflow: visible;
+            width: 183px;
+            height: 48px;
+            left: 0px;
+            top: 0px;
+        }
+        #Event_Desktop {
+            position: absolute;
+            width: 1120px;
+            height: 576px;
+            left: 160px;
+            top: 4640px;
+            overflow: visible;
+        }
+        #Section_Header_Alt {
+            position: absolute;
+            width: 160px;
+            height: 40px;
+            left: 672px;
+            top: 0px;
+            overflow: visible;
+        }
+        .Rectangle_146 {
+            position: absolute;
+            overflow: visible;
+            width: 160px;
+            height: 40px;
+            left: 0px;
+            top: 0px;
+        }
+        #VOLUNTARIADO {
+            position: absolute;
+            left: 0px;
+            top: 11px;
+            overflow: hidden;
+            width: 161px;
+            height: 18px;
+            text-align: center;
+            font-family: Komet;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 14px;
+            color: rgba(53,68,99,1);
+            letter-spacing: 0.4px;
+        }
+        #Call_to_Action_Desktop_fl {
+            position: absolute;
+            width: 160px;
+            height: 48px;
+            left: 672px;
+            top: 490px;
+            overflow: visible;
+            --web-animation: fadein 0.3s ease-out;
+            --web-action-type: page;
+            --web-action-target: Our_Stories.html;
+            cursor: pointer;
+        }
+        .Rectangle_177_fm {
+            position: absolute;
+            overflow: visible;
+            width: 160px;
+            height: 48px;
+            left: 0px;
+            top: 0px;
+        }
+        #meeting {
+            position: absolute;
+            width: 513px;
+            height: 557px;
+            left: 607px;
+            top: 0px;
+            overflow: visible;
+        }
+        #Section_Header_Alt_fs {
+            position: absolute;
+            width: 160px;
+            height: 40px;
+            left: 0px;
+            top: 0px;
+            overflow: visible;
+        }
+        .Rectangle_146_ft {
+            position: absolute;
+            overflow: visible;
+            width: 160px;
+            height: 40px;
+            left: 0px;
+            top: 0px;
+        }
+        #VOLUNTARIADO_fu {
+            position: absolute;
+            left: 0px;
+            top: 11px;
+            overflow: visible;
+            width: 161px;
+            height: 19px;
+            text-align: center;
+            font-family: Komet;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 14px;
+            color: rgba(53,68,99,1);
+            letter-spacing: 0.4px;
+        }
+        .Rectangle_177_fw {
+            position: absolute;
+            overflow: visible;
+            width: 160px;
+            height: 48px;
+            left: 0px;
+            top: 0px;
+        }
+        #Leer_m_s_fx {
+            position: absolute;
+            left: 0px;
+            top: 13px;
+            overflow: hidden;
+            width: 161px;
+            height: 22px;
+            text-align: center;
+            font-family: PoynterOSDisp;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 18px;
+            color: rgba(53,68,99,1);
+        }
+        #Section_Header_Alt_fy {
+            position: absolute;
+            width: 160px;
+            height: 40px;
+            left: 160px;
+            top: 1128px;
+            overflow: visible;
+        }
+        .Rectangle_146_fz {
+            position: absolute;
+            overflow: visible;
+            width: 160px;
+            height: 40px;
+            left: 0px;
+            top: 0px;
+        }
+        #_Qu__hacemos_ {
+            position: absolute;
+            left: 0px;
+            top: 11px;
+            overflow: hidden;
+            width: 161px;
+            height: 18px;
+            text-align: center;
+            font-family: Komet;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 14px;
+            color: rgba(53,68,99,1);
+            letter-spacing: 0.4px;
+        }
+        #Nuestra_misi_n_es_conectar_vol {
+            position: absolute;
+            left: 160px;
+            top: 1208px;
+            overflow: visible;
+            width: 1123px;
+            height: 140px;
+            line-height: 56px;
+            margin-top: -6px;
+            text-align: left;
+            font-family: PoynterOSDisp;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 44px;
+            color: rgba(255,255,255,1);
+        }
+        #BeONG_f {
+            position: relative;
+            margin-left: auto;
+            margin-right: auto;
+            top: 30px;
+            overflow: visible;
+            width: 228px;
+            white-space: nowrap;
+            line-height: 76px;
+            margin-top: -2px;
+            text-align: left;
+            font-family: flood-std;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 72px;
+            color: rgba(53,68,99,1);
+        }
+        #Subscribe {
+            position: absolute;
+            width: 1440px;
+            height: 208px;
+            left: 0px;
+            top: 6047px;
+            overflow: visible;
+        }
+        .Rectangle_194 {
+            position: absolute;
+            overflow: visible;
+            width: 1440px;
+            height: 208px;
+            left: 0px;
+            top: 0px;
+        }
+        #Group_12 {
+            position: absolute;
+            width: 1126px;
+            height: 83px;
+            left: 154px;
+            top: 63px;
+            overflow: visible;
+        }
+        .Rectangle_195 {
+            position: absolute;
+            overflow: visible;
+            width: 352px;
+            height: 48px;
+            left: 582px;
+            top: 17px;
+        }
+        .Rectangle_196 {
+            position: absolute;
+            overflow: visible;
+            width: 160px;
+            height: 48px;
+            left: 966px;
+            top: 17px;
+            --web-animation: fadein 0.3s ease-out;
+            --web-action-type: page;
+            --web-action-target: Registro.html;
+            cursor: pointer;
+        }
+        #Direcci_n_de_correo_electr_nic {
+            position: absolute;
+            left: 606px;
+            top: 25px;
+            overflow: visible;
+            width: 250px;
+            white-space: nowrap;
+            line-height: 30px;
+            margin-top: -5px;
+            text-align: left;
+            font-family: Komet;
+            font-style: normal;
+            font-weight: lighter;
+            font-size: 20px;
+            color: rgba(53,68,99,1);
+            letter-spacing: -0.2px;
+        }
+        #email-input {
+        }
+    </style>
+</head>
+
+<body>
+    <div id="Home">
+        <div id="Banner_1_Desktop" class="Banner_1_Desktop">
+            <div id="conten-img">
+                {% load static %}
+                <img id="volunteers" src="{% static "/images/volunteers.webp" %}">
+            </div>
+        </div>
+        <div id="Header" class="Header">
+            <svg class="Rectangle_171">
+                <rect fill="rgba(255,255,255,1)" id="Rectangle_171" rx="0" ry="0" x="0" y="0" width="100%" height="150">
+                </rect>
+            </svg>
+        </div>
+        <div id="Footer" class="Footer">
+            <svg class="Rectangle_203">
+                <rect fill="rgba(255,255,255,1)" id="Rectangle_203" rx="0" ry="0" x="0" y="0" width="100%" height="331">
+                </rect>
+            </svg>
+            <div id="Group_154">
+                <svg class="Rectangle_236">
+                    <rect fill="rgba(53,68,99,1)" id="Rectangle_236" rx="0" ry="0" x="0" y="0" width="160" height="1">
+                    </rect>
+                </svg>
+                <svg class="Rectangle_237">
+                    <rect fill="rgba(53,68,99,1)" id="Rectangle_237" rx="0" ry="0" x="0" y="0" width="160" height="1">
+                    </rect>
+                </svg>
+                <svg class="Rectangle_238">
+                    <rect fill="rgba(53,68,99,1)" id="Rectangle_238" rx="0" ry="0" x="0" y="0" width="160" height="1">
+                    </rect>
+                </svg>
+                <div id="_BeTheChange">
+                    <span>#BeTheChange</span>
+                </div>
+                <div id="Noticias_y_eventos_Historias_R">
+                    <span>Noticias y eventos<br/>Historias<br/>Registro<br/>Acerca de nosotros</span>
+                </div>
+                <div id="Facebook_Twitter_Instagram">
+                    <span>Facebook<br/>Twitter<br/>Instagram</span>
+                </div>
+                <div id="Universidad_de_los_Andes_Bogot">
+                    <span>Universidad de los Andes<br/>Bogotá<br/>317 211 7192<br/>contact@npo.org</span>
+                </div>
+                <div id="CONT_CTANOS">
+                    <span>CONTÁCTANOS</span>
+                </div>
+                <div id="LINKS">
+                    <span>LINKS</span>
+                </div>
+                <div id="S_GUENOS">
+                    <span>SÍGUENOS</span>
+                </div>
+            </div>
+            <div id="BeONG">
+                <span>BeONG</span>
+            </div>
+        </div>
+        <div id="BeONG_f">
+            <span>{% load static %}
+                <img src="{% static "/images/BeONG.png" %}" class="img-fluid center" alt="BeONG"></span>
+        </div>
+    <div class="btn">
+        <button>Entrar</button>
+    </div>
+    <div id="Section_Header_Alt_fy" class="Section_Header_Alt">
+		<svg class="Rectangle_146_fz">
+			<rect fill="rgba(255,255,255,1)" id="Rectangle_146_fz" rx="0" ry="0" x="0" y="0" width="160" height="40">
+			</rect>
+		</svg>
+		<div id="_Qu__hacemos_">
+            <div id="email-input">
+                <input type="email">
+                <button>Quiero inscribirme</button>
+            </div>
+		</div>
+	</div>
+</div>
+</body>
+</html>
