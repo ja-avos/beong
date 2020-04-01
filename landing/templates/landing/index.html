@@ -1,400 +1,462 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="utf-8"/>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BeONG</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://use.typekit.net/iib6qmc.css">
-    <link href="https://fonts.googleapis.com/css?family=Work+Sans&display=swap" rel="stylesheet">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     {% load static %}
-    <link rel="shortcut icon" href="{% static "/images/favicon.ico" %}" type="image/x-icon">
     {% load static %}
-    <link rel="icon" href="{% static "/images/favicon.ico" %}" type="image/x-icon">
+    <link rel="icon" href="{% static "/images/logoBeONG.png" %}" type="image/x-icon">
 
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9FN5MPRRXZ"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
+    <link href="https://fonts.googleapis.com/css?family=Muli:300,400,700,900" rel="stylesheet">
+    <link rel="stylesheet" href="{% static "fonts/icomoon/style.css" %}">
 
-        function gtag() {
-            dataLayer.push(arguments);
-        }
+    <link rel="stylesheet" href="{% static "css/bootstrap.min.css" %}">
+    <link rel="stylesheet" href="{% static "css/jquery-ui.css" %}">
+    <link rel="stylesheet" href="{% static "css/owl.carousel.min.css" %}">
+    <link rel="stylesheet" href="{% static "css/owl.theme.default.min.css" %}">
+    <link rel="stylesheet" href="{% static "css/owl.theme.default.min.css" %}">
 
-        gtag('js', new Date());
+    <link rel="stylesheet" href="{% static "css/jquery.fancybox.min.css" %}">
 
-        gtag('config', 'G-9FN5MPRRXZ');
-    </script>
+    <link rel="stylesheet" href="{% static "css/bootstrap-datepicker.css" %}">
 
-    <style id="applicationStylesheet" type="text/css">
-        body {
-            width: 90%;
-            margin-left: auto;
-            margin-right: auto;
-        }
+    <link rel="stylesheet" href="{% static "fonts/flaticon/font/flaticon.css" %}">
 
-        #Header {
-            position: relative;
-            width: 100%;
-            height: 23vh;
-            background-color: white;
-        }
+    <link rel="stylesheet" href="{% static "css/aos.css" %}">
 
-        #beong-logo {
-            position: absolute;
-            top: 45%;
-            margin-left: auto;
-            margin-right: auto;
-            padding: 1%;
-            max-height: 110px;
-            max-width: 50vw;
-            left: 50%;
-            transform: translate(-50%, -50%);
-        }
+    <link rel="stylesheet" href="{% static "css/style.css" %}">
 
-        #title3 {
-            position: absolute;
-            font-size: 1.8vw;
-            text-align: center;
-            top: 13vh;
-            left: 50%;
-            padding-top: 4vh;
-            transform: translate(-50%, 0%);
-        }
-
-        #Intro {
-            position: relative;
-            background-color: rgba(70, 90, 132, 1);
-            width: 100%;
-            margin-right: auto;
-            margin-left: auto;
-            text-align: center;
-            font-family: 'Work Sans', sans-serif;
-            font-weight: 100;
-        }
-
-        #volunteers {
-            opacity: 0.40;
-            background-color: rgba(70, 90, 132, 1);
-            position: relative;
-            max-width: 100%;
-            max-height: 672px;
-            left: 0px;
-            top: 0px;
-            overflow: hidden;
-        }
-
-        #introTitle {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            text-align: center;
-            color: white;
-        }
-
-        #introDesc {
-            position: absolute;
-            top: 70%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            text-align: center;
-            color: white;
-        }
-
-        #SubscribeSec {
-            position: relative;
-            background-color: white;
-            width: 100%;
-            height: 275px;
-            text-align: center;
-        }
-
-        #subtitSus {
-            color: rgba(70, 90, 132, 1);
-            font-size: 5vw;
-            text-align: center;
-        }
-
-        #inputContainer {
-            width: 20%;
-            align-content: center;
-        }
-
-        #btnContainer {
-            position: absolute;
-            top: 60%;
-            left: 60%;
-            transform: translate(-50%, -50%);
-            margin-right: auto;
-            margin-left: 20px;
-        }
-
-        #btnContainer2 {
-            max-width: 400px;
-            text-align: center;
-        }
-
-        #divBtnPage {
-            position: relative;
-            text-align: center;
-            width: 100%;
-            height: 300px;
-            background-color: lightgray;
-        }
-
-        #subtitPage {
-            color: rgba(70, 90, 132, 1);
-            font-size: 4.5vw;
-            text-align: center;
-        }
-
-        #btnPage {
-            width: 100%;
-            position: absolute;
-            top: 70%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-        }
-
-        #btnPage2 {
-            width: 100%;
-            text-align: center;
-        }
-
-        #btnPage > .btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
-            background-color: rgba(70, 90, 132, 1) !important;
-        }
-
-        #Footer {
-            position: relative;
-            width: 100%;
-            height: 300px;
-            margin-left: auto;
-            margin-right: auto;
-            bottom: 0px;
-            overflow: hidden;
-        }
-
-        .Rectangle_203 {
-            position: absolute;
-            overflow: visible;
-            width: 100%;
-            height: 300px;
-            margin-left: auto;
-            margin-right: auto;
-            top: 0px;
-        }
-
-        #Group_154 {
-            position: absolute;
-            width: 100%;
-            height: 118px;
-            left: 448px;
-            top: 94px;
-            overflow: visible;
-        }
-
-        .Rectangle_236 {
-            overflow: visible;
-        }
-
-        .Rectangle_237 {
-            position: absolute;
-            overflow: visible;
-            width: 160px;
-            height: 1px;
-            left: 192px;
-            top: 27px;
-        }
-
-        .Rectangle_238 {
-            overflow: visible;
-            height: 1px;
-        }
-
-        #_BeTheChange {
-            overflow: visible;
-            line-height: 3vw;
-            font-family: Flood Std;
-            font-style: normal;
-            font-weight: normal;
-            font-size: 3vw;
-            color: rgba(53, 68, 99, 1);
-        }
-
-        #Facebook_Twitter_Instagram {
-            position: absolute;
-            left: 330px;
-            top: 39px;
-            overflow: visible;
-            width: 58px;
-            white-space: nowrap;
-            line-height: 20px;
-            margin-top: -3px;
-            text-align: left;
-            font-family: Komet;
-            font-style: normal;
-            font-weight: lighter;
-            font-size: 14px;
-            color: rgba(53, 68, 99, 1);
-            letter-spacing: -0.1px;
-        }
-
-        #Universidad_de_los_Andes_Bogot {
-            position: absolute;
-            left: 0px;
-            top: 39px;
-            overflow: visible;
-            width: 146px;
-            white-space: nowrap;
-            line-height: 20px;
-            margin-top: -3px;
-            text-align: left;
-            font-family: Komet;
-            font-style: normal;
-            font-weight: lighter;
-            font-size: 14px;
-            color: rgba(53, 68, 99, 1);
-            letter-spacing: -0.1px;
-        }
-
-        #CONTACTANOS {
-            font-family: Komet;
-            font-style: normal;
-            font-weight: normal;
-            font-size: 14px;
-            color: rgba(53, 68, 99, 1);
-            letter-spacing: 0.4px;
-        }
-
-        hr.new1 {
-            border: 2px solid rgba(53, 68, 99, 1);
-            border-radius: 5px;
-        }
-
-        #CONTACTANOSText {
-            font-family: Komet;
-            font-style: normal;
-            font-weight: normal;
-            font-size: 14px;
-            color: rgba(53, 68, 99, 1);
-        }
-
-        #S_GUENOS {
-            position: absolute;
-            left: 330px;
-            top: 0px;
-            overflow: visible;
-            width: 71px;
-            white-space: nowrap;
-            text-align: left;
-            font-family: Komet;
-            font-style: normal;
-            font-weight: normal;
-            font-size: 14px;
-            color: rgba(53, 68, 99, 1);
-            letter-spacing: 0.4px;
-        }
-
-        #BeONG {
-            font-family: flood-std;
-            font-style: normal;
-            font-weight: normal;
-            font-size: 72px;
-            color: rgba(53, 68, 99, 1);
-        }
-
-        #title1 {
-            font-size: 4.5vw;
-        }
-
-        #title2 {
-            font-size: 2vw;
-        }
-
-        #colorContainer3 {
-            background-color: lightgray;
-        }
-
-    </style>
 </head>
-<body>
-<div class="container-fluid">
-    <div id="Header">
-        {% load static %}
-        <img src="{% static "/images/BeONG.png" %}" class="img-fluid" id="beong-logo" alt="BeONG">
-        <h1 id="title3">Conectamos voluntarios con ONGs y fundaciones</h1>
-    </div>
-    <div id="Intro" class="row">
-        {% load static %}
-        <img id="volunteers" class="img-fluid" src="{% static "/images/volunteers.webp" %}">
-        <div id="introTitle">
-            <h1 id="title1">Sé parte del cambio</h1>
+<body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
+
+<div class="site-wrap">
+
+    <div class="site-mobile-menu site-navbar-target">
+        <div class="site-mobile-menu-header">
+            <div class="site-mobile-menu-close mt-3">
+                <span class="icon-close2 js-menu-toggle"></span>
+            </div>
         </div>
-        <div id="introDesc">
-            <h4 id="title2">¡El mundo te necesita! Encuentra cómo puedes ayudar</h4>
-        </div>
+        <div class="site-mobile-menu-body"></div>
     </div>
 
-    <div class="container-sm pt-5 pb-5">
-        <h1 class="display-3 mt-5" id="subtitSus">¡Déjanos tu correo para informarte!</h1>
-        <div class="container" id="btnContainer2">
-            <div class="input-group pt-5">
-                <input id="emailInput" type="text" class="form-control" placeholder="Ingresa tu correo"
-                       aria-label="emailInput"
-                       aria-describedby="basic-addon2">
-                <div class="input-group-append">
-                    <button class="btn btn-outline-info" type="button" onclick="subscribe()">Inscríbeme</button>
+
+    <header class="site-navbar py-4 js-sticky-header site-navbar-target" role="banner">
+
+        <div class="container-fluid">
+            <div class="d-flex align-items-center">
+                <div class="site-logo mr-auto w-25"><a href="index.html">BeONG</a></div>
+
+                <div class="mx-auto text-center">
+                    <nav class="site-navigation position-relative text-right" role="navigation">
+                        <ul class="site-menu main-menu js-clone-nav mx-auto d-none d-lg-block  m-0 p-0">
+                            <li><a href="#home-section" class="nav-link">Inicio</a></li>
+                            <li><a href="#wedo-section" class="nav-link">¿Qué hacemos?</a></li>
+                            <li><a href="#doyouknow-section" class="nav-link">¿Sabías qué?</a></li>
+                            <li><a href="#act-section" class="nav-link">Actúa</a></li>
+                        </ul>
+                    </nav>
+                </div>
+
+                <div class="ml-auto w-25">
+                    <nav class="site-navigation position-relative text-right" role="navigation">
+                        <ul class="site-menu main-menu site-menu-dark js-clone-nav mr-auto d-none d-lg-block m-0 p-0">
+                            <li class="cta"><a href="#" class="nav-link"><span>Inscríbete</span></a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <a href="#" class="d-inline-block d-lg-none site-menu-toggle js-menu-toggle text-black float-right"><span
+                            class="icon-menu h3"></span></a>
+                </div>
+            </div>
+        </div>
+
+    </header>
+
+    <div class="intro-section" id="home-section">
+
+        <div class="slide-1" style="background-image: url('{% static 'images/volunteers.webp' %}');"
+             data-stellar-background-ratio="0.5">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-12">
+                        <div class="row align-items-center">
+                            <div class="col-lg-6 mb-4">
+                                <h1 data-aos="fade-up" data-aos-delay="100">Conectamos voluntarios con ONGs y
+                                    fundaciones</h1>
+                                <p class="mb-4" data-aos="fade-up" data-aos-delay="200">Sé parte del cambio
+                                    <br>
+                                    ¡El mundo te necesita! Encuentra cómo puedes ayudar</p>
+                                <p data-aos="fade-up" data-aos-delay="300"><a href="#wedo-section"
+                                                                              class="btn btn-primary py-3 px-5 btn-pill">Conoce
+                                    más</a></p>
+
+                            </div>
+
+                            <div class="col-lg-5 ml-auto" data-aos="fade-up" data-aos-delay="500">
+                                <form action="" method="post" class="form-box">
+                                    <h3 class="h4 text-black mb-4">Déjanos tu correo para informarte</h3>
+                                    <div class="input-group">
+                                        <input id="emailInput" type="text" class="form-control"
+                                               placeholder="Ingresa tu correo"
+                                               aria-label="emailInput"
+                                               aria-describedby="basic-addon2">
+                                        <div class="input-group-append">
+                                            <button class="btn btn-outline-info" type="button" onclick="subscribe()">
+                                                Inscríbeme
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="container-sm pt-5 pb-5" id="colorContainer3">
-        <h1 class="display-3" id="subtitPage">¿Quieres ver cómo va?</h1>
-        <br>
-        <div id="btnPage2">
-            <button class="btn btn-primary" type="button" style="background-color: rgba(70, 90, 132, 1)"
-                    onclick="openPage()">Muéstrame
-            </button>
+
+    <div class="site-section courses-title" id="wedo-section">
+        <div class="container">
+            <div class="row mb-5 justify-content-center">
+                <div class="col-lg-7 text-center" data-aos="fade-up" data-aos-delay="">
+                    <h2 class="section-title">¿Qué hacemos?</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="site-section courses-entry-wrap" data-aos="fade-up" data-aos-delay="100">
+        <div class="container">
+            <div class="row justify-content-center">
+                <iframe width="900" height="506" src="https://www.youtube.com/embed/uF9PuZ-ih10" frameborder="0"
+                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+            </div>
         </div>
     </div>
 
-    <footer class="pt-4 pt-md-5">
-        <div class="row">
-            <div class="col-12 col-md">
-                <div id="BeONG">
-                    <span>BeONG</span>
+    <!--
+    <div class="site-section courses-entry-wrap" data-aos="fade-up" data-aos-delay="100">
+        <div class="container">
+            <div class="row">
+
+                <div class="owl-carousel col-12 nonloop-block-14">
+
+                    <div class="course bg-white h-100 align-self-stretch">
+                        <figure class="m-0">
+                            <a href="course-single.html"><img src="{% static "images/img_1.jpg" %}" alt="Image"
+                                                              class="img-fluid"></a>
+                        </figure>
+                        <div class="course-inner-text py-4 px-4">
+                            <span class="course-price">Kegalle, Sri Lanka</span>
+                            <div class="meta"><span class="icon-clock-o"></span>4 Semanas</div>
+                            <h3><a href="#">Voluntariado comunitario y de elefantes</a></h3>
+                            <p>Los voluntarios trabajarán en Kegalle cuidando a los elefantes abandonados y participando
+                                en otros proyectos... </p>
+                        </div>
+                        <div class="d-flex border-top stats">
+                            <div class="py-3 px-4"><span class="icon-users"></span> 5 Cupos</div>
+                            <div class="py-3 px-4 w-25 ml-auto border-left"><span class="icon-chat"></span> 2</div>
+                        </div>
+                    </div>
+
+                    <div class="course bg-white h-100 align-self-stretch">
+                        <figure class="m-0">
+                            <a href="course-single.html"><img src="{% static "images/img_2.jpg" %}" alt="Image"
+                                                              class="img-fluid"></a>
+                        </figure>
+                        <div class="course-inner-text py-4 px-4">
+                            <span class="course-price">Cali, Colombia</span>
+                            <div class="meta"><span class="icon-clock-o"></span>1 Semana</div>
+                            <h3><a href="#">Proyectos de voluntariado infantil</a></h3>
+                            <p>Sea voluntario para el Programa Especial de 1 semana en Cali con soluciones de
+                                voluntariado y... </p>
+                        </div>
+                        <div class="d-flex border-top stats">
+                            <div class="py-3 px-4"><span class="icon-users"></span> 15 Cupos</div>
+                            <div class="py-3 px-4 w-25 ml-auto border-left"><span class="icon-chat"></span> 0</div>
+                        </div>
+                    </div>
+
+                    <div class="course bg-white h-100 align-self-stretch">
+                        <figure class="m-0">
+                            <a href="course-single.html"><img src="{% static "images/img_3.jpg" %}" alt="Image"
+                                                              class="img-fluid"></a>
+                        </figure>
+                        <div class="course-inner-text py-4 px-4">
+                            <span class="course-price">Bogotá, Colombia</span>
+                            <div class="meta"><span class="icon-clock-o"></span>1 Mes</div>
+                            <h3><a href="#">Adulto Mayor (Manualidades)</a></h3>
+                            <p>Ayuda a las abuelitas a despertar la creatividad y trabajar su motricidad haciendo
+                                llaveros de porcelanicron... </p>
+                        </div>
+                        <div class="d-flex border-top stats">
+                            <div class="py-3 px-4"><span class="icon-users"></span> 6 Cupos</div>
+                            <div class="py-3 px-4 w-25 ml-auto border-left"><span class="icon-chat"></span> 4</div>
+                        </div>
+                    </div>
+
                 </div>
-                <small class="d-block mb-3 text-muted">© 2020</small>
+
+
             </div>
-            <div class="col-6 col-md">
-                <h5 id="CONTACTANOS">CONTÁCTANOS</h5>
-                <hr class="new1 mb-2 mt-0 d-inline-block mx-auto" style="width: 8vw">
-                <ul class="list-unstyled text-small mb-4 ">
-                    <li><a id="CONTACTANOSText" href="https://www.uniandes.edu.co">Universidad de los Andes</a></li>
-                    <li><a id="CONTACTANOSText">Bogotá</a></li>
-                    <li><a id="CONTACTANOSText">317 211 7192</a></li>
-                    <li><a id="CONTACTANOSText" href="mailto:info@beong.me">info@beong.me</a></li>
-                </ul>
-            </div>
-            <div class="col-6 col-md">
-                <h5 id="CONTACTANOS">SÍGUENOS</h5>
-                <hr class="new1 mb-2 mt-0 d-inline-block mx-auto" style="width: 8vw;">
-                <ul class="list-unstyled text-small">
-                    <li><a id="CONTACTANOSText" href="https://www.facebook.com/BeONG-102726601385619/">Facebook</a></li>
-                    <li><a id="CONTACTANOSText" href="https://twitter.com/bethechangeBeOn?s=09">Twitter</a></li>
-                    <li><a id="CONTACTANOSText" href="https://instagram.com/bethechangebeong?igshid=1af15is5hwz3y">Instagram</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="col-6 col-md">
-                <div id="_BeTheChange">
-                    <span>#Be<br/>The<br/>Change</span>
+            <div class="row justify-content-center">
+                <div class="col-7 text-center">
+                    <button class="customPrevBtn btn btn-primary m-1">Anterior</button>
+                    <button class="customNextBtn btn btn-primary m-1">Siguiente</button>
                 </div>
+            </div>
+        </div>
+    </div>
+    -->
+
+    <div class="site-section" id="doyouknow-section">
+        <div class="container">
+            <div class="row mb-5 justify-content-center">
+                <div class="col-lg-7 text-center" data-aos="fade-up" data-aos-delay="">
+                    <h2 class="section-title">¿Sabías qué?</h2>
+                    <p>La falta de voluntarios es un problema, aquí unos datos curiosos:</p>
+                </div>
+            </div>
+            <div class="row mb-5 align-items-center">
+                <div class="col-lg-7 mb-5" data-aos="fade-up" data-aos-delay="100">
+                    <img src="{% static "images/ongs.jpg" %}" alt="Image" class="img-fluid">
+                </div>
+                <div class="col-lg-4 ml-auto" data-aos="fade-up" data-aos-delay="200">
+                    <h2 class="text-black mb-4">+10 Millones</h2>
+                    <p class="mb-4">Organizaciones no gubernamentales (ONG) en el mundo.</p>
+                </div>
+            </div>
+
+            <div class="row mb-5 align-items-center">
+                <div class="col-lg-7 mb-5 order-1 order-lg-2" data-aos="fade-up" data-aos-delay="100">
+                    <img src="{% static "images/vountarios.jpg" %}" alt="Image" class="img-fluid">
+                </div>
+                <div class="col-lg-4 mr-auto order-2 order-lg-1" data-aos="fade-up" data-aos-delay="200">
+                    <h2 class="text-black mb-4">+140 Millones</h2>
+                    <p class="mb-4">Voluntarios en el mundo.</p>
+                </div>
+            </div>
+
+            <div class="row mb-5 align-items-center">
+                <div class="col-lg-7 mb-5" data-aos="fade-up" data-aos-delay="100">
+                    <img src="{% static "images/1_3.jpg" %}" alt="Image" class="img-fluid">
+                </div>
+                <div class="col-lg-4 ml-auto" data-aos="fade-up" data-aos-delay="200">
+                    <h2 class="text-black mb-4">1 De cada 3</h2>
+                    <p class="mb-4">Colombianos ha participado en voluntariados.</p>
+                </div>
+            </div>
+
+            <div class="row mb-5 align-items-center">
+                <div class="col-lg-7 mb-5 order-1 order-lg-2" data-aos="fade-up" data-aos-delay="100">
+                    <img src="{% static "images/women.png" %}" alt="Image" class="img-fluid">
+                </div>
+                <div class="col-lg-4 mr-auto order-2 order-lg-1" data-aos="fade-up" data-aos-delay="200">
+                    <h2 class="text-black mb-4">67%</h2>
+                    <p class="mb-4">De los colombianos que hacen voluntariado son mujeres.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- <div class="site-section" id="teachers-section">
+        <div class="container">
+
+            <div class="row mb-5 justify-content-center">
+                <div class="col-lg-7 mb-5 text-center" data-aos="fade-up" data-aos-delay="">
+                    <h2 class="section-title">Actúa</h2>
+                    <p class="mb-5">Muchas fundaciones y personas han hecho parte de BeONG y han sido el cambio. Lee
+                        algunas de sus historias con nosotros</p>
+                </div>
+            </div>
+
+            <div class="row">
+
+                <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="teacher text-center">
+                        <img src="{% static "images/person_1.jpg" %}" alt="Image"
+                             class="img-fluid w-50 rounded-circle mx-auto mb-4">
+                        <div class="py-2">
+                            <h3 class="text-black">Benjamin Perez</h3>
+                            <p class="position">Voluntario</p>
+                            <p>Hacer parte de BeONG me abrió muchas puertas a nuevas experiencias y nuevas personas de
+                                las que aprendí cosas bastante útiles en todos los aspectos.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="teacher text-center">
+                        <img src="{% static "images/person_4.jpg" %}" alt="Image"
+                             class="img-fluid w-50 rounded-circle mx-auto mb-4">
+                        <div class="py-2">
+                            <h3 class="text-black">Andrés Abondano</h3>
+                            <p class="position">Voluntario</p>
+                            <p>Hasta ahora solo he hecho un voluntariado en otro país gracias a BeONG, la experiencia
+                                fue única y espero poder hacer más.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="teacher text-center">
+                        <img src="{% static "images/person_3.jpg" %}" alt="Image"
+                             class="img-fluid w-50 rounded-circle mx-auto mb-4">
+                        <div class="py-2">
+                            <h3 class="text-black">Sofia Peña</h3>
+                            <p class="position">Voluntaria</p>
+                            <p>Entré con un poco de escecpticismo respecto a encontrar mi voluntariado ideal. Sin
+                                embargo
+                                en BeONG encontré bastantes voluntariados en áreas que me gustan, ya he hecho tres y
+                                cada vez
+                                encuentro más.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> -->
+
+    <!--<div class="site-section bg-image overlay" style="background-image: url('{% static  'images/hero_1.jpg' %}');">
+        <div class="container">
+            <div class="row justify-content-center align-items-center">
+                <div class="col-md-8 text-center testimony">
+                    <img src="{% static "images/person_2.jpg" %}" alt="Image"
+                         class="img-fluid w-25 mb-4 rounded-circle">
+                    <h3 class="mb-4">Alba Pérez</h3>
+                    <p class="position">Representante Fundación Por un Nuevo Mañana, Bogotá</p>
+                    <blockquote>
+                        <p>&ldquo; Soy la representante de una fundación que contaba con distintos proyectos pero sin
+                            voluntarios para llevarlos a cabo. Gracias a BeONG ahora sucede lo contrario &rdquo;</p>
+                    </blockquote>
+                </div>
+            </div>
+        </div>
+    </div> -->
+
+    <div class="site-section pb-0" id="act-section">
+
+        <div class="future-blobs">
+            <div class="blob_2">
+                <img src="{% static "images/blob_2.svg" %}" alt="Image">
+            </div>
+            <div class="blob_1">
+                <img src="{% static "images/blob_1.svg" %}" alt="Image">
+            </div>
+        </div>
+        <div class="container">
+            <div class="row mb-5 justify-content-center" data-aos="fade-up" data-aos-delay="">
+                <div class="col-lg-7 text-center">
+                    <h2 class="section-title">Actúa</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 ml-auto align-self-start" data-aos="fade-up" data-aos-delay="100">
+
+                    <div class="p-4 rounded bg-white why-choose-us-box">
+
+                        <div class="d-flex align-items-center custom-icon-wrap custom-icon-light mb-3">
+                            <div class="mr-3"><span class="custom-icon-inner"><span
+                                    class="icon icon-search"></span></span></div>
+                            <div><h3 class="m-0">Encuentra</h3></div>
+                        </div>
+
+                        <div class="d-flex align-items-center custom-icon-wrap custom-icon-light mb-3">
+                            <div class="mr-3"><span class="custom-icon-inner"><span
+                                    class="icon icon-touch_app"></span></span></div>
+                            <div><h3 class="m-0">Aplica</h3></div>
+                        </div>
+
+                        <div class="d-flex align-items-center custom-icon-wrap custom-icon-light mb-3">
+                            <div class="mr-3"><span class="custom-icon-inner"><span
+                                    class="icon icon-people"></span></span></div>
+                            <div><h3 class="m-0">Comparte</h3></div>
+                        </div>
+
+                        <div class="d-flex align-items-center custom-icon-wrap custom-icon-light mb-3">
+                            <div class="mr-3"><span class="custom-icon-inner"><span
+                                    class="icon icon-globe"></span></span></div>
+                            <div><h3 class="m-0">Date a conocer</h3></div>
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="col-lg-7 align-self-end" data-aos="fade-left" data-aos-delay="200">
+                    <img src="{% static "images/voluntarios.jpg" %}" alt="Image" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer-section bg-white">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h3>Sobre BeONG</h3>
+                    <p>
+                        Somos un grupo de ingenieros de la Universidad de los Andes, conectamos voluntarios con ONGs y
+                        fundaciones de manera fácil y efectiva.
+                        <br>
+                        Si tienes dudas puedes escribirnos a info@beong.me
+                        <br>
+                        <a href="https://xd.adobe.com/view/22ce8d00-570f-4b98-74b5-c7353c9d6034-54ff/?fullscreen&hints=off">Prototipo</a>
+                    </p>
+                </div>
+
+                <div class="col-md-3 ml-auto">
+                    <h3>Síguenos</h3>
+                    <ul class="list-unstyled footer-links">
+                        <li><a href="https://www.facebook.com/BeONG-102726601385619/">Facebook</a>
+                        </li>
+                        <li><a href="https://twitter.com/bethechangeBeOn?s=09">Twitter</a></li>
+                        <li><a href="https://instagram.com/bethechangebeong?igshid=1af15is5hwz3y">Instagram</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-md-4">
+                    <h3>Suscríbete</h3>
+                    <p> Déjanos tu correo para informarte</p>
+                    <form action="#" class="footer-subscribe">
+                        <div class="d-flex mb-5">
+                            <div class="input-group">
+                                <input id="emailInput2" type="text" class="form-control"
+                                       placeholder="Ingresa tu correo"
+                                       aria-label="emailInput"
+                                       aria-describedby="basic-addon2">
+                                <div class="input-group-append">
+                                    <button class="btn btn-outline-info" type="button" onclick="subscribe2()">
+                                        Inscríbeme
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+
+            <div class="row pt-5 mt-5 text-center">
+                <div class="col-md-12">
+                    <div class="border-top pt-5">
+                        <p>
+                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                            Copyright &copy;<script>document.write(new Date().getFullYear());</script>
+                            BeONG | This template is made with <i class="icon-heart"
+                                                                  aria-hidden="true"></i> by <a
+                                href="https://colorlib.com" target="_blank">Colorlib</a>
+                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                        </p>
+                    </div>
+                </div>
+
             </div>
         </div>
     </footer>
@@ -428,10 +490,58 @@
             }
         }
 
+        function subscribe2() {
+            var email = document.getElementById("emailInput2").value;
+            var parts = email.split("@");
+            if (parts.length == 2 && parts[1].split(".").length >= 2) {
+                //Code to save mail
+                const Http = new XMLHttpRequest();
+                const url = 'http://beong.me/add';
+                console.log(url);
+                Http.open("POST", url);
+                Http.setRequestHeader("Content-type", "application/json;charset=UTF-8");
+                Http.send(JSON.stringify({
+                    "email": email
+                }));
+
+                Http.onreadystatechange = (e) => {
+                    if (Http.responseText == "OK") {
+                        alert("Registrado exitosamente. ¡Gracias!");
+                    } else if (this.status != "") {
+                        alert(Http.responseText);
+                    }
+                }
+
+                document.getElementById("emailInput").value = "";
+            } else {
+                alert("El email no es correcto. Por favor revisa.");
+            }
+        }
+
         function openPage() {
             window.open("https://xd.adobe.com/view/22ce8d00-570f-4b98-74b5-c7353c9d6034-54ff/?fullscreen&hints=off")
         }
     </script>
-</div>
+
+
+</div> <!-- .site-wrap -->
+
+<script src="{% static "js/jquery-3.3.1.min.js" %}"></script>
+<script src="{% static "js/jquery-migrate-3.0.1.min.js" %}"></script>
+<script src="{% static "js/jquery-ui.js" %}"></script>
+<script src="{% static "js/popper.min.js" %}"></script>
+<script src="{% static "js/bootstrap.min.js" %}"></script>
+<script src="{% static "js/owl.carousel.min.js" %}"></script>
+<script src="{% static "js/jquery.stellar.min.js" %}"></script>
+<script src="{% static "js/jquery.countdown.min.js" %}"></script>
+<script src="{% static "js/bootstrap-datepicker.min.js" %}"></script>
+<script src="{% static "js/jquery.easing.1.3.js" %}"></script>
+<script src="{% static "js/aos.js" %}"></script>
+<script src="{% static "js/jquery.fancybox.min.js" %}"></script>
+<script src="{% static "js/jquery.sticky.js" %}"></script>
+
+
+<script src="{% static "js/main.js" %}"></script>
+
 </body>
 </html>
