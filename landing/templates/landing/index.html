@@ -6,8 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     {% load static %}
     {% load static %}
-    <link rel="icon" href="{% static "/images/logoBeONG.png" %}" type="image/x-icon">
-
     <link href="https://fonts.googleapis.com/css?family=Muli:300,400,700,900" rel="stylesheet">
     <link rel="stylesheet" href="{% static "fonts/icomoon/style.css" %}">
 
@@ -52,9 +50,9 @@
                     <nav class="site-navigation position-relative text-right" role="navigation">
                         <ul class="site-menu main-menu js-clone-nav mx-auto d-none d-lg-block  m-0 p-0">
                             <li><a href="#home-section" class="nav-link">Inicio</a></li>
-                            <li><a href="#wedo-section" class="nav-link">¿Qué hacemos?</a></li>
-                            <li><a href="#doyouknow-section" class="nav-link">¿Sabías qué?</a></li>
-                            <li><a href="#act-section" class="nav-link">Actúa</a></li>
+                            <li><a href="#courses-section" class="nav-link">Courses</a></li>
+                            <li><a href="#programs-section" class="nav-link">Programs</a></li>
+                            <li><a href="#teachers-section" class="nav-link">Teachers</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -62,8 +60,7 @@
                 <div class="ml-auto w-25">
                     <nav class="site-navigation position-relative text-right" role="navigation">
                         <ul class="site-menu main-menu site-menu-dark js-clone-nav mr-auto d-none d-lg-block m-0 p-0">
-                            <li class="cta"><a href="#" class="nav-link"><span>Inscríbete</span></a>
-                            </li>
+                            <li class="cta"><a href="#contact-section" class="nav-link"><span>Contáctanos</span></a></li>
                         </ul>
                     </nav>
                     <a href="#" class="d-inline-block d-lg-none site-menu-toggle js-menu-toggle text-black float-right"><span
@@ -88,7 +85,7 @@
                                 <p class="mb-4" data-aos="fade-up" data-aos-delay="200">Sé parte del cambio
                                     <br>
                                     ¡El mundo te necesita! Encuentra cómo puedes ayudar</p>
-                                <p data-aos="fade-up" data-aos-delay="300"><a href="#wedo-section"
+                                <p data-aos="fade-up" data-aos-delay="300"><a href="#courses-section"
                                                                               class="btn btn-primary py-3 px-5 btn-pill">Conoce
                                     más</a></p>
 
@@ -97,16 +94,11 @@
                             <div class="col-lg-5 ml-auto" data-aos="fade-up" data-aos-delay="500">
                                 <form action="" method="post" class="form-box">
                                     <h3 class="h4 text-black mb-4">Déjanos tu correo para informarte</h3>
-                                    <div class="input-group">
-                                        <input id="emailInput" type="text" class="form-control"
-                                               placeholder="Ingresa tu correo"
-                                               aria-label="emailInput"
-                                               aria-describedby="basic-addon2">
-                                        <div class="input-group-append">
-                                            <button class="btn btn-outline-info" type="button" onclick="subscribe()">
-                                                Inscríbeme
-                                            </button>
-                                        </div>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" placeholder="Correo electrónico">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="submit" class="btn btn-primary btn-pill" value="Quiero saber más">
                                     </div>
                                 </form>
 
@@ -120,26 +112,15 @@
     </div>
 
 
-    <div class="site-section courses-title" id="wedo-section">
+    <div class="site-section courses-title" id="courses-section">
         <div class="container">
             <div class="row mb-5 justify-content-center">
                 <div class="col-lg-7 text-center" data-aos="fade-up" data-aos-delay="">
-                    <h2 class="section-title">¿Qué hacemos?</h2>
+                    <h2 class="section-title">Voluntariados</h2>
                 </div>
             </div>
         </div>
     </div>
-    <div class="site-section courses-entry-wrap" data-aos="fade-up" data-aos-delay="100">
-        <div class="container">
-            <div class="row justify-content-center">
-                <iframe width="900" height="506" src="https://www.youtube.com/embed/uF9PuZ-ih10" frameborder="0"
-                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen></iframe>
-            </div>
-        </div>
-    </div>
-
-    <!--
     <div class="site-section courses-entry-wrap" data-aos="fade-up" data-aos-delay="100">
         <div class="container">
             <div class="row">
@@ -155,8 +136,7 @@
                             <span class="course-price">Kegalle, Sri Lanka</span>
                             <div class="meta"><span class="icon-clock-o"></span>4 Semanas</div>
                             <h3><a href="#">Voluntariado comunitario y de elefantes</a></h3>
-                            <p>Los voluntarios trabajarán en Kegalle cuidando a los elefantes abandonados y participando
-                                en otros proyectos... </p>
+                            <p>Los voluntarios trabajarán en Kegalle cuidando a los elefantes abandonados y participando en otros proyectos... </p>
                         </div>
                         <div class="d-flex border-top stats">
                             <div class="py-3 px-4"><span class="icon-users"></span> 5 Cupos</div>
@@ -173,8 +153,7 @@
                             <span class="course-price">Cali, Colombia</span>
                             <div class="meta"><span class="icon-clock-o"></span>1 Semana</div>
                             <h3><a href="#">Proyectos de voluntariado infantil</a></h3>
-                            <p>Sea voluntario para el Programa Especial de 1 semana en Cali con soluciones de
-                                voluntariado y... </p>
+                            <p>Sea voluntario para el Programa Especial de 1 semana en Cali con soluciones de voluntariado y... </p>
                         </div>
                         <div class="d-flex border-top stats">
                             <div class="py-3 px-4"><span class="icon-users"></span> 15 Cupos</div>
@@ -191,8 +170,7 @@
                             <span class="course-price">Bogotá, Colombia</span>
                             <div class="meta"><span class="icon-clock-o"></span>1 Mes</div>
                             <h3><a href="#">Adulto Mayor (Manualidades)</a></h3>
-                            <p>Ayuda a las abuelitas a despertar la creatividad y trabajar su motricidad haciendo
-                                llaveros de porcelanicron... </p>
+                            <p>Ayuda a las abuelitas a despertar la creativida y trabajar su motricidad haciendo llaveros de porcelanicron... </p>
                         </div>
                         <div class="d-flex border-top stats">
                             <div class="py-3 px-4"><span class="icon-users"></span> 6 Cupos</div>
@@ -206,15 +184,15 @@
             </div>
             <div class="row justify-content-center">
                 <div class="col-7 text-center">
-                    <button class="customPrevBtn btn btn-primary m-1">Anterior</button>
-                    <button class="customNextBtn btn btn-primary m-1">Siguiente</button>
+                    <button class="customPrevBtn btn btn-primary m-1">Prev</button>
+                    <button class="customNextBtn btn btn-primary m-1">Sig</button>
                 </div>
             </div>
         </div>
     </div>
-    -->
 
-    <div class="site-section" id="doyouknow-section">
+
+    <div class="site-section" id="programs-section">
         <div class="container">
             <div class="row mb-5 justify-content-center">
                 <div class="col-lg-7 text-center" data-aos="fade-up" data-aos-delay="">
@@ -252,7 +230,7 @@
                 </div>
             </div>
 
-            <div class="row mb-5 align-items-center">
+              <div class="row mb-5 align-items-center">
                 <div class="col-lg-7 mb-5 order-1 order-lg-2" data-aos="fade-up" data-aos-delay="100">
                     <img src="{% static "images/women.png" %}" alt="Image" class="img-fluid">
                 </div>
@@ -265,14 +243,13 @@
         </div>
     </div>
 
-    <!-- <div class="site-section" id="teachers-section">
+    <div class="site-section" id="teachers-section">
         <div class="container">
 
             <div class="row mb-5 justify-content-center">
                 <div class="col-lg-7 mb-5 text-center" data-aos="fade-up" data-aos-delay="">
-                    <h2 class="section-title">Actúa</h2>
-                    <p class="mb-5">Muchas fundaciones y personas han hecho parte de BeONG y han sido el cambio. Lee
-                        algunas de sus historias con nosotros</p>
+                    <h2 class="section-title">Historias</h2>
+                    <p class="mb-5">Muchas fundaciones y personas han hecho parte de BeONG y han sido el cambio. Lee algunas de sus historias con nosotros</p>
                 </div>
             </div>
 
@@ -285,8 +262,7 @@
                         <div class="py-2">
                             <h3 class="text-black">Benjamin Perez</h3>
                             <p class="position">Voluntario</p>
-                            <p>Hacer parte de BeONG me abrió muchas puertas a nuevas experiencias y nuevas personas de
-                                las que aprendí cosas bastante útiles en todos los aspectos.</p>
+                            <p>Hacer parte de BeONG me abrió muchas puertas a nuevas experiencias y nuevas personas de las que aprendí cosas bastante útiles en todos los aspectos.</p>
                         </div>
                     </div>
                 </div>
@@ -299,7 +275,7 @@
                             <h3 class="text-black">Andrés Abondano</h3>
                             <p class="position">Voluntario</p>
                             <p>Hasta ahora solo he hecho un voluntariado en otro país gracias a BeONG, la experiencia
-                                fue única y espero poder hacer más.</p>
+                            fue única y espero poder hacer más.</p>
                         </div>
                     </div>
                 </div>
@@ -311,19 +287,17 @@
                         <div class="py-2">
                             <h3 class="text-black">Sofia Peña</h3>
                             <p class="position">Voluntaria</p>
-                            <p>Entré con un poco de escecpticismo respecto a encontrar mi voluntariado ideal. Sin
-                                embargo
-                                en BeONG encontré bastantes voluntariados en áreas que me gustan, ya he hecho tres y
-                                cada vez
-                                encuentro más.</p>
+                            <p>Entré con un poco de escecpticismo respecto a encontrar mi voluntariado ideal. Sin embargo
+                            en BeONG encontré bastantes voluntariados en áreas que me gustan, ya he hecho tres y cada vez
+                            encuentro más.</p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div> -->
+    </div>
 
-    <!--<div class="site-section bg-image overlay" style="background-image: url('{% static  'images/hero_1.jpg' %}');">
+    <div class="site-section bg-image overlay" style="background-image: url('{% static  'images/hero_1.jpg' %}');">
         <div class="container">
             <div class="row justify-content-center align-items-center">
                 <div class="col-md-8 text-center testimony">
@@ -333,14 +307,14 @@
                     <p class="position">Representante Fundación Por un Nuevo Mañana, Bogotá</p>
                     <blockquote>
                         <p>&ldquo; Soy la representante de una fundación que contaba con distintos proyectos pero sin
-                            voluntarios para llevarlos a cabo. Gracias a BeONG ahora sucede lo contrario &rdquo;</p>
+                                voluntarios para llevarlos a cabo. Gracias a BeONG ahora sucede lo contrario &rdquo;</p>
                     </blockquote>
                 </div>
             </div>
         </div>
-    </div> -->
+    </div>
 
-    <div class="site-section pb-0" id="act-section">
+    <div class="site-section pb-0">
 
         <div class="future-blobs">
             <div class="blob_2">
@@ -384,16 +358,71 @@
                                     class="icon icon-globe"></span></span></div>
                             <div><h3 class="m-0">Date a conocer</h3></div>
                         </div>
+
                     </div>
 
 
                 </div>
                 <div class="col-lg-7 align-self-end" data-aos="fade-left" data-aos-delay="200">
-                    <img src="{% static "images/voluntarios.jpg" %}" alt="Image" class="img-fluid">
+                    <img src="{% static "images/person_transparent.png" %}" alt="Image" class="img-fluid">
                 </div>
             </div>
         </div>
     </div>
+
+
+    <div class="site-section bg-light" id="contact-section">
+        <div class="container">
+
+            <div class="row justify-content-center">
+                <div class="col-md-7">
+
+
+                    <h2 class="section-title mb-3">Escríbenos</h2>
+                    <p class="mb-5">¿Tienes dudas, reclamos o recomendaciones? No dudes en escribirnos </p>
+
+                    <form method="post" data-aos="fade">
+                        <div class="form-group row">
+                            <div class="col-md-6 mb-3 mb-lg-0">
+                                <input type="text" class="form-control" placeholder="Nombre">
+                            </div>
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" placeholder="Apellido">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <div class="col-md-12">
+                                <input type="text" class="form-control" placeholder="Asunto">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <div class="col-md-12">
+                                <input type="email" class="form-control" placeholder="Email">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-md-12">
+                                <textarea class="form-control" id="" cols="30" rows="10"
+                                          placeholder="Escribe tu mensaje aquí"></textarea>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <div class="col-md-6">
+
+                                <input type="submit" class="btn btn-primary py-3 px-5 btn-block btn-pill"
+                                       value="Enviar Mensaje">
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
 
     <footer class="footer-section bg-white">
         <div class="container">
@@ -405,19 +434,15 @@
                         fundaciones de manera fácil y efectiva.
                         <br>
                         Si tienes dudas puedes escribirnos a info@beong.me
-                        <br>
-                        <a href="https://xd.adobe.com/view/22ce8d00-570f-4b98-74b5-c7353c9d6034-54ff/?fullscreen&hints=off">Prototipo</a>
                     </p>
                 </div>
 
                 <div class="col-md-3 ml-auto">
                     <h3>Síguenos</h3>
                     <ul class="list-unstyled footer-links">
-                        <li><a href="https://www.facebook.com/BeONG-102726601385619/">Facebook</a>
-                        </li>
-                        <li><a href="https://twitter.com/bethechangeBeOn?s=09">Twitter</a></li>
-                        <li><a href="https://instagram.com/bethechangebeong?igshid=1af15is5hwz3y">Instagram</a>
-                        </li>
+                        <li><a href="#">Facebook</a></li>
+                        <li><a href="#">Twitter</a></li>
+                        <li><a href="#">Instagram</a></li>
                     </ul>
                 </div>
 
@@ -426,17 +451,8 @@
                     <p> Déjanos tu correo para informarte</p>
                     <form action="#" class="footer-subscribe">
                         <div class="d-flex mb-5">
-                            <div class="input-group">
-                                <input id="emailInput2" type="text" class="form-control"
-                                       placeholder="Ingresa tu correo"
-                                       aria-label="emailInput"
-                                       aria-describedby="basic-addon2">
-                                <div class="input-group-append">
-                                    <button class="btn btn-outline-info" type="button" onclick="subscribe2()">
-                                        Inscríbeme
-                                    </button>
-                                </div>
-                            </div>
+                            <input type="text" class="form-control rounded-0" placeholder="Email">
+                            <input type="submit" class="btn btn-primary rounded-0" value="Suscribirme">
                         </div>
                     </form>
                 </div>
@@ -449,8 +465,8 @@
                         <p>
                             <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                             Copyright &copy;<script>document.write(new Date().getFullYear());</script>
-                            BeONG | This template is made with <i class="icon-heart"
-                                                                  aria-hidden="true"></i> by <a
+                            All rights reserved | This template is made with <i class="icon-heart"
+                                                                                aria-hidden="true"></i> by <a
                                 href="https://colorlib.com" target="_blank">Colorlib</a>
                             <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                         </p>
@@ -460,68 +476,6 @@
             </div>
         </div>
     </footer>
-
-    <script>
-        function subscribe() {
-            var email = document.getElementById("emailInput").value;
-            var parts = email.split("@");
-            if (parts.length == 2 && parts[1].split(".").length >= 2) {
-                //Code to save mail
-                const Http = new XMLHttpRequest();
-                const url = 'http://beong.me/add';
-                console.log(url);
-                Http.open("POST", url);
-                Http.setRequestHeader("Content-type", "application/json;charset=UTF-8");
-                Http.send(JSON.stringify({
-                    "email": email
-                }));
-
-                Http.onreadystatechange = (e) => {
-                    if (Http.responseText == "OK") {
-                        alert("Registrado exitosamente. ¡Gracias!");
-                    } else if (this.status != "") {
-                        alert(Http.responseText);
-                    }
-                }
-
-                document.getElementById("emailInput").value = "";
-            } else {
-                alert("El email no es correcto. Por favor revisa.");
-            }
-        }
-
-        function subscribe2() {
-            var email = document.getElementById("emailInput2").value;
-            var parts = email.split("@");
-            if (parts.length == 2 && parts[1].split(".").length >= 2) {
-                //Code to save mail
-                const Http = new XMLHttpRequest();
-                const url = 'http://beong.me/add';
-                console.log(url);
-                Http.open("POST", url);
-                Http.setRequestHeader("Content-type", "application/json;charset=UTF-8");
-                Http.send(JSON.stringify({
-                    "email": email
-                }));
-
-                Http.onreadystatechange = (e) => {
-                    if (Http.responseText == "OK") {
-                        alert("Registrado exitosamente. ¡Gracias!");
-                    } else if (this.status != "") {
-                        alert(Http.responseText);
-                    }
-                }
-
-                document.getElementById("emailInput").value = "";
-            } else {
-                alert("El email no es correcto. Por favor revisa.");
-            }
-        }
-
-        function openPage() {
-            window.open("https://xd.adobe.com/view/22ce8d00-570f-4b98-74b5-c7353c9d6034-54ff/?fullscreen&hints=off")
-        }
-    </script>
 
 
 </div> <!-- .site-wrap -->
