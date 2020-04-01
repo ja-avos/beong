@@ -1,6 +1,4 @@
 # Ignore databases
-#*.sqlite
-#*.sqlite3
 #
 # Ignore .idea folder
 .idea/
