@@ -1,4 +1,6 @@
 from django.db import models
+from intereses.models import Gusto, Idioma
+from calificaciones.models import Calificacion
 
 class Voluntariado (models.Model):
     nombre = models.CharField(max_length=30)
@@ -8,4 +10,7 @@ class Voluntariado (models.Model):
     lugar=models.CharField(max_length=25)
     precio=models.FloatField()
     requsitos=models.CharField(max_length=50)
-# Create your models here.
+    gustosRequeridos=models.ForeignKey(Gusto, on_delete=None)
+    idiomasRequeridos=models.ForeignKey(Idioma, on_delete=None)
+    calificaciones=models.ForeignKey(Calificacion, on_delete=models.CASCADE)
+
