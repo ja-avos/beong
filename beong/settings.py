@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'calificaciones',
     'postulacion',
     'voluntariados',
+    'intereses',
 ]
 
 MIDDLEWARE = [
@@ -84,8 +85,6 @@ DATABASES = {
         'NAME': 'beong',
         'USER': 'violeta',
         'PASSWORD': 'beong',
-        'HOST': 'localhost',
-        'PORT': '',
     }
 }
 
