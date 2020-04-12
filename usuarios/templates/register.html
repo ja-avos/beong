@@ -1,11 +1,26 @@
 
 {% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
 {% block content %}
-<form method="POST"> 
-    {% csrf_token %}
     <br>
-    {{ form.as_p }} 
-    <button type="submit" class="btn btn-success waves-effect waves-light">Registrarme</button>
-    </button>
-</form> 
+<br>
+<br>
+<br>
+    <h2 class = "text-center">Nuevo Voluntario! :)</h2>
+<br>
+<div class = "input-group, text-center">
+    <style>
+        background-color: blue;
+    </style>
+    <form method="POST" class = "text-center">{% csrf_token %}
+            {% crispy form %}
+        <br>
+        <div class = "text-center">
+
+
+        <button type="submit" class="btn btn-success waves-effect waves-light">Registrarme</button>
+        </div>
+</div>
+    </form>
 {% endblock %}

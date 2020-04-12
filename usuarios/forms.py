@@ -12,7 +12,37 @@ class ONGForm(forms.ModelForm):
 class VoluntarioForm(forms.ModelForm):
     class Meta:
         model = Voluntario
-        fields = "__all__"
+        required_css_class = 'bold'
+        fields = (
+            "nombre",
+            "usuario",
+            "contrasenia",
+            "descripcion",
+            "edad",
+            "pais",
+            "ocupacion",
+            "idiomas",
+            "gustos"
+        )
+        widgets = {
+            "nombre":forms.TextInput(attrs= {"placeholder": "Tu nombre"}),
+            "usuario":forms.TextInput(attrs = { "placeholder": "Usuario cool"}),
+            "contrasenia":forms.PasswordInput(),
+            "descripcion":forms.TextInput(attrs = {"placeholder":"Cuentamos lo mejor de ti!"}),
+            "pais":forms.TextInput(attrs = {"placeholder": "País donde vives"}),
+            "ocupacion":forms.TextInput(attrs = { "placeholder":"Cuentanos a que te dedicas"})
+        }
+        labels = {
+            "nombre" : "Nombre",
+            "usuario": "Usuario",
+            "contrasenia": "Contraseña",
+            "descripcion": "Descripción",
+            "edad": "Edad",
+            "pais": "País",
+            "ocupacion": "Ocupacion",
+            "idiomas": "Idiomas",
+            "gustos":"Gustos"
+        }
 
 
 
