@@ -6,7 +6,6 @@ class Interes (models.Model):
     class Meta:
         abstract=True
 
-    id = models.IntegerField(primary_key=True)
     nombre=models.CharField(max_length=50)
 
     def __str__(self):
