@@ -30,7 +30,7 @@ class Voluntario(Usuario):
 
 class ONG(Usuario):
     pais = models.CharField(max_length=25)
-    voluntariados= models.ManyToManyField(Voluntario)
+    voluntariados= models.ManyToManyField(Voluntariado)
 
 
 
