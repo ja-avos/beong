@@ -24,13 +24,13 @@ class Voluntario(Usuario):
     edad=models.IntegerField()
     pais=models.CharField(max_length=25)
     ocupacion=models.CharField(max_length=30)
-    idiomas=models.ForeignKey(Idioma, null=False, on_delete=None)
-    gustos=models.ForeignKey(Gusto, null=False,on_delete=None)
-    postulaciones=models.ForeignKey(Postulacion, on_delete=models.CASCADE)
+    idiomas=models.ManyToManyField(Idioma)
+    gustos=models.ManyToManyField(Gusto)
+    postulaciones=models.ManyToManyField(Postulacion)
 
 class ONG(Usuario):
     pais = models.CharField(max_length=25)
-    voluntariados= models.ForeignKey(Voluntario,on_delete=None)
+    voluntariados= models.ManyToManyField(Voluntario)
 
 
 
