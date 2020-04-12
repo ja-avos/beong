@@ -9,6 +9,9 @@ import json
 def index(request):
     return render(request, 'landing/index.html')
 
+def about(request):
+    return render(request, 'landing/about.html')
+
 @csrf_exempt
 def addPerson(request):
     if request.method == 'POST':
