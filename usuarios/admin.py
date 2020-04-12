@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Voluntario, ONG, Administrador
+from .models import ONG, Administrador, Voluntario
 
 # Register your models here.
 admin.site.register(Voluntario)
