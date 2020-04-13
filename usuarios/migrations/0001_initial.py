@@ -27,7 +27,7 @@ class Migration(migrations.Migration):
             },
         ),
         migrations.CreateModel(
-            name='Voluntario',
+            name='ONG',
             fields=[
                 ('nombre', models.CharField(max_length=60)),
                 ('usuario', models.CharField(max_length=20, primary_key=True, serialize=False)),
@@ -47,13 +47,18 @@ class Migration(migrations.Migration):
             },
         ),
         migrations.CreateModel(
-            name='ONG',
+            name='Voluntario',
             fields=[
                 ('nombre', models.CharField(max_length=60)),
                 ('usuario', models.CharField(max_length=20, primary_key=True, serialize=False)),
                 ('contrasenia', models.CharField(max_length=20)),
+                ('descripcion', models.CharField(max_length=100)),
+                ('edad', models.IntegerField()),
                 ('pais', models.CharField(max_length=25)),
-                ('voluntariados', models.ManyToManyField(blank=True, to='voluntariados.Voluntariado')),
+                ('ocupacion', models.CharField(max_length=30)),
+                ('gustos', models.ManyToManyField(to='intereses.Gusto')),
+                ('idiomas', models.ManyToManyField(to='intereses.Idioma')),
+                ('postulaciones', models.ManyToManyField(to='postulacion.Postulacion')),
             ],
             options={
                 'abstract': False,

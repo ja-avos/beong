@@ -1,116 +1,32 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <title>BeONG</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    {% load static %}
-    {% load static %}
-    <link rel="icon" href="{% static "/images/logoBeONG.png" %}" type="image/x-icon">
-
-    <link href="https://fonts.googleapis.com/css?family=Muli:300,400,700,900" rel="stylesheet">
-    <link rel="stylesheet" href="{% static "fonts/icomoon/style.css" %}">
-
-    <link rel="stylesheet" href="{% static "css/bootstrap.min.css" %}">
-    <link rel="stylesheet" href="{% static "css/jquery-ui.css" %}">
-    <link rel="stylesheet" href="{% static "css/owl.carousel.min.css" %}">
-    <link rel="stylesheet" href="{% static "css/owl.theme.default.min.css" %}">
-    <link rel="stylesheet" href="{% static "css/owl.theme.default.min.css" %}">
-
-    <link rel="stylesheet" href="{% static "css/jquery.fancybox.min.css" %}">
-
-    <link rel="stylesheet" href="{% static "css/bootstrap-datepicker.css" %}">
-
-    <link rel="stylesheet" href="{% static "fonts/flaticon/font/flaticon.css" %}">
-
-    <link rel="stylesheet" href="{% static "css/aos.css" %}">
-
-    <link rel="stylesheet" href="{% static "css/style.css" %}">
-
-</head>
-<body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
-
-<div class="site-wrap">
-
-    <div class="site-mobile-menu site-navbar-target">
-        <div class="site-mobile-menu-header">
-            <div class="site-mobile-menu-close mt-3">
-                <span class="icon-close2 js-menu-toggle"></span>
-            </div>
-        </div>
-        <div class="site-mobile-menu-body"></div>
-    </div>
-
-
-    <header class="site-navbar py-4 js-sticky-header site-navbar-target" role="banner">
-
-        <div class="container-fluid">
-            <div class="d-flex align-items-center">
-                <div class="site-logo mr-auto w-25"><a href="index.html">BeONG</a></div>
-
-                <div class="mx-auto text-center">
-                    <nav class="site-navigation position-relative text-right" role="navigation">
-                        <ul class="site-menu main-menu js-clone-nav mx-auto d-none d-lg-block  m-0 p-0">
-                            <li><a href="#home-section" class="nav-link">Inicio</a></li>
-                            <li><a href="#wedo-section" class="nav-link">¿Qué hacemos?</a></li>
-                            <li><a href="#doyouknow-section" class="nav-link">¿Sabías qué?</a></li>
-                            <li><a href="#act-section" class="nav-link">Actúa</a></li>
-                            <li><a href="/acerca" class="nav-link">Acerca de</a></li>
-                        </ul>
-                    </nav>
-                </div>
-
-                <div class="ml-auto w-25">
-                    <nav class="site-navigation position-relative text-right" role="navigation">
-                        <ul class="site-menu main-menu site-menu-dark js-clone-nav mr-auto d-none d-lg-block m-0 p-0">
-                            <li class="cta"><a href="#" class="nav-link"><span>Inscríbete</span></a>
-                            </li>
-                        </ul>
-                    </nav>
-                    <a href="#" class="d-inline-block d-lg-none site-menu-toggle js-menu-toggle text-black float-right"><span
-                            class="icon-menu h3"></span></a>
-                </div>
-            </div>
-        </div>
-
-    </header>
-
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
     <div class="intro-section" id="home-section">
-
-        <div class="slide-1" style="background-image: url('{% static 'images/volunteers.webp' %}');"
+        <div class="slide-1" style="background-image: url('{% static 'images/manos1.jpg' %}');"
              data-stellar-background-ratio="0.5">
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-12">
                         <div class="row align-items-center">
-                            <div class="col-lg-6 mb-4">
-                                <h1 data-aos="fade-up" data-aos-delay="100">Conectamos voluntarios con ONGs y
-                                    fundaciones</h1>
-                                <p class="mb-4" data-aos="fade-up" data-aos-delay="200">Sé parte del cambio
+                            <div class="col-lg-6 form-box">
+                                <h1 data-aos="fade-up" data-aos-delay="100" class="text-black">Conectamos voluntarios
+                                    con ONGs y fundaciones</h1>
+                                <p class="mb-4 text-black" data-aos="fade-up" data-aos-delay="200">Sé parte del cambio
                                     <br>
                                     ¡El mundo te necesita! Encuentra cómo puedes ayudar</p>
                                 <p data-aos="fade-up" data-aos-delay="300"><a href="#wedo-section"
                                                                               class="btn btn-primary py-3 px-5 btn-pill">Conoce
                                     más</a></p>
-
                             </div>
 
-                            <div class="col-lg-5 ml-auto" data-aos="fade-up" data-aos-delay="500">
-                                <form action="" method="post" class="form-box">
-                                    <h3 class="h4 text-black mb-4">Déjanos tu correo para informarte</h3>
-                                    <div class="input-group">
-                                        <input id="emailInput" type="text" class="form-control"
-                                               placeholder="Ingresa tu correo"
-                                               aria-label="emailInput"
-                                               aria-describedby="basic-addon2">
-                                        <div class="input-group-append">
-                                            <button class="btn btn-outline-info" type="button" onclick="subscribe()">
-                                                Inscríbeme
-                                            </button>
-                                        </div>
-                                    </div>
-                                </form>
-
+                            <div class="col-lg-4 ml-auto" data-aos="fade-up" data-aos-delay="500">
+                                <p id="_BeTheChange">
+                                    #BE
+                                    <br>
+                                    THE
+                                    <br>
+                                    CHANGE
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -119,7 +35,6 @@
             </div>
         </div>
     </div>
-
 
     <div class="site-section courses-title" id="wedo-section">
         <div class="container">
@@ -130,15 +45,23 @@
             </div>
         </div>
     </div>
-    <div class="site-section courses-entry-wrap" data-aos="fade-up" data-aos-delay="100">
+
+    <div class="site-section courses-title" id="wedo-section">
         <div class="container">
-            <div class="row justify-content-center">
+            <div class="row mb-5 justify-content-center">
+                <div class="col-lg-7 text-center" data-aos="fade-up" data-aos-delay="">
+                    <h2 class="section-title">¿Qué hacemos?</h2>
+                </div>
+            </div>
+            <div class="row mb-5 justify-content-center">
                 <iframe width="900" height="506" src="https://www.youtube.com/embed/EKEuowYbXRM" frameborder="0"
                         allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen></iframe>
+                        allowfullscreen data-aos="fade-up" data-aos-delay=""></iframe>
             </div>
+
         </div>
     </div>
+
 
     <!--
     <div class="site-section courses-entry-wrap" data-aos="fade-up" data-aos-delay="100">
@@ -396,133 +319,69 @@
         </div>
     </div>
 
-    <footer class="footer-section bg-white">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4">
-                    <h3>Sobre BeONG</h3>
-                    <p>
-                        Somos un grupo de ingenieros de la Universidad de los Andes, conectamos voluntarios con ONGs y
-                        fundaciones de manera fácil y efectiva.
-                        <br>
-                        Si tienes dudas puedes escribirnos a info@beong.me
-                        <br>
-                        <a href="https://xd.adobe.com/view/22ce8d00-570f-4b98-74b5-c7353c9d6034-54ff/?fullscreen&hints=off">Prototipo</a>
-                    </p>
-                </div>
+{% endblock %}
 
-                <div class="col-md-3 ml-auto">
-                    <h3>Síguenos</h3>
-                    <ul class="list-unstyled footer-links">
-                        <li><a href="https://www.facebook.com/BeONG-102726601385619/">Facebook</a>
-                        </li>
-                        <li><a href="https://twitter.com/bethechangeBeOn?s=09">Twitter</a></li>
-                        <li><a href="https://instagram.com/bethechangebeong?igshid=1af15is5hwz3y">Instagram</a>
-                        </li>
-                    </ul>
-                </div>
+<script>
+    function subscribe() {
+        var email = document.getElementById("emailInput").value;
+        var parts = email.split("@");
+        if (parts.length == 2 && parts[1].split(".").length >= 2) {
+            //Code to save mail
+            const Http = new XMLHttpRequest();
+            const url = 'http://beong.me/add';
+            console.log(url);
+            Http.open("POST", url);
+            Http.setRequestHeader("Content-type", "application/json;charset=UTF-8");
+            Http.send(JSON.stringify({
+                "email": email
+            }));
 
-                <div class="col-md-4">
-                    <h3>Suscríbete</h3>
-                    <p> Déjanos tu correo para informarte</p>
-                    <form action="#" class="footer-subscribe">
-                        <div class="d-flex mb-5">
-                            <div class="input-group">
-                                <input id="emailInput2" type="text" class="form-control"
-                                       placeholder="Ingresa tu correo"
-                                       aria-label="emailInput"
-                                       aria-describedby="basic-addon2">
-                                <div class="input-group-append">
-                                    <button class="btn btn-outline-info" type="button" onclick="subscribe2()">
-                                        Inscríbeme
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-
-            </div>
-
-            <div class="row pt-5 mt-5 text-center">
-                <div class="col-md-12">
-                    <div class="border-top pt-5">
-                        <p>
-                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                            Copyright &copy;<script>document.write(new Date().getFullYear());</script>
-                            BeONG | This template is made with <i class="icon-heart"
-                                                                  aria-hidden="true"></i> by <a
-                                href="https://colorlib.com" target="_blank">Colorlib</a>
-                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                        </p>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </footer>
-
-    <script>
-        function subscribe() {
-            var email = document.getElementById("emailInput").value;
-            var parts = email.split("@");
-            if (parts.length == 2 && parts[1].split(".").length >= 2) {
-                //Code to save mail
-                const Http = new XMLHttpRequest();
-                const url = 'http://beong.me/add';
-                console.log(url);
-                Http.open("POST", url);
-                Http.setRequestHeader("Content-type", "application/json;charset=UTF-8");
-                Http.send(JSON.stringify({
-                    "email": email
-                }));
-
-                Http.onreadystatechange = (e) => {
-                    if (Http.responseText == "OK") {
-                        alert("Registrado exitosamente. ¡Gracias!");
-                    } else if (this.status != "") {
-                        alert(Http.responseText);
-                    }
+            Http.onreadystatechange = (e) => {
+                if (Http.responseText == "OK") {
+                    alert("Registrado exitosamente. ¡Gracias!");
+                } else if (this.status != "") {
+                    alert(Http.responseText);
                 }
-
-                document.getElementById("emailInput").value = "";
-            } else {
-                alert("El email no es correcto. Por favor revisa.");
             }
+
+            document.getElementById("emailInput").value = "";
+        } else {
+            alert("El email no es correcto. Por favor revisa.");
         }
+    }
 
-        function subscribe2() {
-            var email = document.getElementById("emailInput2").value;
-            var parts = email.split("@");
-            if (parts.length == 2 && parts[1].split(".").length >= 2) {
-                //Code to save mail
-                const Http = new XMLHttpRequest();
-                const url = 'http://beong.me/add';
-                console.log(url);
-                Http.open("POST", url);
-                Http.setRequestHeader("Content-type", "application/json;charset=UTF-8");
-                Http.send(JSON.stringify({
-                    "email": email
-                }));
+    function subscribe2() {
+        var email = document.getElementById("emailInput2").value;
+        var parts = email.split("@");
+        if (parts.length == 2 && parts[1].split(".").length >= 2) {
+            //Code to save mail
+            const Http = new XMLHttpRequest();
+            const url = 'http://beong.me/add';
+            console.log(url);
+            Http.open("POST", url);
+            Http.setRequestHeader("Content-type", "application/json;charset=UTF-8");
+            Http.send(JSON.stringify({
+                "email": email
+            }));
 
-                Http.onreadystatechange = (e) => {
-                    if (Http.responseText == "OK") {
-                        alert("Registrado exitosamente. ¡Gracias!");
-                    } else if (this.status != "") {
-                        alert(Http.responseText);
-                    }
+            Http.onreadystatechange = (e) => {
+                if (Http.responseText == "OK") {
+                    alert("Registrado exitosamente. ¡Gracias!");
+                } else if (this.status != "") {
+                    alert(Http.responseText);
                 }
-
-                document.getElementById("emailInput").value = "";
-            } else {
-                alert("El email no es correcto. Por favor revisa.");
             }
-        }
 
-        function openPage() {
-            window.open("https://xd.adobe.com/view/22ce8d00-570f-4b98-74b5-c7353c9d6034-54ff/?fullscreen&hints=off")
+            document.getElementById("emailInput").value = "";
+        } else {
+            alert("El email no es correcto. Por favor revisa.");
         }
-    </script>
+    }
+
+    function openPage() {
+        window.open("https://xd.adobe.com/view/22ce8d00-570f-4b98-74b5-c7353c9d6034-54ff/?fullscreen&hints=off")
+    }
+</script>
 
 
 </div> <!-- .site-wrap -->
