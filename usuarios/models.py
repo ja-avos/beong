@@ -27,10 +27,12 @@ class Voluntario(Usuario):
     idiomas=models.ManyToManyField(Idioma)
     gustos=models.ManyToManyField(Gusto)
     postulaciones=models.ManyToManyField(Postulacion, blank=True)
+    ciudad=models.CharField(max_length=20, blank=True)
+    departamento=models.CharField(max_length=20, blank=True)
 
 class ONG(Usuario):
     pais = models.CharField(max_length=25)
-  #  voluntariados= models.ManyToManyField(Voluntariado, blank=True)
+    voluntariados= models.ManyToManyField(Voluntariado, blank=True)
 
 
 
