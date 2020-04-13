@@ -38,7 +38,13 @@ h1, h2, h3, h4, h5,
     font-size: 4vw;
     color: #fff;
 }
-
+.historias {
+    font-family: Flood Std;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 3vw;
+    color: #fff;
+}
 .border-2 {
     border-width: 2px;
 }
@@ -1429,6 +1435,15 @@ h1, h2, h3, h4, h5,
     background:#354463;
     text-color:#fff;
 }
+
+.text-azul {
+    color: #354463 !important;
+    background: #c1f7d5;
+}
+.text-blue{
+    color:#354463 !important;
+}
+
 .courses-entry-wrap {
     margin-top: -282px;
 }
