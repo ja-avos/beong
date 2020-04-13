@@ -20,17 +20,19 @@ class Administrador (Usuario):
     cargo=models.CharField(max_length=20)
 
 class Voluntario(Usuario):
-    descripcion=models.CharField(max_length=100)
+    descripcion=models.CharField(max_length=200)
     edad=models.IntegerField()
     pais=models.CharField(max_length=25)
     ocupacion=models.CharField(max_length=30)
     idiomas=models.ManyToManyField(Idioma)
     gustos=models.ManyToManyField(Gusto)
-    postulaciones=models.ManyToManyField(Postulacion)
+    postulaciones=models.ManyToManyField(Postulacion, blank=True)
+    ciudad=models.CharField(max_length=20, blank=True)
+    departamento=models.CharField(max_length=20, blank=True)
 
 class ONG(Usuario):
     pais = models.CharField(max_length=25)
-    voluntariados= models.ManyToManyField(Voluntariado)
+    voluntariados= models.ManyToManyField(Voluntariado, blank=True)
 
 
 

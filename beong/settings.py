@@ -86,7 +86,6 @@ DATABASES = {
         'USER': 'beonguser',
         'PASSWORD': 'beong2020',
         'HOST': 'beong-db.cq9blh97b4vq.us-east-1.rds.amazonaws.com',
-        'PORT': '5432',
     }
 }
 
