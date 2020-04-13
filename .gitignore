@@ -3,3 +3,6 @@
 # Ignore .idea folder
 .idea/
 .idea/*
+
+# Ignore __pycache__
+*/__pycache__/
