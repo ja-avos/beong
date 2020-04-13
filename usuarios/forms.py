@@ -20,6 +20,8 @@ class VoluntarioForm(forms.ModelForm):
             "descripcion",
             "edad",
             "pais",
+            "ciudad",
+            "departamento",
             "ocupacion",
             "idiomas",
             "gustos"
@@ -28,9 +30,11 @@ class VoluntarioForm(forms.ModelForm):
             "nombre":forms.TextInput(attrs= {"placeholder": "Tu nombre"}),
             "usuario":forms.TextInput(attrs = { "placeholder": "Usuario cool"}),
             "contrasenia":forms.PasswordInput(),
-            "descripcion":forms.TextInput(attrs = {"placeholder":"Cuentamos lo mejor de ti!"}),
+            "descripcion":forms.Textarea(attrs = {"placeholder":"Cuentamos lo mejor de ti!"}),
             "pais":forms.TextInput(attrs = {"placeholder": "País donde vives"}),
-            "ocupacion":forms.TextInput(attrs = { "placeholder":"Cuentanos a que te dedicas"})
+            "ocupacion":forms.TextInput(attrs = { "placeholder":"Cuentanos a que te dedicas"}),
+            "ciudad":forms.TextInput(attrs = {"placeholder": "Ciudad"}),
+            "departamento":forms.TextInput(attrs={"placeholder":"Departamento"}),
         }
         labels = {
             "nombre" : "Nombre",
@@ -41,6 +45,8 @@ class VoluntarioForm(forms.ModelForm):
             "pais": "País",
             "ocupacion": "Ocupacion",
             "idiomas": "Idiomas",
+            "ciudad":"Ciudad",
+            "departamento":"Departamento",
             "gustos":"Gustos"
         }
 
