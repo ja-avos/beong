@@ -994,10 +994,31 @@ h1, h2, h3, h4, h5,
 
 .courses-title {
   padding-bottom: 13rem;
-  background: #7971ea; }
+  background: #354463; }
   .courses-title .section-title {
-    color: #fff; }
+    color: #ffffff; }
 
+.seccion-blanca {
+  padding-bottom: 13rem;
+  background: #ffffff; }
+  .seccion-blanca .titulo {
+    color: #354463; }
+
+.seccion-verde {
+  padding-bottom: 13rem;
+  background: #c1f7d5; }
+  .seccion-verde .titulo {
+    color: #354463; }
+
+ .centrar{
+    text-align: center;
+    display: block;
+    width:200px;}
+
+.fondo-azul{
+    background:#354463
+    text-color:#fff
+}
 .courses-entry-wrap {
   margin-top: -282px; }
   @media (max-width: 1199.98px) {
