@@ -25,9 +25,6 @@ SECRET_KEY = 'o5s^$l5%h7pihxn3689dz_l=bggmi=g-o9ihj-b)g_&g-a(+w#'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['backend', 'localhost', '127.0.0.1']
-
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -84,8 +81,12 @@ WSGI_APPLICATION = 'beong.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'beongDB',
+        'USER': 'beonguser',
+        'PASSWORD': 'beong2020',
+        'HOST': 'beong-db.cq9blh97b4vq.us-east-1.rds.amazonaws.com',
+        'PORT': '5432',
     }
 }
 
