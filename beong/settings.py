@@ -60,7 +60,7 @@ ROOT_URLCONF = 'beong.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'landing', 'templates','landing')],
+        'DIRS': [os.path.join(BASE_DIR, 'landing', 'templates', 'landing')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -85,8 +85,8 @@ DATABASES = {
         'NAME': 'beong',
         'USER': 'violeta',
         'PASSWORD': 'beong',
-        'HOST':'localhost',
-        'PORT':'',
+        'HOST': 'localhost',
+        'PORT': '',
     }
 }
 

@@ -46,7 +46,12 @@
 
         <div class="container-fluid">
             <div class="d-flex align-items-center">
-                <div class="site-logo mr-auto w-25"><a href="index.html">BeONG</a></div>
+                <div class="site-logo mr-auto w-25">
+                    <a href="/">
+                        <img src="{% static "/images/logoBeONG.png" %}" alt="Logo" height="50">
+                        BeONG
+                    </a>
+                </div>
 
                 <div class="mx-auto text-center">
                     <nav class="site-navigation position-relative text-right" role="navigation">
@@ -63,7 +68,7 @@
                 <div class="ml-auto w-25">
                     <nav class="site-navigation position-relative text-right" role="navigation">
                         <ul class="site-menu main-menu site-menu-dark js-clone-nav mr-auto d-none d-lg-block m-0 p-0">
-                            <li class="cta"><a href="#" class="nav-link"><span>Inscríbete</span></a>
+                            <li class="cta"><a href="#" class="nav-link"><span>Regístrate</span></a>
                             </li>
                         </ul>
                     </nav>
@@ -75,8 +80,8 @@
 
     </header>
 
-          {% block content %} 
-          {% endblock %} 
+    {% block content %}
+    {% endblock %}
 
     <footer class="footer-section bg-white">
         <div class="container">
