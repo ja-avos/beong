@@ -39,6 +39,23 @@ h1, h2, h3, h4, h5,
     font-size: 4vw;
     color: #fff;
 }
+
+#_BeTheChange2 {
+    font-family: Flood Std;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 1vw;
+    color: #000000;
+}
+
+#_LetraBeTheChange {
+    font-family: Flood Std;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 4vw;
+    color: #fff;
+}
+
 .historias {
     font-family: Flood Std;
     font-style: normal;
@@ -46,6 +63,7 @@ h1, h2, h3, h4, h5,
     font-size: 3vw;
     color: #fff;
 }
+
 .border-2 {
     border-width: 2px;
 }
@@ -246,7 +264,7 @@ h1, h2, h3, h4, h5,
 }
 
 .site-footer ul li {
-    margin-bottom: 10px;
+    margin-bottom: 5px;
 }
 
 .site-footer .footer-heading {
@@ -1017,7 +1035,7 @@ h1, h2, h3, h4, h5,
 }
 
 .form-box2 {
-    padding: 25px;
+    padding: 30px;
     background: #fff;
     border-radius: 7px;
 }
@@ -1081,6 +1099,13 @@ h1, h2, h3, h4, h5,
     font-weight: 900;
 }
 
+.section-title1 {
+    font-size: 3rem;
+    color: #fff;
+    margin-bottom: 1.8rem;
+    font-weight: 900;
+}
+
 .section-title2 {
     font-size: 1.5rem;
     background-color: #354463;
@@ -1095,6 +1120,14 @@ h1, h2, h3, h4, h5,
     color: #fff;
     margin-bottom: 1.8rem;
     font-weight: 900;
+}
+
+.section-title4 {
+    font-size: 2rem;
+    color: #fff;
+    margin-bottom: 1.8rem;
+    font-weight: 900;
+    border-radius: 10rem;
 }
 
 @media (max-width: 991.98px) {
@@ -1315,11 +1348,11 @@ h1, h2, h3, h4, h5,
 }
 
 .footer-section .footer-links li {
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
 
 .footer-subscribe .btn {
-    height: 43px;
+    height: 48px;
     line-height: 1;
 }
 
@@ -1486,7 +1519,7 @@ h1, h2, h3, h4, h5,
 }
 
 .seccion-verde {
-    padding-bottom: 13rem;
+    padding-bottom: 2rem;
     background: #c1f7d5;
 }
 
@@ -1510,8 +1543,8 @@ h1, h2, h3, h4, h5,
     background: #c1f7d5;
 }
 
-.text-blue{
-    color:#354463 !important;
+.text-blue {
+    color: #354463 !important;
 }
 
 .courses-entry-wrap {
