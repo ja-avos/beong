@@ -40,9 +40,6 @@ INSTALLED_APPS = [
     'postulacion',
     'voluntariados',
     'intereses',
-    "django_countries",
-    'crispy_forms',
-
 ]
 
 MIDDLEWARE = [
