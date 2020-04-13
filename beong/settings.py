@@ -82,11 +82,11 @@ WSGI_APPLICATION = 'beong.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'beong',
-        'USER': 'violeta',
-        'PASSWORD': 'beong',
-        'HOST':'localhost',
-        'PORT':'',
+        'NAME': 'beongDB',
+        'USER': 'beonguser',
+        'PASSWORD': 'beong2020',
+        'HOST':'beong-db.cq9blh97b4vq.us-east-1.rds.amazonaws.com',
+        'PORT':'5432',
     }
 }
 
