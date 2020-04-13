@@ -1,4 +1,8 @@
-<html>
+            {% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<!-- <html>
     <head>
         <title>Voluntariados</title>
         <meta charset="utf-8">
@@ -89,12 +93,28 @@
                     </div>
                 </div>
         
-            </header>
+            </header> -->
         
-            <div class="intro-section" id="home-section">
+            <div class="vol-section" id="home-section">
+
+                <style>
+                    .parallax {
+                      /* The image used */
+                      /* background-image: url("img_parallax.jpg"); */
+                    
+                      /* Set a specific height */
+                      min-height: 300px; 
+                    
+                      /* Create the parallax scrolling effect */
+                      background-attachment: fixed;
+                      background-position: center;
+                      background-repeat: no-repeat;
+                      background-size: cover;
+                    }
+                    </style>
         
                 <div class="slide-1 parallax" style="background-image: url('{% static 'images/volunteers.webp' %}');">
-                     <div class="container" style="height: auto; background-color: brown;">
+                     <div class="container" style="height: auto;">
                         <div class="row align-items-center">
                             <div class="col-12">
                                 {% if latest_volunteers %}
@@ -167,72 +187,8 @@
                     </div>
                 </div>
             </div>
-        
-            <footer class="footer-section bg-white">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-4">
-                            <h3>Sobre BeONG</h3>
-                            <p>
-                                Somos un grupo de ingenieros de la Universidad de los Andes, conectamos voluntarios con ONGs y
-                                fundaciones de manera fácil y efectiva.
-                                <br>
-                                Si tienes dudas puedes escribirnos a info@beong.me
-                                <br>
-                                <a href="https://xd.adobe.com/view/22ce8d00-570f-4b98-74b5-c7353c9d6034-54ff/?fullscreen&hints=off">Prototipo</a>
-                            </p>
-                        </div>
-        
-                        <div class="col-md-3 ml-auto">
-                            <h3>Síguenos</h3>
-                            <ul class="list-unstyled footer-links">
-                                <li><a href="https://www.facebook.com/BeONG-102726601385619/">Facebook</a>
-                                </li>
-                                <li><a href="https://twitter.com/bethechangeBeOn?s=09">Twitter</a></li>
-                                <li><a href="https://instagram.com/bethechangebeong?igshid=1af15is5hwz3y">Instagram</a>
-                                </li>
-                            </ul>
-                        </div>
-        
-                        <div class="col-md-4">
-                            <h3>Suscríbete</h3>
-                            <p> Déjanos tu correo para informarte</p>
-                            <form action="#" class="footer-subscribe">
-                                <div class="d-flex mb-5">
-                                    <div class="input-group">
-                                        <input id="emailInput2" type="text" class="form-control"
-                                               placeholder="Ingresa tu correo"
-                                               aria-label="emailInput"
-                                               aria-describedby="basic-addon2">
-                                        <div class="input-group-append">
-                                            <button class="btn btn-outline-info" type="button" onclick="subscribe2()">
-                                                Inscríbeme
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-        
-                    </div>
-        
-                    <div class="row pt-5 mt-5 text-center">
-                        <div class="col-md-12">
-                            <div class="border-top pt-5">
-                                <p>
-                                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                                    Copyright &copy;<script>document.write(new Date().getFullYear());</script>
-                                    BeONG | This template is made with <i class="icon-heart"
-                                                                          aria-hidden="true"></i> by <a
-                                        href="https://colorlib.com" target="_blank">Colorlib</a>
-                                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                                </p>
-                            </div>
-                        </div>
-        
-                    </div>
-                </div>
-            </footer>
+
+            {% endblock %}
         
             <script>
                 function subscribe() {

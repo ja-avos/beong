@@ -57,7 +57,9 @@ ROOT_URLCONF = 'beong.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'landing', 'templates', 'landing')],
+        'DIRS': [os.path.join(BASE_DIR, 'landing', 'templates', 'landing'),
+            os.path.join(BASE_DIR, 'voluntariados', 'templates', 'voluntariados')
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
