@@ -12,6 +12,7 @@ class Voluntariado (models.Model):
     gustosRequeridos=models.ManyToManyField(Gusto)
     idiomasRequeridos=models.ManyToManyField(Idioma)
     calificaciones=models.ManyToManyField(Calificacion, blank=True)
+    imagen=models.CharField(max_length=150, blank=True)
 
     def __str__(self):
         return '%s' % (self.nombre)
