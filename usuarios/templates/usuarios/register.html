@@ -8,24 +8,10 @@
               integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
               crossorigin="anonymous">
         <style>
-            html, body {
-                min-height: 100%;
-            }
-
-            body, div, form, input, select, textarea, label, p {
-                padding: 0;
-                margin: 0;
-                outline: none;
-                font-family: Roboto, Arial, sans-serif;
-                font-size: 14px;
-                color: #666;
-                line-height: 22px;
-            }
 
             h1 {
                 position: absolute;
                 margin: 0;
-                font-size: 40px;
                 color: #fff;
                 z-index: 2;
                 line-height: 83px;
@@ -264,57 +250,57 @@
                 <h1>¡Te necesitamos!</h1>
             </div>
             <br/>
-            <p>BeONG busca voluntarios para que puedan mejorar el mundo ayudando a los demás. Llena toda la información
+            <p class = "text-black">BeONG busca voluntarios para que puedan mejorar el mundo ayudando a los demás. Llena toda la información
                 para poder ser parte de magníficos proyectos</p>
             <br/>
             <div class="colums">
                 <div class="item">
-                    <label for="name">Nombre<span>*</span></label>
+                    <label for="name" class = "text-black">Nombre<span>*</span></label>
                     {{ form.nombre }}
                 </div>
                 <div class="item">
-                    <label for="eaddress">Usuario<span>*</span></label>
+                    <label for="eaddress" class = "text-black">Usuario<span>*</span></label>
                     {{ form.usuario }}
                 </div>
                 <div class="item">
-                    <label for="phone">Contraseña<span>*</span></label>
+                    <label for="phone" class = "text-black">Contraseña<span>*</span></label>
                     {{ form.contrasenia }}
                 </div>
                 <div class="item">
-                    <label for="street">País<span>*</span></label>
+                    <label for="street" class = "text-black">País<span>*</span></label>
                     {{ form.pais }}
                 </div>
                 <div class="item">
-                    <label for="city">Ciudad<span>*</span></label>
+                    <label for="city" class = "text-black">Ciudad<span>*</span></label>
                     {{ form.ciudad }}
                 </div>
                 <div class="item">
-                    <label for="state">Departamento/Estado/Provincia<span>*</span></label>
+                    <label for="state" class = "text-black">Departamento/Estado/Provincia<span>*</span></label>
                     {{ form.departamento }}
                 </div>
                 <div class="item">
-                    <label for="zip">Ocupación<span>*</span></label>
+                    <label for="zip" class = "text-black">Ocupación<span>*</span></label>
                     {{ form.ocupacion }}
                 </div>
                 <div class="item">
-                    <label for="zip">Edad<span>*</span></label>
+                    <label for="zip" class = "text-black">Edad<span>*</span></label>
                     {{ form.edad }}
                 </div>
             </div>
             <div class="item">
-                <p>Idiomas</p>
+                <p class = "text-black">Idiomas</p>
                 {{ form.idiomas }}
             </div>
             <div class="item">
-                <p>Gustos</p>
+                <p class = "text-black">Gustos</p>
                 {{ form.gustos }}
             </div>
             <div class="item">
-                <label for="visit">Descripción</label>
+                <label for="visit" class = "text-black">Descripción</label>
                 {{ form.descripcion }}
             </div>
             <div class="btn-block">
-                <button type="submit" href="/">Registrarme</button>
+                <button type="submit" href="/" >Registrarme</button>
             </div>
         </form>
     </div>
