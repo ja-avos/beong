@@ -8,12 +8,15 @@ class Interes (models.Model):
 
     nombre=models.CharField(max_length=50)
 
-    def __str__(self):
-        return '%s' % (self.nombre)
 
 
 class Gusto(Interes):
-    grado=models.IntegerField()
+    grado=models.CharField(max_length=10)
+    def __str__(self):
+        return '%s: %s' % (self.nombre, self.grado)
+
 
 class Idioma(Interes):
-    nivel=models.IntegerField()
+    nivel=models.CharField(max_length=10)
+    def __str__(self):
+        return '%s: %s' % (self.nombre, self.nivel)

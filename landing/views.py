@@ -12,6 +12,9 @@ def index(request):
 def about(request):
     return render(request, 'landing/about.html')
 
+def experiences(request):
+    return render(request, 'landing/experiences.html')
+
 @csrf_exempt
 def addPerson(request):
     if request.method == 'POST':
