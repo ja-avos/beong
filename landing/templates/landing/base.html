@@ -59,11 +59,8 @@
                 <div class="mx-auto text-center">
                     <nav class="site-navigation position-relative text-right" role="navigation">
                         <ul class="site-menu main-menu js-clone-nav mx-auto d-none d-lg-block  m-0 p-0">
-                            <li><a href="/#home-section" class="nav-link">Inicio</a></li>
-                            <li><a href="/#wedo-section" class="nav-link">¿Qué hacemos?</a></li>
-                            <li><a href="/#doyouknow-section" class="nav-link">¿Sabías qué?</a></li>
-                            <li><a href="/#act-section" class="nav-link">Actúa</a></li>
-                            <li><a href="/acerca" class="nav-link">Acerca de</a></li>
+                            <li><a href="/" class="nav-link">Inicio</a></li>
+                            <li><a href="/acerca" class="nav-link">Sobre nosotros</a></li>
                             <li><a href="/experiencias" class="nav-link">Experiencias</a></li>
                         </ul>
                     </nav>
@@ -88,17 +85,19 @@
     {% endblock %}
 
     <footer class="footer-section bg-white">
-        <div class="container-fluid">
+        <div class="container">
             <div class="row">
                 <div class="col-md-4">
-                    <h3>Sobre BeONG</h3>
+                    <h3>Sobre BeONG <img src="{% static "/images/logoBeONG.png" %}" alt="Logo" height="50"></h3>
                     <p>
                         Somos un grupo de ingenieros de la Universidad de los Andes, conectamos voluntarios con ONGs y
                         fundaciones de manera fácil y efectiva.
                         <br>
                         Si tienes dudas puedes escribirnos a info@beong.me
                         <br>
-                        <a href="https://xd.adobe.com/view/22ce8d00-570f-4b98-74b5-c7353c9d6034-54ff/?fullscreen&hints=off">Prototipo</a>
+                    <p id="_BeTheChange2">
+                        #BETHECHANGE BeONG
+                    </p>
                     </p>
                 </div>
 
@@ -125,14 +124,13 @@
                                        aria-describedby="basic-addon2">
                                 <div class="input-group-append">
                                     <button class="btn btn-outline-info" type="button" onclick="subscribe2()">
-                                        Inscríbeme
+                                        Suscribirme
                                     </button>
                                 </div>
                             </div>
                         </div>
                     </form>
                 </div>
-
             </div>
 
             <div class="row pt-5 mt-5 text-center">
@@ -141,14 +139,13 @@
                         <p>
                             <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                             Copyright &copy;<script>document.write(new Date().getFullYear());</script>
-                            BeONG | This template is made with <i class="icon-heart"
-                                                                  aria-hidden="true"></i> by <a
+                            BeONG | <i class="icon-heart"
+                                       aria-hidden="true"></i> <a
                                 href="https://colorlib.com" target="_blank">Colorlib</a>
                             <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                         </p>
                     </div>
                 </div>
-
             </div>
         </div>
     </footer>
@@ -168,8 +165,6 @@
 <script src="{% static "js/aos.js" %}"></script>
 <script src="{% static "js/jquery.fancybox.min.js" %}"></script>
 <script src="{% static "js/jquery.sticky.js" %}"></script>
-
-
 <script src="{% static "js/main.js" %}"></script>
 
 </body>

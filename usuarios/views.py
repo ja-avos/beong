@@ -21,7 +21,7 @@ def voluntario_create(request):
     context = {
         'form': form,
     }
-    return render(request, 'register.html', context)
+    return render(request, 'usuarios/register.html', context)
 
 
 
