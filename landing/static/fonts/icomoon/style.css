@@ -24,6 +24,19 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+
+.icon-oficial {
+    color:white;
+    font-size:500%;
+    text-align: center;
+    display: block;
+    width:200px;
+}
+#slideshow{
+    display:table;
+}
+
+
 .icon-asterisk:before {
   content: "\f069";
 }
