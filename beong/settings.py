@@ -57,7 +57,9 @@ ROOT_URLCONF = 'beong.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'landing', 'templates', 'landing')],
+        'DIRS': [os.path.join(BASE_DIR, 'landing', 'templates', 'landing'),
+            os.path.join(BASE_DIR, 'voluntariados', 'templates', 'voluntariados')
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -82,7 +84,8 @@ DATABASES = {
         'NAME': 'beongDB',
         'USER': 'beonguser',
         'PASSWORD': 'beong2020',
-        'HOST': 'beong-db.cq9blh97b4vq.us-east-1.rds.amazonaws.com',
+        'HOST':'beong-db.cq9blh97b4vq.us-east-1.rds.amazonaws.com',
+        'PORT':'5432',
     }
 }
 

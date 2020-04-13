@@ -8,8 +8,8 @@ class Migration(migrations.Migration):
     initial = True
 
     dependencies = [
-        ('intereses', '0001_initial'),
         ('calificaciones', '0001_initial'),
+        ('intereses', '0001_initial'),
     ]
 
     operations = [

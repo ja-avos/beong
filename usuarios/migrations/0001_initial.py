@@ -8,8 +8,8 @@ class Migration(migrations.Migration):
     initial = True
 
     dependencies = [
-        ('intereses', '0001_initial'),
         ('postulacion', '0001_initial'),
+        ('intereses', '0001_initial'),
         ('voluntariados', '0001_initial'),
     ]
 
@@ -54,7 +54,10 @@ class Migration(migrations.Migration):
                 ('usuario', models.CharField(max_length=20, primary_key=True, serialize=False)),
                 ('contrasenia', models.CharField(max_length=20)),
                 ('pais', models.CharField(max_length=25)),
-                ('voluntariados', models.ManyToManyField(blank=True, to='voluntariados.Voluntariado')),
+                ('ocupacion', models.CharField(max_length=30)),
+                ('gustos', models.ManyToManyField(to='intereses.Gusto')),
+                ('idiomas', models.ManyToManyField(to='intereses.Idioma')),
+                ('postulaciones', models.ManyToManyField(to='postulacion.Postulacion')),
             ],
             options={
                 'abstract': False,
