@@ -35,7 +35,7 @@
               /* background-image: url("img_parallax.jpg"); */
             
               /* Set a specific height */
-              min-height: 500px; 
+              min-height: 300px; 
             
               /* Create the parallax scrolling effect */
               background-attachment: fixed;
@@ -58,7 +58,7 @@
             </div>
         
         
-            <header class="site-navbar py-4 js-sticky-header site-navbar-target" role="banner">
+            <header class="site-navbar py-4 site-navbar-target" role="banner">
         
                 <div class="container-fluid">
                     <div class="d-flex align-items-center">
@@ -93,25 +93,26 @@
         
             <div class="intro-section" id="home-section">
         
-                <div class="slide-1 parallax" style="background-image: url('{% static 'images/volunteers.webp' %}');"
-                     data-stellar-background-ratio="0.5">
-                     <div class="container">
+                <div class="slide-1 parallax" style="background-image: url('{% static 'images/volunteers.webp' %}');">
+                     <div class="container" style="height: auto; background-color: brown;">
                         <div class="row align-items-center">
                             <div class="col-12">
                                 {% if latest_volunteers %}
-                                <div class="row row-cols-1 row-cols-md-3" style="padding-top: 7rem;">
+                                <div class="row row-cols-1 row-cols-md-3" style="padding-top: 7rem; ">
                                     {% for i in latest_volunteers %}
+                                    {% for j in '123456789123455'|make_list %}
                                     <div class="col-sm-4 mb-4">
-                                        <div class="card">
-                                            <img src="..." class="card-img-top" alt="...">
+                                        <div data-aos="fade-up" class="card">
+                                            <img src={{i.imagen}} class="card-img-top" alt={{i.nombre}}>
                                             <div class="card-body">
-                                              <h5 class="card-title">{{i.nombre}}</h5>
-                                              <p class="card-text">{{i.descripcion}}</p>
+                                              <h5 class="card-title text-primary">{{i.nombre}}</h5>
+                                              <p class="card-text text-secondary"   >{{i.descripcion}}</p>
                                             </div>
                                             <ul class="list-group list-group-flush">
                                               <li class="list-group-item">{{i.area}}</li>
                                               <li class="list-group-item">{{i.duracion}}</li>
                                               <li class="list-group-item">{{i.lugar}}</li>
+                                              <li class="list-group-item">{% static 'images/volunteers.webp' %}</li>
                                             </ul>
                                             <div class="card-body">
                                               <a href="#" class="card-link">Aplicar</a>
@@ -119,6 +120,7 @@
                                             </div>
                                           </div>
                                     </div>
+                                    {% endfor %}
                                     {% endfor %}
                                 </div>
                                 {% else %}
@@ -296,5 +298,23 @@
         
         
         </div> <!-- .site-wrap -->
+        
+<script src="{% static "js/jquery-3.3.1.min.js" %}"></script>
+<script src="{% static "js/jquery-migrate-3.0.1.min.js" %}"></script>
+<script src="{% static "js/jquery-ui.js" %}"></script>
+<script src="{% static "js/popper.min.js" %}"></script>
+<script src="{% static "js/bootstrap.min.js" %}"></script>
+<script src="{% static "js/owl.carousel.min.js" %}"></script>
+<script src="{% static "js/jquery.stellar.min.js" %}"></script>
+<script src="{% static "js/jquery.countdown.min.js" %}"></script>
+<script src="{% static "js/bootstrap-datepicker.min.js" %}"></script>
+<script src="{% static "js/jquery.easing.1.3.js" %}"></script>
+<script src="{% static "js/aos.js" %}"></script>
+<script src="{% static "js/jquery.fancybox.min.js" %}"></script>
+<script src="{% static "js/jquery.sticky.js" %}"></script>
+
+
+<script src="{% static "js/main.js" %}"></script>
+
     </body>
 </html>
