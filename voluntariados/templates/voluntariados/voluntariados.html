@@ -111,10 +111,62 @@
                       background-repeat: no-repeat;
                       background-size: cover;
                     }
+
+                    input {
+                    box-sizing: border-box;
+                    border-top: 2rem;
+                    border-left: 2rem;
+                    border-right: 2rem;
+                    background-color: transparent;
+                    font-size: 2rem;
+                    display: block;
+                    caret-color: white;
+                    color: white;
+                    }
+
+                    input:focus {
+                    outline: none !important;
+                    }
+
+                    ul {
+                    list-style: none;
+                    text-align: center;
+                    margin: 0;
+                    padding: 0;
+                    }
+                    #filter-section {
+                        position: relative;
+                        display: flex;
+                        flex-direction: column;
+                        text-align: center;
+                        align-items: center;
+                        justify-content: center;
+                        height: 100vh;
+                        z-index: 10;
+                    }
+                    .input-group {
+                        left: 50%;
+                        transform: translateX(-18%);
+                    }
                     </style>
         
                 <div class="slide-1 parallax" style="background-image: url('{% static 'images/volunteers.webp' %}');">
                      <div class="container" style="height: auto;">
+                        <!-- Filters section -->
+                <div class="container-fluid align-items-center" id="filter-section">
+                    <div class="input-group">
+                        <input id="finder" type="text" placeholder="Buscar...">
+                        <div class="input-group-append">
+                            <a href="#">
+                                <img src="https://credicelu.net/tienda/wp-content/uploads/2019/10/lupa-blanca.png" style="width: 8vh; height: 8vh;">
+                            </a>
+                        </div>
+                    </div>
+                    <a href="#filters" data-toggle="collapse">Más filtros</a>
+                    <div id="filters" class="collapse">
+                        
+                    </div>
+                </div>
                         <div class="row align-items-center">
                             <div class="col-12">
                                 {% if latest_volunteers %}
