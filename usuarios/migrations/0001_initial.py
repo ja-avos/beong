@@ -8,9 +8,9 @@ class Migration(migrations.Migration):
     initial = True
 
     dependencies = [
-        ('voluntariados', '0001_initial'),
-        ('postulacion', '0001_initial'),
         ('intereses', '0001_initial'),
+        ('postulacion', '0001_initial'),
+        ('voluntariados', '0001_initial'),
     ]
 
     operations = [
@@ -32,13 +32,15 @@ class Migration(migrations.Migration):
                 ('nombre', models.CharField(max_length=60)),
                 ('usuario', models.CharField(max_length=20, primary_key=True, serialize=False)),
                 ('contrasenia', models.CharField(max_length=20)),
-                ('descripcion', models.CharField(max_length=100)),
+                ('descripcion', models.CharField(max_length=200)),
                 ('edad', models.IntegerField()),
                 ('pais', models.CharField(max_length=25)),
                 ('ocupacion', models.CharField(max_length=30)),
+                ('ciudad', models.CharField(blank=True, max_length=20)),
+                ('departamento', models.CharField(blank=True, max_length=20)),
                 ('gustos', models.ManyToManyField(to='intereses.Gusto')),
                 ('idiomas', models.ManyToManyField(to='intereses.Idioma')),
-                ('postulaciones', models.ManyToManyField(to='postulacion.Postulacion')),
+                ('postulaciones', models.ManyToManyField(blank=True, to='postulacion.Postulacion')),
             ],
             options={
                 'abstract': False,
@@ -51,7 +53,7 @@ class Migration(migrations.Migration):
                 ('usuario', models.CharField(max_length=20, primary_key=True, serialize=False)),
                 ('contrasenia', models.CharField(max_length=20)),
                 ('pais', models.CharField(max_length=25)),
-                ('voluntariados', models.ManyToManyField(to='voluntariados.Voluntariado')),
+                ('voluntariados', models.ManyToManyField(blank=True, to='voluntariados.Voluntariado')),
             ],
             options={
                 'abstract': False,
