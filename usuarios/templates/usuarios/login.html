@@ -1,0 +1,46 @@
+
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<style>
+    button {
+               border-color: #C1F7D5;
+                padding: 14px 20px;
+                color: #354463;
+                background: #C1F7D5;
+                border-radius: 30px;
+                font-size: .7rem;
+                font-weight: 900;
+                text-transform: uppercase;
+                -webkit-transition: .3s all ease;
+                -o-transition: .3s all ease;
+                transition: .3s all ease;
+            }
+</style>
+<div class="" style="background-image: url('{% static 'images/manos1.jpg' %}');"
+             data-stellar-background-ratio="0.5">
+    <div class="site-section courses-title container md-6 my-3" id="experiences-section">
+            <p class="text-white text-center ">Bienvenido aventurero</p>
+            <form method="POST">
+                <div class = "text-center pt-3" >
+                    <p class="text-white">Usuario</p>
+                    {% csrf_token %}
+                    {{ form.usuario}}
+                    <br>
+                    <br>
+                    <p class = "text-white">Contraseña</p>
+                    {{ form.password }}
+                    <br>
+                    <br>
+                    <button type="submit"  href="/" >Entrar</button>
+
+
+                </div>
+            </form>
+            <br>
+            <br>
+            <br>
+            <br>
+    </div>
+</div>
+{% endblock %}
