@@ -13,45 +13,45 @@
                                 <h3 class="h3">¡Publica tu voluntariado!</h3>
                                 {% csrf_token %}
                                 <div class="row mb-2">
-                                    <div class="col-lg-6 "> <p class="text-black">Nombre</p>
+                                    <div class="col-lg-6 "> <p class="text-black">Nombre<span style="color:red;">*</span></p>
                                         {{form.nombre}}
                                     </div>
                                     <div class="col-lg-6 ">
-                                        <p class="text-black">Area</p>
+                                        <p class="text-black">Area<span style="color:red;">*</span></p>
                                         {{form.area}}
                                     </div>
                                 </div>
                                 <div class="row mb-2">
                                     <div class="col-lg-6 ">
-                                        <p class="text-black">Duración</p>
+                                        <p class="text-black">Duración<span style="color:red;">*</span></p>
                                         {{form.duracion}}
                                     </div>
                                     <div class="col-lg-6">
-                                        <p class="text-black">Lugar</p>
+                                        <p class="text-black">Lugar<span style="color:red;">*</span></p>
                                         {{form.lugar}}
                                     </div>
                                 </div>
                                 <div class="row mb-2">
                                     <div class="col-lg-6 ">
-                                        <p class="text-black">Precio</p>
+                                        <p class="text-black">Precio<span style="color:red;">*</span></p>
                                         {{form.precio}}
                                     </div>
                                     <div class="col-lg-6 ">
-                                        <p class="text-black">Imagen</p>
+                                        <p class="text-black">Imagen<span style="color:red;">*</span></p>
                                         {{form.imagen}}
                                     </div>
                                 </div>
                                 <div class="row mb-2">
                                     <div class="col-lg-6 ">
-                                        <p class="text-black">Gustos requeridos</p>
+                                        <p class="text-black">Gustos requeridos<span style="color:red;">*</span></p>
                                         {{form.gustosRequeridos}}
                                     </div>
                                     <div class="col-lg-6 ">
-                                        <p class="text-black">Idiomas Requeridos</p>
+                                        <p class="text-black">Idiomas Requeridos<span style="color:red;">*</span></p>
                                         {{form.idiomasRequeridos}}
                                     </div>
                                 </div>
-                                <p class="text-black">Descripción</p>
+                                <p class="text-black">Descripción<span style="color:red;">*</span></p>
                                 {{form.descripcion}}
                                 <br>
                                 <button type="button" class="btn btn-primary waves-effect waves-light"
