@@ -3,5 +3,6 @@ from . import views
 
 urlpatterns = [
     path('', views.index, name='voluntariados'), #Falta hacerla
-    path('list', views.getVoluntariados, name='getVoluntariados')
+    path('list', views.getVoluntariados, name='getVoluntariados'),
+    path('create',views.createVoluntariado,name='createVoluntariado')
 ]
