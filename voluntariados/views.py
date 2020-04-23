@@ -7,6 +7,11 @@ from django.core.mail import send_mail
 from django.template import loader
 import os
 import json
+from .logic_voluntariado.logic_voluntariado import create_Voluntariado
+from django.urls import reverse
+from .forms import VoluntariadoForm
+from django.contrib import messages
+from django.http import HttpResponseRedirect
 
 def getVoluntariados(request):
     volunteers = Voluntariado.objects.all()
@@ -91,5 +96,21 @@ def apply_volunteer(request):
 
 def send_email(dest_mail, subject, content, html):
     send_mail(subject, content, EMAIL_HOST_USER, [dest_mail], html_message=html)
+def createVoluntariado(request):
+    if request.method == 'POST':
+        form = VoluntariadoForm(request.POST)
+        if form.is_valid():
+            create_Voluntariado(form)
+            messages.add_message(request, messages.SUCCESS, 'Voluntariado satisfactoriamente creado')
+            return HttpResponseRedirect(reverse('createVoluntariado'))
+        else:
+            print(form.errors)
+    else:
+        form = VoluntariadoForm()
+
+    context = {
+        'form': form,
+    }
+    return render(request, 'Voluntariados/create.html', context)
 
 # Create your views here.

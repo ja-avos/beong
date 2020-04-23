@@ -47,7 +47,7 @@ class VoluntarioForm(forms.ModelForm):
             "idiomas": "Idiomas",
             "ciudad":"Ciudad",
             "departamento":"Departamento",
-            "gustos":"Gustos"
+            "gustos":"Gustos",
         }
 
 
