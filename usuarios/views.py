@@ -9,10 +9,15 @@ def voluntario_create(request):
     if request.method == 'POST':
         form = VoluntarioForm(request.POST)
         if form.is_valid():
+            user = form.cleaned_data["usuario"]
             voluntario = form.save()
             voluntario.save()
+            user = Voluntario.objects.get(usuario = user)
+            context ={
+                "user":user
+            }
             messages.add_message(request, messages.SUCCESS, 'Voluntario satisfactoriamente creado')
-            return HttpResponseRedirect(reverse('index'))
+            return render(request, 'landing/index.html', context)
         else:
             print(form.errors)
     else:
@@ -49,6 +54,7 @@ def generate_login(request):
     else:
         form = Voluntariologin()
     context = {
+        "user":None,
         'form': form,
     }
     return render(request, "usuarios/login.html", context)

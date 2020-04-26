@@ -51,7 +51,8 @@ class VoluntarioForm(forms.ModelForm):
         }
 class Voluntariologin(forms.Form):
     usuario = forms.CharField(label = "Usuario")
-    password = forms.CharField(label= "Contraseña")
+    password = forms.CharField(widget=forms.PasswordInput())
+
 
 
 
