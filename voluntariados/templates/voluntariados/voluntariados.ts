@@ -5,7 +5,7 @@ import * as http from 'http';
 
 let proyectos:Voluntariado[] = []
 
-const url: string = 'localhost:8080/voluntariados/list';
+const url: string = 'localhost:8080/voluntariados/<str:username>/list';
 
 try {
     const response = http.get(url);
