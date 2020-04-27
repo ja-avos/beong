@@ -30,9 +30,9 @@ class VoluntarioForm(forms.ModelForm):
             "nombre":forms.TextInput(attrs= {"placeholder": "Tu nombre"}),
             "usuario":forms.TextInput(attrs = { "placeholder": "Usuario cool"}),
             "contrasenia":forms.PasswordInput(),
-            "descripcion":forms.Textarea(attrs = {"placeholder":"Cuentamos lo mejor de ti!"}),
+            "descripcion":forms.Textarea(attrs = {"placeholder":"¡Cuéntamos lo mejor de ti!"}),
             "pais":forms.TextInput(attrs = {"placeholder": "País donde vives"}),
-            "ocupacion":forms.TextInput(attrs = { "placeholder":"Cuentanos a que te dedicas"}),
+            "ocupacion":forms.TextInput(attrs = { "placeholder":"Cuéntanos a qué te dedicas"}),
             "ciudad":forms.TextInput(attrs = {"placeholder": "Ciudad"}),
             "departamento":forms.TextInput(attrs={"placeholder":"Departamento"}),
         }
