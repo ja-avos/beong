@@ -106,6 +106,8 @@ def apply_volunteer(request):
         body = json.loads(request.body.decode('utf-8'))
         send_email('javelino2311@gmail.com', 'Aplicación Exitosa' + body['saludo'], "Aplicación",
                    loader.render_to_string('mail/apply_mail.html', {'voluntariado': 'Prueba'}))
+        send_email('gd.martinez@beong.me', 'Aplicación Exitosa' + body['saludo'], "Aplicación",
+                   loader.render_to_string('mail/apply_mail.html', {'voluntariado': 'Prueba'}))
     return HttpResponse('Good')
 
 
