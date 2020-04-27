@@ -366,9 +366,15 @@
                             <h2 class="display-5 text-secondary">Area</h2>
                             <p id="modalArea">Area del proyecto ...</p>
                             <div id="detailsBtns">
-                                <a id="applyBtn" href="#" onclick="apply(); return false;"
+                                {% if user is not None %}
+                                    <a id="applyBtn" href="#" onclick="apply(); return false;"
                                    class="card-link">Aplicar</a>
-                                <a href="#" class="card-link">Guardar</a>
+                                    <a href="#" class="card-link">Guardar</a>
+                                {% else %}
+                                    <a id="applyBtn" href="#" onclick="apply(); return false;"
+                                   class="card-link"></a>
+
+                                {% endif %}
                             </div>
                         </div>
                     </div>

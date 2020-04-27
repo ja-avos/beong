@@ -105,15 +105,22 @@ def save_volunteer(request):
 
 
 @csrf_exempt
-def apply_volunteer(request):
-    # TODO Apply to specified volunteer
-    if request.method == 'POST':
-        body = json.loads(request.body.decode('utf-8'))
-        send_email('javelino2311@gmail.com', 'Aplicación Exitosa' + body['saludo'], "Aplicación",
-                   loader.render_to_string('mail/apply_mail.html', {'voluntariado': 'Prueba'}))
-        send_email('gd.martinez@beong.me', 'Aplicación Exitosa' + body['saludo'], "Aplicación",
-                   loader.render_to_string('mail/apply_mail.html', {'voluntariado': 'Prueba'}))
-    return HttpResponse('Good')
+def apply_volunteer(request,username):
+    user = None
+    if username != "Visitante":
+        Usuario = Voluntario.objects.get(usuario = username)
+        correo = Usuario.correo
+        # TODO Apply to specified volunteer
+        if request.method == 'POST':
+            body = json.loads(request.body.decode('utf-8'))
+            send_email(correo, 'Aplicación Exitosa' + body['saludo'], "Aplicación",
+                       loader.render_to_string('mail/apply_mail.html', {'voluntariado': 'Prueba'}))
+            send_email('gd.martinez@beong.me', 'Aplicación Exitosa' + body['saludo'], "Aplicación",
+                       loader.render_to_string('mail/apply_mail.html', {'voluntariado': 'Prueba'}))
+        return HttpResponse('Good')
+
+
+
 
 
 def send_email(dest_mail, subject, content, html):
