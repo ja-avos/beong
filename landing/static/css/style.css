@@ -1541,6 +1541,11 @@ h1, h2, h3, h4, h5,
 .text-azul {
     color: #354463 !important;
     background: #c1f7d5;
+    padding: 1em;
+    border-radius: 30px;
+    font-size: 1.2rem;
+    font-weight: 900;
+    transition: .3s all ease;
 }
 
 .text-blue {

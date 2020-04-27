@@ -1,50 +1,56 @@
-
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
 
-<div class="site-section courses-title" id="experiences-section">
-    <div class="container mt-5">
-        <div class="row" data-aos="fade-up" data-aos-delay="100">
-            <div class="col-md-6">
-                <div class="col-rg-4 ml-auto" data-aos="fade-up" data-aos-delay="500">
-                    <p class="historias">
-                        HISTORIAS DE
-                        <br>
-                        VOLUNTARIOS
-                        <br>
-                    </p>
+    <div class="site-section courses-title" id="experiences-section">
+        <div class="container mt-5">
+            <div class="row" data-aos="fade-right" data-aos-delay="200">
+                <div class="col-md-6">
+                    <div class="col-rg-4 ml-auto" data-aos="fade-right">
+                        <p class="historias">
+                            HISTORIAS DE
+                            <br>
+                            VOLUNTARIOS
+                            <br>
+                        </p>
+                    </div>
+                    <p class="text-white">Esta semana la historia de ...</p>
+                    <div style="text-align: right">
+                        <span class="text-azul">JOSÉ en el AMAZONAS</span>
+                    </div>
                 </div>
-                <p class="text-azul">JOSÉ, AMAZONAS</p>
-                <p class="text-white">LAURA, EL SALTO</p>
-                <p class="text-white">DAVID, NUQUÍ</p>
-                <p class="text-white">JONATAN, SRI LANKA</p>
-                <p class="text-white">DANIELA, CALI</p>
-                <p class="text-white">MARCO, GUATEMALA</p>
-            </div>
-
-            <div class="col-md-6">
-                <img src="{% static "images/micosXD.jpeg" %}" class="card-img-top" alt="...">
-            </div>
-        </div>
-
-        <div class="row" data-aos="fade-up" data-aos-delay="100">
-            <div class="col-md-6">
-                <div class="col-lg-12 form-box">
-                    <h4 class="h4 text-blue">"Aprendía mucho más de lo que enseñaba (y enseñaba bastante), aprovechaba las salidas a conocer distintos lugares para enseñar aún más el idioma español y aprender de ellos".</h4>
+                <div class="col-md-6">
+                    <img src="{% static "images/micosXD.jpeg" %}" class="card-img-top" alt="...">
                 </div>
-                <img src="{% static "images/agua.jpeg" %}" class="mt-5" alt="...">
             </div>
-            <div class="col-md-6">
-                <h1 class="h1 text-white">JOSÉ, AMAZONAS</h1>
-                <h4 class="text-white h4">Dos de mis pasiones son enseñar y viajar, cuando vi esta oportunidad supe que no debía desaprovecharla e intenté aplicar de inmediato, el proceso fue muy ágil y rápido, no tuve inconvenientes y cuando menos pensé ya estaba viajando al Amazonas.
-                    Cuando llegué al Amazonas me recibieron de una manera cordial y me dieron un tour por la zona, y me presentaron a mis futuros alumnos. Los siguientes días fueron bastante productivos, aprendía mucho más de lo que enseñaba (y enseñaba bastante), aprovechaba las salidas a conocer distintos lugares para enseñar aún más el idioma español y aprender de ellos.
-                    Repetiría y recomiendo esta oportunidad sin pensarlo 2 veces, las experiencias que se viven son únicas y se aprende demasiado al igual que se comparte con personas maravillosas.</h4>
-                <p data-aos="fade-up" data-aos-delay="300" class="mt-4"><a href="#"
-                                                              class="btn btn-primary py-3 px-5 btn-pill">Siguiente historia</a></p>
+            <br><br>
+            <div class="row" data-aos="fade-up" data-aos-delay="1200">
+                <div class="col-md-6">
+                    <div class="col-lg-12 form-box">
+                        <h4 class="h4 text-blue">"Aprendía mucho más de lo que enseñaba (y enseñaba bastante),
+                            aprovechaba las salidas a conocer distintos lugares para enseñar aún más el idioma español y
+                            aprender de ellos"</h4>
+                    </div>
+                    <img src="{% static "images/agua.jpeg" %}" class="mt-5" alt="...">
+                </div>
+                <div class="col-md-6">
+                    <h1 class="h1 text-white">José, Amazonas</h1>
+                    <br>
+                    <p class="text-white">Dos de mis pasiones son enseñar y viajar, cuando vi esta oportunidad supe
+                        que no debía desaprovecharla e intenté aplicar de inmediato, el proceso fue muy ágil y rápido,
+                        no tuve inconvenientes y cuando menos pensé ya estaba viajando al Amazonas.
+                        Cuando llegué al Amazonas me recibieron de una manera cordial y me dieron un tour por la zona, y
+                        me presentaron a mis futuros alumnos. Los siguientes días fueron bastante productivos, aprendía
+                        mucho más de lo que enseñaba (y enseñaba bastante), aprovechaba las salidas a conocer distintos
+                        lugares para enseñar aún más el idioma español y aprender de ellos.
+                        Repetiría y recomiendo esta oportunidad sin pensarlo 2 veces, las experiencias que se viven son
+                        únicas y se aprende demasiado al igual que se comparte con personas maravillosas.</p>
+                    <p data-aos="fade-left" data-aos-delay="100" class="mt-4"><a href="/voluntariados"
+                                                                                 class="btn btn-primary py-3 px-5 btn-pill">Explorar
+                        voluntariados</a></p>
+                </div>
             </div>
         </div>
     </div>
-</div>
 
 {% endblock %}
