@@ -24,7 +24,8 @@ class VoluntarioForm(forms.ModelForm):
             "departamento",
             "ocupacion",
             "idiomas",
-            "gustos"
+            "gustos",
+            "correo",
         )
         widgets = {
             "nombre":forms.TextInput(attrs= {"placeholder": "Tu nombre"}),
@@ -48,6 +49,7 @@ class VoluntarioForm(forms.ModelForm):
             "ciudad":"Ciudad",
             "departamento":"Departamento",
             "gustos":"Gustos",
+            "correo":"Correo",
         }
 class Voluntariologin(forms.Form):
     usuario = forms.CharField(label = "Usuario")
