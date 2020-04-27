@@ -12,6 +12,9 @@ from django.urls import reverse
 from .forms import VoluntariadoForm
 from django.contrib import messages
 from django.http import HttpResponseRedirect
+import sys
+sys.path.append("..")
+from usuarios.models import  Voluntario
 
 
 def getVoluntariados(request):
@@ -19,7 +22,10 @@ def getVoluntariados(request):
     return JsonResponse(volunteers)
 
 
-def index(request):
+def index(request, username):
+    user = None
+    if username != "Visitante":
+        user = Voluntario.objects.get(usuario=username)
     latest_volunteers = Voluntariado.objects.order_by('nombre')
     areas = set([])
     locations = set([])
@@ -39,6 +45,7 @@ def index(request):
     context = {'latest_volunteers': latest_volunteers,
                'areas': areas,
                'locations': locations,
+               "user":user,
                }
     user_mail = 'javelino2311@gmail.com'
     user_mail = 'gd.martinez@uniandes.edu.co'

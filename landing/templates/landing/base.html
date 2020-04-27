@@ -63,9 +63,11 @@
                             {% if user is not None %}
                                 <li><a href="/acerca/{{ user.usuario }}" class="nav-link">Sobre nosotros</a></li>
                                 <li><a href="/experiencias/{{ user.usuario }}" class="nav-link">Experiencias</a></li>
+                                <li><a href="/voluntariados/{{ user.usuario }}" class="nav-link">Voluntariados</a></li>
                             {% else %}
                                 <li><a href="/acerca/Visitante" class="nav-link">Sobre nosotros</a></li>
                                 <li><a href="/experiencias/Visitante" class="nav-link">Experiencias</a></li>
+                                <li><a href="/voluntariados/Visitante" class="nav-link">Voluntariados</a></li>
                             {% endif %}
 
                         </ul>
