@@ -17,13 +17,14 @@ def voluntario_create(request):
                 "user":user
             }
             messages.add_message(request, messages.SUCCESS, 'Voluntario satisfactoriamente creado')
-            return render(request, 'landing/index.html', context)
+            return render(request, 'index.html', context)
         else:
             print(form.errors)
     else:
         form = VoluntarioForm()
 
     context = {
+        "user":None,
         'form': form,
     }
     return render(request, 'usuarios/register.html', context)

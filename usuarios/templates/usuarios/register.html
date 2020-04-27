@@ -8,7 +8,6 @@
               integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
               crossorigin="anonymous">
         <style>
-
             h1 {
                 position: absolute;
                 margin: 0;
@@ -34,7 +33,7 @@
                 width: 100%;
                 padding: 20px;
                 border-radius: 6px;
-                background: #fff;
+                background: #354463;
                 box-shadow: 0 0 8px #669999;
             }
 
@@ -244,62 +243,67 @@
                     padding-bottom: 5px;
                 }
             }
+            .fondo{
+             background: #354463;
+
+
+                    }
         </style>
     </head>
     <body>
-    <div class="testbox">
+    <div class="testbox fondo">
         <form method="POST">
             <div class="banner">
                 <h1 class = "text-white">¡Te necesitamos!</h1>
             </div>
             <br/>
-            <p class = "text-black">BeONG busca voluntarios para que puedan mejorar el mundo ayudando a los demás. Llena toda la información
+            <p class = "text-white">BeONG busca voluntarios para que puedan mejorar el mundo ayudando a los demás. Llena toda la información
                 para poder ser parte de magníficos proyectos</p>
             <br/>
-            <div class="colums">
+            <div class="colums fondo">
                 <div class="item">
-                    <label for="name" class = "text-black">Nombre<span>*</span></label>
+                    <label for="name" class = "text-white">Nombre<span>*</span></label>
                     {{ form.nombre }}
                 </div>
                 <div class="item">
-                    <label for="eaddress" class = "text-black">Usuario<span>*</span></label>
+                    <label for="eaddress" class = "text-white">Usuario<span>*</span></label>
                     {{ form.usuario }}
                 </div>
                 <div class="item">
-                    <label for="phone" class = "text-black">Contraseña<span>*</span></label>
+                    <label for="phone" class = "text-white">Contraseña<span>*</span></label>
                     {{ form.contrasenia }}
                 </div>
                 <div class="item">
-                    <label for="street" class = "text-black">País<span>*</span></label>
+                    <label for="street" class = "text-white">País<span>*</span></label>
                     {{ form.pais }}
                 </div>
                 <div class="item">
-                    <label for="city" class = "text-black">Ciudad<span>*</span></label>
+                    <label for="city" class = "text-white">Ciudad<span>*</span></label>
                     {{ form.ciudad }}
                 </div>
                 <div class="item">
-                    <label for="state" class = "text-black">Departamento/Estado/Provincia<span>*</span></label>
+                    <label for="state" class = "text-white">Departamento/Estado/Provincia<span>*</span></label>
                     {{ form.departamento }}
                 </div>
                 <div class="item">
-                    <label for="zip" class = "text-black">Ocupación<span>*</span></label>
+                    <label for="zip" class = "text-white">Ocupación<span>*</span></label>
                     {{ form.ocupacion }}
                 </div>
                 <div class="item">
-                    <label for="zip" class = "text-black">Edad<span>*</span></label>
+                    <label for="zip" class = "text-white">Edad<span>*</span></label>
                     {{ form.edad }}
                 </div>
             </div>
             <div class="item">
-                <p class = "text-black">Idiomas</p>
+                <p class = "text-white">Idiomas</p>
                 {{ form.idiomas }}
             </div>
             <div class="item">
-                <p class = "text-black">Gustos</p>
+                <p class = "text-white">Gustos</p>
                 {{ form.gustos }}
             </div>
             <div class="item">
-                <label for="visit" class = "text-black">Descripción</label>
+                <label for="visit" class = "text-white">Descripción</label>
                 {{ form.descripcion }}
             </div>
             <div class="btn-block">
