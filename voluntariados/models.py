@@ -2,7 +2,8 @@ from django.db import models
 from intereses.models import Gusto, Idioma
 from calificaciones.models import Calificacion
 
-class Voluntariado (models.Model):
+
+class Voluntariado(models.Model):
     nombre = models.CharField(max_length=50)
     area=models.CharField(max_length=20)
     duracion=models.CharField(max_length=30)
@@ -15,5 +16,4 @@ class Voluntariado (models.Model):
     imagen=models.CharField(max_length=200, blank=True)
 
     def __str__(self):
-        return '%s' % (self.nombre)
-
+        return '%s' % self.nombre

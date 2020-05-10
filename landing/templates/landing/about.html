@@ -1,282 +1,310 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
-    <div class="intro-section" id="home-section">
-        <div class="slide-1" style="background-image: url('{% static 'images/volunteers.webp' %}');"
-             data-stellar-background-ratio="0.5">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-12">
-                        <div class="row align-items-center">
-                            <div class="col-lg-6 mb-4">
-                                <h1 data-aos="fade-up" data-aos-delay="100" id="BETHECHANGE">#BeTheChange</h1>
-                                <p class="mb-4" data-aos="fade-up" data-aos-delay="200">Sé parte del cambio
-                                    <br>
-                                    ¡El mundo te necesita! Encuentra cómo puedes ayudar</p>
-                                <p data-aos="fade-up" data-aos-delay="300"><a href="#wedo-section"
-                                                                              class="btn btn-primary py-3 px-5 btn-pill">Conoce
-                                    más</a></p>
+<div class="intro-section" id="home-section">
+    <div class="slide-1" style="background-image: url('{% static 'images/volunteers.webp' %}');"
+         data-stellar-background-ratio="0.5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-12">
+                    <div class="row align-items-center">
+                        <div class="col-lg-6 mb-4">
+                            <h1 data-aos="fade-up" data-aos-delay="100" id="_BeTheChange">#BeTheChange</h1>
+                            <p class="mb-4" data-aos="fade-up" data-aos-delay="200">Sé parte del cambio
+                                <br>
+                                ¡El mundo te necesita! Encuentra cómo puedes ayudar</p>
+                            <p data-aos="fade-up" data-aos-delay="300"><a href="#wedo-section"
+                                                                          class="btn btn-primary py-3 px-5 btn-pill">Conoce
+                                más</a></p>
 
-                            </div>
+                        </div>
 
-                            <div class="col-lg-5 ml-auto" data-aos="fade-up" data-aos-delay="500">
-                                <form action="" method="post" class="form-box">
-                                    <h3 class="h4 text-black mb-4">Déjanos tu correo para informarte</h3>
-                                    <div class="input-group">
-                                        <input id="emailInput" type="text" class="form-control"
-                                               placeholder="Ingresa tu correo"
-                                               aria-label="emailInput"
-                                               aria-describedby="basic-addon2">
-                                        <div class="input-group-append">
-                                            <button class="btn btn-outline-info" type="button" onclick="subscribe()">
-                                                Inscríbeme
-                                            </button>
-                                        </div>
+                        <div class="col-lg-5 ml-auto" data-aos="fade-up" data-aos-delay="500">
+                            <form action="" method="post" class="form-box">
+                                <h3 class="h4 text-black mb-4">Déjanos tu correo para informarte</h3>
+                                <div class="input-group">
+                                    <input id="emailInput" type="text" class="form-control"
+                                           placeholder="Ingresa tu correo"
+                                           aria-label="emailInput"
+                                           aria-describedby="basic-addon2">
+                                    <div class="input-group-append">
+                                        <button class="btn btn-outline-info" type="button" onclick="subscribe()">
+                                            Inscríbeme
+                                        </button>
                                     </div>
-                                </form>
+                                </div>
+                            </form>
 
-                            </div>
                         </div>
                     </div>
-
                 </div>
+
             </div>
         </div>
     </div>
+</div>
 
-    <div class="site-section courses-title" id="wedo-section">
-        <div class="container">
-            <h2><span class="badge badge-pill badge-light" data-aos="fade-up" data-aos-delay="">LO QUE HACEMOS</span>
-            </h2>
-            <div class="row mb-5 justify-content-center">
-                <div class="col-lg-10 text-center" data-aos="fade-up" data-aos-delay="">
-                    <h2 class="section-title">Nosotros conectamos personas interesadas en cambiar el mundo mediante
-                        voluntariados con programas de voluntariado.</h2>
-                    <p class="h3 text-white mb-4">Algunas recomendaciones y beneficios al hacer tu voluntariado</p>
-                </div>
+<div class="site-section courses-title" id="wedo-section">
+    <div class="container">
+        <h2><span class="badge badge-pill badge-light" data-aos="fade-up" data-aos-delay="">LO QUE HACEMOS</span>
+        </h2>
+        <div class="row mb-5 justify-content-center">
+            <div class="col-lg-10 text-center" data-aos="fade-up" data-aos-delay="">
+                <h2 class="section-title">Nosotros conectamos personas interesadas en cambiar el mundo mediante
+                    voluntariados con programas de voluntariado.</h2>
+                <p class="h3 text-white mb-4">Algunas recomendaciones y beneficios al hacer tu voluntariado</p>
             </div>
-            <div class="row" data-aos="fade-up" data-aos-delay="100">
-                <div class="col">
-                    <span class="icon-oficial icon-smile-o "></span>
-                    <h2 class="h2 text-white">Mantente abierto</h2>
-                    <p class="mb-4 text-white">Dispuesto a aceptar todas las ideas y propuestas que te lleguen.</p>
-                </div>
-                <div class="col">
-                    <span class="icon-handshake-o  icon-oficial  "></span>
-                    <h2 class="h2 text-white">Presta una mano</h2>
-                    <p class="mb-4 text-white">Ayuda a personas vulnerables en su situación.</p>
-                </div>
-                <div class="col">
-                    <span class="icon-sun-o  icon-oficial "></span>
-                    <h2 class="h2 text-white">Sé optimista</h2>
-                    <p class="mb-4 text-white">Siempre da lo mejor de tí.</p>
-                </div>
-                <div class="col">
-                    <span class="icon-oficial icon-heart-o"></span>
-                    <h2 class="h2 text-white">Trabaja con amor</h2>
-                    <p class="mb-4 text-white">Dedica tu tiempo ayudando a otros en lo que te gusta y tienes motivación
-                        para hacerlo.</p>
-                </div>
+        </div>
+        <div class="row" data-aos="fade-up" data-aos-delay="100">
+            <div class="col">
+                <span class="icon-oficial icon-smile-o "></span>
+                <h2 class="h2 text-white">Mantente abierto</h2>
+                <p class="mb-4 text-white">Dispuesto a aceptar todas las ideas y propuestas que te lleguen.</p>
             </div>
-            <div class="row" data-aos="fade-up" data-aos-delay="100">
-                <div class="col">
-                    <span class="icon-oficial icon-recycle"></span>
-                    <h2 class="h2 text-white">Cuida el planeta</h2>
-                    <p class="mb-4 text-white">Podrías mejorar condiciones ambientales dando tu granito de arena.</p>
-                </div>
-                <div class="col">
-                    <span class="icon-oficial  icon-globe"></span>
-                    <h2 class="h2 text-white">Viaja por el planeta</h2>
-                    <p class="mb-4 text-white">Vé a diferentes lugares del mundo para hacer tu voluntariado y conoce de
-                        nuevas culturas.</p>
-                </div>
-                <div class="col">
-                    <span class="icon-oficial icon-people_outline"></span>
-                    <h2 class="h2 text-white">Trabaja en grupo</h2>
-                    <p class="mb-4 text-white">Mejora tu comunicación y la forma de relacionarte con las personas.</p>
-                </div>
-                <div class="col">
-                    <span class="icon-oficial  icon-book "></span>
-                    <h2 class="h2 text-white">Sé un libro abierto</h2>
-                    <p class="mb-4 text-white">Disponible a aceptar las diversas ideas y opiniones.</p>
-                </div>
+            <div class="col">
+                <span class="icon-handshake-o  icon-oficial  "></span>
+                <h2 class="h2 text-white">Presta una mano</h2>
+                <p class="mb-4 text-white">Ayuda a personas vulnerables en su situación.</p>
+            </div>
+            <div class="col">
+                <span class="icon-sun-o  icon-oficial "></span>
+                <h2 class="h2 text-white">Sé optimista</h2>
+                <p class="mb-4 text-white">Siempre da lo mejor de tí.</p>
+            </div>
+            <div class="col">
+                <span class="icon-oficial icon-heart-o"></span>
+                <h2 class="h2 text-white">Trabaja con amor</h2>
+                <p class="mb-4 text-white">Dedica tu tiempo ayudando a otros en lo que te gusta y tienes motivación
+                    para hacerlo.</p>
+            </div>
+        </div>
+        <div class="row" data-aos="fade-up" data-aos-delay="100">
+            <div class="col">
+                <span class="icon-oficial icon-recycle"></span>
+                <h2 class="h2 text-white">Cuida el planeta</h2>
+                <p class="mb-4 text-white">Podrías mejorar condiciones ambientales dando tu granito de arena.</p>
+            </div>
+            <div class="col">
+                <span class="icon-oficial  icon-globe"></span>
+                <h2 class="h2 text-white">Viaja por el planeta</h2>
+                <p class="mb-4 text-white">Vé a diferentes lugares del mundo para hacer tu voluntariado y conoce de
+                    nuevas culturas.</p>
+            </div>
+            <div class="col">
+                <span class="icon-oficial icon-people_outline"></span>
+                <h2 class="h2 text-white">Trabaja en grupo</h2>
+                <p class="mb-4 text-white">Mejora tu comunicación y la forma de relacionarte con las personas.</p>
+            </div>
+            <div class="col">
+                <span class="icon-oficial  icon-book "></span>
+                <h2 class="h2 text-white">Sé un libro abierto</h2>
+                <p class="mb-4 text-white">Disponible a aceptar las diversas ideas y opiniones.</p>
             </div>
         </div>
     </div>
+</div>
 
-    <div class="site-section seccion-blanca" id="team-section">
-        <div class="container">
-            <h2><span class="badge badge-pill badge-light" data-aos="fade-up" data-aos-delay="">NUESTRO EQUIPO</span>
-            </h2>
-            <div class="row mb-5 justify-content-center">
-                <div class="col-lg-7 text-center" data-aos="fade-up" data-aos-delay="">
-                    <h2 class="h2 titulo">Conoce nuestro equipo.</h2>
-                    <p class="h4 text-grey mb-4">Nuestros líderes son personas interesadas en incrementar el cambio
-                        positivo que ofrecen los voluntariados.</p>
-                </div>
-            </div>
-
-            <div class="row row-cols-1 row-cols-md-3" data-aos="fade-up" data-aos-delay="100">
-                <div class="col mb-4">
-                    <div class="card">
-                        <img src="{% static "images/german.jpeg" %}" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title ">Germán Martínez</h5>
-                        </div>
-                    </div>
-                </div>
-                <div class="col mb-4">
-                    <div class="card">
-                        <img src="{% static "images/violeta.jpeg" %}" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Violeta Rodríguez</h5>
-                        </div>
-                    </div>
-                </div>
-                <div class="col mb-4">
-                    <div class="card">
-                        <img src="{% static "images/juan.jpeg" %}" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Juan Avelino</h5>
-                        </div>
-                    </div>
-                </div>
-                <div class="col mb-4">
-                    <div class="card">
-                        <img src="{% static "images/juanes.jpeg" %}" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Juan Cañizarez</h5>
-                        </div>
-                    </div>
-                </div>
-                <div class="col mb-4">
-                    <div class="card">
-                        <img src="{% static "images/carlos.jpeg" %}" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Carlos Salazar</h5>
-                        </div>
-                    </div>
-                </div>
+<div class="site-section seccion-blanca" id="team-section">
+    <div class="container">
+        <h2><span class="badge badge-pill badge-light" data-aos="fade-up" data-aos-delay="">NUESTRO EQUIPO</span>
+        </h2>
+        <div class="row mb-5 justify-content-center">
+            <div class="col-lg-7 text-center" data-aos="fade-up" data-aos-delay="">
+                <h2 class="h2 titulo">Conoce nuestro equipo.</h2>
+                <p class="h4 text-grey mb-4">Nuestros líderes son personas interesadas en incrementar el cambio
+                    positivo que ofrecen los voluntariados.</p>
             </div>
         </div>
-    </div>
 
-    <div class="site-section seccion-verde" id="impact-section">
-        <div class="container">
-            <h2><span class="badge badge-pill badge-light" data-aos="fade-up" data-aos-delay="">NUESTRO IMPACTO</span>
-            </h2>
-        </div>
-        <div class="container">
-            <div class="row mb-5 justify-content-center">
-                <div class="col-lg-7 text-center" data-aos="fade-up" data-aos-delay="">
-                    <h2 class="h2 titulo">Nosotros ayudamos a cambiar el mundo para bien, para todos.</h2>
-                </div>
-            </div>
-            <div class="row" data-aos="fade-up" data-aos-delay="100">
-                <div class="col ml-4">
-                    <h1 class="h2 titulo centrar">3</h1>
-                    <p class="mb-4 titulo">Millones de voluntarios han usado BeONG.</p>
-                </div>
-                <div class="col ml-4">
-                    <h1 class="h2 titulo centrar">1000</h1>
-                    <p class="mb-4 titulo">Voluntariados han sido realizados.</p>
-                </div>
-                <div class="col ml-4">
-                    <h1 class="h2 titulo centrar">25000</h1>
-                    <p class="mb-4 titulo">Personas han sido beneficiadas.</p>
-                </div>
-                <div class="col ml-4">
-                    <h1 class="h2 titulo centrar">150</h1>
-                    <p class="mb-4 titulo">Ciudades donde ha hecho presencia BeONG.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="site-section courses-title" id="programs-section">
-        <div class="container">
-            <h2><span class="badge badge-pill badge-light " data-aos="fade-up" data-aos-delay="">VOLUNTARIADOS</span>
-            </h2>
-            <div class="row mb-5 justify-content-center">
-                <div class="col-lg-7 text-center" data-aos="fade-up" data-aos-delay="">
-                    <h2 class="h2 section-title">Recordemos algunos de nuestros voluntariados.</h2>
-                </div>
-            </div>
-            <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel" data-aos="fade-up"
-                 data-aos-delay="">
-
-                <div class="carousel-inner ">
-
-                    <div class="carousel-item active">
-                        <div class="card-deck">
-                            <div class="card mb-3" style="width: 18rem;">
-                                <img src="{% static "images/img_1.jpg" %}" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                    <h5 class="card-title">Voluntariado comunitario y de elefantes</h5>
-                                    <p class="card-text">Los voluntarios trabajarán en Kegalle cuidando a los elefantes
-                                        abandonados y participando en otros proyectos....</p>
-                                    <a href="#" class="btn btn-primary">Leer más</a>
-                                </div>
-                            </div>
-
-                            <div class="card mb-3" style="width: 18rem;">
-                                <img src="{% static "images/img_2.jpg" %}" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                    <h5 class="card-title">Proyectos de voluntariado infantil</h5>
-                                    <p class="card-text">Sea un voluntario para el Programa Especial de 1 semana en Cali
-                                        con soluciones de voluntariado y...</p>
-                                    <a href="#" class="btn btn-primary">Leer más</a>
-                                </div>
-                            </div>
-
-                            <div class="card mb-3" style="width: 18rem;">
-                                <img src="{% static "images/img_3.jpg" %}" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                    <h5 class="card-title">Adulto mayor (manualidades)</h5>
-                                    <p class="card-text">Ayuda a las abuelitas a despertar la creatividad y trabajar su
-                                        motricidad, haciendo llaveros de porcelanicrón...</p>
-                                    <a href="#" class="btn btn-primary">Leer más</a>
-                                </div>
-                            </div>
-
-                        </div>
+        <div class="row row-cols-1 row-cols-md-3" data-aos="fade-up" data-aos-delay="100">
+            <div class="col mb-4">
+                <div class="card">
+                    <img src="{% static "images/german.jpeg" %}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title ">Germán Martínez</h5>
                     </div>
-
-                    <div class="carousel-item ">
-                        <div class="card-deck">
-                            <div class="card mb-3" style="width: 18rem;">
-                                <img src="{% static "images/img_4.jpg" %}" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                    <h5 class="card-title">Ayuda a habitantes de Mocoa</h5>
-                                    <p class="card-text">Con el objetivo de ayudar a las personas para que pudieran
-                                        abastecerse y acceder a la alimentación debido a el desastre ...</p>
-                                    <a href="#" class="btn btn-primary">Leer más</a>
-                                </div>
-                            </div>
-
-                            <div class="card mb-3" style="width: 18rem;">
-                                <img src="{% static "images/img_5.jpg" %}" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                    <h5 class="card-title">Planta un árbol en Guatemala</h5>
-                                    <p class="card-text">Con el objetivo de ver el país más verde, la organización El
-                                        Día del Millón de Árboles buscó el apoyo y ayuda de...</p>
-                                    <a href="#" class="btn btn-primary">Leer más</a>
-                                </div>
-                            </div>
-
-                            <div class="card mb-3" style="width: 18rem;">
-                                <img src="{% static "images/slider_1.jpg" %}" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                    <h5 class="card-title">Voluntariado con estudiantes de grado 11</h5>
-                                    <p class="card-text">Ayuda a estudiantes a punto de graduarse con distintas
-                                        materias, ofrecerás tutorías donde no solo enseñarás...</p>
-                                    <a href="#" class="btn btn-primary">Leer más</a>
-                                </div>
-                            </div>
-                        </div>
+                </div>
+            </div>
+            <div class="col mb-4">
+                <div class="card">
+                    <img src="{% static "images/violeta.jpeg" %}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Violeta Rodríguez</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col mb-4">
+                <div class="card">
+                    <img src="{% static "images/juan.jpeg" %}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Juan Avelino</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col mb-4">
+                <div class="card">
+                    <img src="{% static "images/juanes.jpeg" %}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Juan Cañizarez</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col mb-4">
+                <div class="card">
+                    <img src="{% static "images/carlos.jpeg" %}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Carlos Salazar</h5>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+</div>
+
+<div class="site-section seccion-verde" id="impact-section">
+    <div class="container">
+        <h2><span class="badge badge-pill badge-light" data-aos="fade-up" data-aos-delay="">NUESTRO IMPACTO</span>
+        </h2>
+    </div>
+    <div class="container">
+        <div class="row mb-5 justify-content-center">
+            <div class="col-lg-7 text-center" data-aos="fade-up" data-aos-delay="">
+                <h2 class="h2 titulo">Nosotros ayudamos a cambiar el mundo para bien, para todos.</h2>
+            </div>
+        </div>
+        <div class="row" data-aos="fade-up" data-aos-delay="100">
+            <div class="col ml-4">
+                <h1 class="h2 titulo centrar">3</h1>
+                <p class="mb-4 titulo">Millones de voluntarios han usado BeONG.</p>
+            </div>
+            <div class="col ml-4">
+                <h1 class="h2 titulo centrar">1000</h1>
+                <p class="mb-4 titulo">Voluntariados han sido realizados.</p>
+            </div>
+            <div class="col ml-4">
+                <h1 class="h2 titulo centrar">25000</h1>
+                <p class="mb-4 titulo">Personas han sido beneficiadas.</p>
+            </div>
+            <div class="col ml-4">
+                <h1 class="h2 titulo centrar">150</h1>
+                <p class="mb-4 titulo">Ciudades donde ha hecho presencia BeONG.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="site-section courses-title" id="programs-section">
+    <div class="container">
+        <h2><span class="badge badge-pill badge-light " data-aos="fade-up" data-aos-delay="">VOLUNTARIADOS</span>
+        </h2>
+        <div class="row mb-5 justify-content-center">
+            <div class="col-lg-7 text-center" data-aos="fade-up" data-aos-delay="">
+                <h2 class="h2 section-title">Recordemos algunos de nuestros voluntariados.</h2>
+            </div>
+        </div>
+
+        <div class="owl-carousel col-12 nonloop-block-14">
+            <div class="course bg-white h-100 align-self-stretch">
+                <figure class="m-0">
+                    <a href="course-single.html"><img src="{% static "images/img_1.jpg" %}" alt="Image"
+                        class="img-fluid"></a>
+                </figure>
+                <div class="course-inner-text py-4 px-4">
+                    <span class="course-price">Kegalle, Sri Lanka</span>
+                    <div class="meta"><span class="icon-clock-o"></span>4 Semanas</div>
+                    <h3><a href="#">Voluntariado comunitario y de elefantes</a></h3>
+                    <p>Los voluntarios trabajarán en Kegalle cuidando a los elefantes abandonados y participando
+                        en otros proyectos... </p>
+                </div>
+                <div class="d-flex border-top stats">
+                    <div class="py-3 px-4"><span class="icon-users"></span> 5 Cupos</div>
+                    <div class="py-3 px-4 w-25 ml-auto border-left"><span class="icon-chat"></span> 2</div>
+                </div>
+            </div>
+            <div class="course bg-white h-100 align-self-stretch">
+                <figure class="m-0">
+                    <a href="course-single.html"><img src="{% static "images/img_2.jpg" %}" alt="Image"
+                        class="img-fluid"></a>
+                </figure>
+                <div class="course-inner-text py-4 px-4">
+                    <span class="course-price">Cali, Colombia</span>
+                    <div class="meta"><span class="icon-clock-o"></span>1 Semana</div>
+                    <h3><a href="#">Proyectos de voluntariado infantil</a></h3>
+                    <p>Sea voluntario para el Programa Especial de 1 semana en Cali con soluciones de
+                        voluntariado y... </p>
+                </div>
+                <div class="d-flex border-top stats">
+                    <div class="py-3 px-4"><span class="icon-users"></span> 15 Cupos</div>
+                    <div class="py-3 px-4 w-25 ml-auto border-left"><span class="icon-chat"></span> 0</div>
+                </div>
+            </div>
+            <div class="course bg-white h-100 align-self-stretch">
+                <figure class="m-0">
+                    <a href="course-single.html"><img src="{% static "images/img_3.jpg" %}" alt="Image"
+                        class="img-fluid"></a>
+                </figure>
+                <div class="course-inner-text py-4 px-4">
+                    <span class="course-price">Bogotá, Colombia</span>
+                    <div class="meta"><span class="icon-clock-o"></span>1 Mes</div>
+                    <h3><a href="#">Adulto Mayor (Manualidades)</a></h3>
+                    <p>Ayuda a las abuelitas a despertar la creatividad y trabajar su motricidad haciendo
+                        llaveros de porcelanicron... </p>
+                </div>
+                <div class="d-flex border-top stats">
+                    <div class="py-3 px-4"><span class="icon-users"></span> 6 Cupos</div>
+                    <div class="py-3 px-4 w-25 ml-auto border-left"><span class="icon-chat"></span> 4</div>
+                </div>
+            </div>
+            <div class="course bg-white h-100 align-self-stretch">
+                <figure class="m-0">
+                    <a href="course-single.html"><img src="{% static "images/slider_1.jpg" %}" alt="Image"
+                        class="img-fluid"></a>
+                </figure>
+                <div class="course-inner-text py-4 px-4">
+                    <span class="course-price">Bogotá, Colombia</span>
+                    <div class="meta"><span class="icon-clock-o"></span>1 Mes</div>
+                    <h3><a href="#">Voluntariado con estudiantes de grado 11</a></h3>
+                    <p>Ayuda a estudiantes a punto de graduarse con distintas materias, ofrecerás tutorías donde no solo enseñarás... </p>
+                </div>
+                <div class="d-flex border-top stats">
+                    <div class="py-3 px-4"><span class="icon-users"></span> 5 Cupos</div>
+                    <div class="py-3 px-4 w-25 ml-auto border-left"><span class="icon-chat"></span> 4</div>
+                </div>
+            </div>
+            <div class="course bg-white h-100 align-self-stretch">
+                <figure class="m-0">
+                    <a href="course-single.html"><img src="{% static "images/img_5.jpg" %}"alt="Image"
+                        class="img-fluid"></a>
+                </figure>
+                <div class="course-inner-text py-4 px-4">
+                    <span class="course-price">Guatemala</span>
+                    <div class="meta"><span class="icon-clock-o"></span>1 Mes</div>
+                    <h3><a href="#">Planta un árbol en Guatemala</a></h3>
+                    <p>Con el objetivo de ver el país más verde, la organización El Día del Millón de Árboles buscó el apoyo y ayuda de... </p>
+                </div>
+                <div class="d-flex border-top stats">
+                    <div class="py-3 px-4"><span class="icon-users"></span> 15 Cupos</div>
+                    <div class="py-3 px-4 w-25 ml-auto border-left"><span class="icon-chat"></span> 4</div>
+                </div>
+            </div>
+            <div class="course bg-white h-100 align-self-stretch">
+                <figure class="m-0">
+                    <a href="course-single.html"><img src="{% static "images/img_4.jpg" %}" alt="Image"
+                        class="img-fluid"></a>
+                </figure>
+                <div class="course-inner-text py-4 px-4">
+                    <span class="course-price">Mocoa</span>
+                    <div class="meta"><span class="icon-clock-o"></span>1 Mes</div>
+                    <h3><a href="#">Ayuda a habitantes de Mocoa</a></h3>
+                    <p>Con el objetivo de ayudar a las personas para que pudieran abastecerse y acceder a la alimentación debido a el desastre ... </p>
+                </div>
+                <div class="d-flex border-top stats">
+                    <div class="py-3 px-4"><span class="icon-users"></span> 2 Cupos</div>
+                    <div class="py-3 px-4 w-25 ml-auto border-left"><span class="icon-chat"></span> 4</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 {% endblock %}

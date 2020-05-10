@@ -24,15 +24,16 @@ class VoluntarioForm(forms.ModelForm):
             "departamento",
             "ocupacion",
             "idiomas",
-            "gustos"
+            "gustos",
+            "correo",
         )
         widgets = {
             "nombre":forms.TextInput(attrs= {"placeholder": "Tu nombre"}),
             "usuario":forms.TextInput(attrs = { "placeholder": "Usuario cool"}),
             "contrasenia":forms.PasswordInput(),
-            "descripcion":forms.Textarea(attrs = {"placeholder":"Cuentamos lo mejor de ti!"}),
+            "descripcion":forms.Textarea(attrs = {"placeholder":"¡Cuéntamos lo mejor de ti!"}),
             "pais":forms.TextInput(attrs = {"placeholder": "País donde vives"}),
-            "ocupacion":forms.TextInput(attrs = { "placeholder":"Cuentanos a que te dedicas"}),
+            "ocupacion":forms.TextInput(attrs = { "placeholder":"Cuéntanos a qué te dedicas"}),
             "ciudad":forms.TextInput(attrs = {"placeholder": "Ciudad"}),
             "departamento":forms.TextInput(attrs={"placeholder":"Departamento"}),
         }
@@ -47,8 +48,16 @@ class VoluntarioForm(forms.ModelForm):
             "idiomas": "Idiomas",
             "ciudad":"Ciudad",
             "departamento":"Departamento",
-            "gustos":"Gustos"
+            "gustos":"Gustos",
+            "correo":"Correo",
         }
+class Voluntariologin(forms.Form):
+    usuario = forms.CharField(label = "Usuario")
+    password = forms.CharField(widget=forms.PasswordInput())
+
+
+
+
 
 
 
