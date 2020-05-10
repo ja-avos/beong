@@ -134,7 +134,7 @@ def createVoluntariado(request,username):
     user = None
     if username != "Visitante":
         try:
-            user = Voluntario.objects.get(usuario=username)
+            user = ONG.objects.get(usuario=username)
         except:
             user = ONG.objects.get(usuario=username)
     if request.method == 'POST':

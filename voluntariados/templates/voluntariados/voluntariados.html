@@ -308,7 +308,9 @@
                             </style>
                         </div>
                     </div>
-                    <a href="./create">Inscribir voluntariado</a>
+                    {% if user.get_class == "ong" %}
+                        <a href="./create">Inscribir voluntariado</a>
+                    {% endif %}
                 </form>
                 <div class="row align-items-center">
                     <div class="col-12">
