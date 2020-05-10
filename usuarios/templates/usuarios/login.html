@@ -16,16 +16,22 @@
                 -o-transition: .3s all ease;
                 transition: .3s all ease;
             }
+     input{
+     border-radius:25px;
+    background:rgba(255,255,255,.1);
+    color:#fff;
+
+     }
 </style>
 <div class="site-section courses-title" id="experiences-section">
     <div class = "container mt-5">
         <div class = "row">
-            <div class ="col-sm">
+            <div class ="col-sm" data-aos="flip-left" data-aos-delay="300">
                 <img src="{% static "images/hero_1.jpg" %}" class="card-img-top" alt="...">
             </div>
-            <div class ="col-sm">
+            <div class="col-md-6" data-aos="flip-left">
             <p class="text-white text-center ">Bienvenido aventurero!</p>
-            <form method="POST">
+            <form method="POST" >
                 <div class = "text-center pt-3" >
                     <p class="text-white">Usuario</p>
                     {% csrf_token %}
@@ -36,7 +42,15 @@
                     {{ form.password }}
                     <br>
                     <br>
+                    <div class = "text-white">
+                    {{ form.ong }}
+                     {{ form.ong.label}}
+                        </div>
+                    <br>
+                    <br>
+
                     <button type="submit"  href="/" >Entrar</button>
+
 
 
                 </div>

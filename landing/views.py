@@ -6,7 +6,8 @@ from django.http import HttpResponseServerError
 from .models import Person
 import sys
 sys.path.append("..")
-from usuarios.models import  Voluntario
+from usuarios.models import  Voluntario, ONG
+
 import json
 
 def index(request):
@@ -19,7 +20,10 @@ def index(request):
 def about(request, username):
     user = None
     if username != "Visitante":
-        user = Voluntario.objects.get(usuario = username)
+        try:
+            user = Voluntario.objects.get(usuario = username)
+        except:
+            user = ONG.objects.get(usuario = username)
     context = {
         "user":user
     }
@@ -29,7 +33,10 @@ def about(request, username):
 def experiences(request, username ):
     user = None
     if username != "Visitante":
-        user = Voluntario.objects.get(usuario = username)
+        try:
+            user = Voluntario.objects.get(usuario=username)
+        except:
+            user = ONG.objects.get(usuario=username)
     context = {
         "user":user
     }

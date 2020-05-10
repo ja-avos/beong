@@ -54,6 +54,9 @@ class VoluntarioForm(forms.ModelForm):
 class Voluntariologin(forms.Form):
     usuario = forms.CharField(label = "Usuario")
     password = forms.CharField(widget=forms.PasswordInput())
+    ong = forms.BooleanField(label=("Soy ONG"), required=False)
+
+
 
 
 
