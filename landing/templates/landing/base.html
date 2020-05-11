@@ -78,7 +78,7 @@
                     <nav class="site-navigation position-relative text-right" role="navigation">
                         <ul class="site-menu main-menu site-menu-dark js-clone-nav mr-auto d-none d-lg-block m-0 p-0">
                             {% if user is not None %}
-                                <li class="cta"><a href="" class="nav-link"><span>Bienvenido {{user.nombre|truncatewords:1}}</span></a>
+                                <li class="cta"><a href="/usuarios/detail/{{ user.usuario }}" class="nav-link"><span>Bienvenido {{user.nombre|truncatewords:1}}</span></a>
                             {% else  %}
                                 <li class="cta"><a href="/usuarios/login/" class="nav-link"><span>Ingresar</span></a>
                                 <li class="cta"><a href="/usuarios/register/" class="nav-link"><span>Regístrate</span></a>

@@ -13,10 +13,10 @@ from django.urls import reverse
 from .forms import VoluntariadoForm
 from django.contrib import messages
 from django.http import HttpResponseRedirect
+import datetime
 import sys
 sys.path.append("..")
 from usuarios.models import  Voluntario,ONG
-
 
 def getVoluntariados(request):
     volunteers = Voluntariado.objects.all()

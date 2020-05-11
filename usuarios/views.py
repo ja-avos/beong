@@ -78,7 +78,12 @@ def generate_login(request):
     return render(request, "usuarios/login.html", context)
 
 
-
+def generate_detail(request, username):
+    user = Voluntario.objects.get(usuario = username)
+    context = {
+        "user":user
+    }
+    return render(request,"usuarios/detail.html",context)
 
 
 # Create your views here.
