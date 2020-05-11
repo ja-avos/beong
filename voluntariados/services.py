@@ -35,7 +35,7 @@ def apply(user: Voluntario, vol: Voluntariado):
     if changed:
         correo = user.correo
         volun = vol.nombre
-        send_email(correo, 'Aplicación Exitosa ' + date.today().strftime("DD-MM-YYYY"), "Aplicación",
+        send_email(correo, 'Aplicación Exitosa ' + date.today().strftime("%d-%m-%y"), "Aplicación",
                        loader.render_to_string('mail/apply_mail.html', {'voluntariado': volun}))
         send_email('gd.martinez@beong.me', 'Aplicación Exitosa ' + date.today().strftime("DD-MM-YYYY"), "Aplicación",
                        loader.render_to_string('mail/apply_mail.html', {'voluntariado': volun}))
