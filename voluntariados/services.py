@@ -82,9 +82,14 @@ def getOrgVoluntariados(ong: ONG):
 def getActiveProcesses(user: Voluntario):
     process = Postulacion.objects.filter(voluntario = user.usuario)
     active = []
-    for i in process:
-        if i.estado != Postulacion.INTERESTED and i.estado != Postulacion.NOTINTERESTED and i.estado != Postulacion.CANCELLED and Postulacion.CANCELLED not in i.getHistorial():
-            active.append(i)
+    for j in process:
+        historial = j.getHistorial()
+        historial = [i for i in historial if i != Postulacion.INTERESTED and i != Postulacion.NOTINTERESTED]
+        if len(historial) - 1 < 0:
+            continue
+        if Postulacion.CANCELLED not in historial and historial[len(historial)-1] != Postulacion.INTERESTED and historial[len(historial)-1] != Postulacion.NOTINTERESTED:
+            j.estado = historial[len(historial)-1]
+            active.append(j)
     return active
 
 def getRecVolunteers(user: Voluntario):

@@ -82,6 +82,7 @@ def generate_login(request):
 def generate_detail(request, username):
     user = Voluntario.objects.get(usuario = username)
     active = services.getActiveProcesses(user)
+    print(active)
     recommend = services.getRecVolunteers(user)
     liked = services.getLikedVolunteers(user)
     context = {
