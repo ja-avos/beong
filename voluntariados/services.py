@@ -87,8 +87,9 @@ def getActiveProcesses(user: Voluntario):
         historial = [i for i in historial if i != Postulacion.INTERESTED and i != Postulacion.NOTINTERESTED]
         if len(historial) - 1 < 0:
             continue
-        if Postulacion.CANCELLED not in historial and historial[len(historial)-1] != Postulacion.INTERESTED and historial[len(historial)-1] != Postulacion.NOTINTERESTED:
+        if j.estado == Postulacion.INTERESTED or j.estado == Postulacion.NOTINTERESTED:
             j.estado = historial[len(historial)-1]
+        if Postulacion.CANCELLED not in historial and historial[len(historial)-1] != Postulacion.INTERESTED and historial[len(historial)-1] != Postulacion.NOTINTERESTED:
             active.append(j)
     return active
 
