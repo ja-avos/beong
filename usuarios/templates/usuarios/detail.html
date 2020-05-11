@@ -45,10 +45,10 @@
         <!--Recomendaciones-->
         <div id="recom" class="row tabcontent">
             <!-- Ojo que el if necesita identacion xd -->
-            {% if user.postulaciones.all %}
+            <!-- {% if user.postulaciones.all %}
             {% for voluntariado in user.postulaciones.all %}
             <div>
-                <!-- aqui puede hacer su magia -->
+                <!-- aqui puede hacer su magia --
             </div>
             {% endfor %}
             {% else %}
@@ -58,10 +58,282 @@
                 <h1 class="text-white text-center">Aqui va la maquinaria</h1>
             </div>
 
-            {% endif %}
+            {% endif %} -->
+            <div class="row align-items-center">
+                <div class="col-12">
+                    {% if recommend %}
+                    <div class="row row-cols-1 row-cols-md-3">
+                        {% for i in recommend %}
+                        <div class="col-sm-4 mb-4">
+                            <div data-aos="fade-up" class="card">
+                                <img src={{ i.imagen }} class="card-img-top" alt={{ i.nombre }}>
+                                <div class="card-body">
+                                    <h5 class="card-title text-primary">{{ i.nombre }}</h5>
+                                </div>
+                                <ul class="list-group list-group-flush" id="ul2">
+                                    <li class="list-group-item">{{ i.area }}</li>
+                                    <li class="list-group-item">{{ i.duracion }} día(s)</li>
+                                    <li class="list-group-item">{{ i.lugar }}</li>
+                                </ul>
+                                <div class="card-body text-center">
+                                    <a id="seeMore" href="#"
+                                        onclick="showModal('{{ i.nombre }}', '{{ i.imagen }}', '{{ i.descripcion }}', '{{ i.area }}', '{{ i.lugar }}', '{{ i.duracion }}', '{{ i.precio }}', '{{ i.idiomas }}', '{{ i.id }}'); return false;"
+                                        class="card-link">Ver más</a>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    {% else %}
+                    <div>
+                        <h2>
+                            No hay voluntariados :(
+                        </h2>
+                    </div>
+                    {% endif %}
+                </div>
 
+            </div>
+            <div id="detailModal" class="modal">
+                <!-- Modal content -->
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <h1 class="display-4 text-secondary text-center" id="modalName">Proyecto</h1>
+                    <img src="" id="modalImg" class="img-fluid rounded">
+                    <div id="propertiesModal">
+                        <h2 class="display-5 text-secondary">Descripción</h2>
+                        <p id="modalDesc">Descripción del proyecto ...</p>
+                        <h2 class="display-5 text-secondary">Duración</h2>
+                        <p id="modalDura">Duración del proyecto ...</p>
+                        <h2 class="display-5 text-secondary">Lugar</h2>
+                        <p id="modalLugar">Lugar del proyecto ...</p>
+                        <h2 class="display-5 text-secondary">Precio</h2>
+                        <p id="modalPrice">Precio del proyecto ...</p>
+                        <h2 class="display-5 text-secondary">Idiomas requeridos</h2>
+                        <p id="modalLang">Idiomas del proyecto ...</p>
+                        <h2 class="display-5 text-secondary">Area</h2>
+                        <p id="modalArea">Area del proyecto ...</p>
+                        <div id="detailsBtns">
+                            <a id="applyBtn" href="#" onclick="apply(); return false;" class="card-link">Aplicar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="notiModal" class="modal">
+                <!-- Modal content -->
+                <div class="modal-content">
+                    <span class="close" id="closeMsg">&times;</span>
+                    <h1 class="display-4 text-secondary text-center" id="msgTitle">Aplicación exitosa</h1>
+                    <div id="messageModal">
+                        <h2 class="display-5 text-secondary" id="msgSubtitle">¿Ahora qué?</h2>
+                        <p id="modalMsg">Revisa tu correo, te enviaremos las instrucciones a seguir! Te queremos
+                            felicitar por aplicar a un proyecto con BeONG</p>
+                    </div>
+                </div>
+            </div>
+            <style>
+                /* The Modal (background) */
+                .modal {
+                    display: none;
+                    /* Hidden by default */
+                    position: fixed;
+                    /* Stay in place */
+                    z-index: 2000;
+                    /* Sit on top */
+                    left: 0;
+                    top: 0;
+                    width: 100%;
+                    /* Full width */
+                    height: 100%;
+                    /* Full height */
+                    overflow: auto;
+                    /* Enable scroll if needed */
+                    background-color: rgb(0, 0, 0);
+                    /* Fallback color */
+                    background-color: rgba(0, 0, 0, 0.4);
+                    /* Black w/ opacity */
+                }
 
+                /* Modal Content/Box */
+                .modal-content {
+                    background-color: #fefefe;
+                    margin: 5% auto;
+                    /* 15% from the top and centered */
+                    padding: 20px;
+                    border: 1px solid #888;
+                    width: 80%;
+                    max-width: 700px;
+                    /* Could be more or less, depending on screen size */
+                }
 
+                .modal-content p {
+                    color: darkgray;
+                }
+
+                .modal-content img {
+                    margin-left: 5%;
+                    margin-right: 5%;
+                }
+
+                .modal-content #propertiesModal {
+                    margin-left: 5%;
+                    margin-right: 5%;
+                }
+
+                .modal-content #messageModal {
+                    margin-left: 5%;
+                    margin-right: 5%;
+                }
+
+                .modal-content h2 {
+                    margin-top: 2%;
+                }
+
+                /* The Close Button */
+                .close {
+                    color: #aaa;
+                    float: right;
+                    right: 0px;
+                    font-size: 28px;
+                    font-weight: bold;
+                }
+
+                .close:hover,
+                .close:focus {
+                    color: black;
+                    text-decoration: none;
+                    cursor: pointer;
+                }
+            </style>
+            <script id="detailScript">
+                var modal = document.getElementById("detailModal");
+                // Get the button that opens the modal
+                var btn = document.getElementById("seeMore");
+                var appbtn = document.getElementById("applyBtn");
+
+                // Get the <span> element that closes the modal
+                var span = document.getElementsByClassName("close")[0];
+
+                // When the user clicks on the button, open the modal
+                function showModal(nombre, imagen, descripcion, area, lugar, duracion, precio, idiomas, id) {
+                    var nameel = document.getElementById("modalName");
+                    nameel.innerText = nombre;
+                    var imgel = document.getElementById("modalImg");
+                    imgel.src = imagen;
+                    var descel = document.getElementById("modalDesc");
+                    descel.innerText = descripcion;
+                    var durael = document.getElementById("modalDura");
+                    durael.innerText = duracion;
+                    var lugarel = document.getElementById("modalLugar");
+                    lugarel.innerText = lugar;
+                    var priceel = document.getElementById("modalPrice");
+                    priceel.innerText = precio + " USD";
+                    var langel = document.getElementById("modalLang");
+                    langel.innerText = idiomas == "" ? "No hay restricción" : idiomas;
+                    var areael = document.getElementById("modalArea");
+                    areael.innerText = area;
+                    appbtn.setAttribute("onclick", "apply(\"" + id + "\"); return false;");
+                    modal.style.display = "block";
+                    return false;
+                }
+
+                // When the user clicks on <span> (x), close the modal
+                span.onclick = function () {
+                    modal.style.display = "none";
+                }
+
+                function closeDetails() {
+                    modal.style.display = "none";
+                }
+
+                // When the user clicks anywhere outside of the modal, close it
+                window.onclick = function (event) {
+                    if (event.target == modal) {
+                        modal.style.display = "none";
+                    }
+                }
+            </script>
+            <script id="likeScript">
+                function like(id) {
+                    var xhttp = new XMLHttpRequest();
+                    xhttp.onreadystatechange = function () {
+                        if (this.readyState == 4 && this.status == 200) {
+                            console.log("Liked!")
+                        } else if (this.readyState == 4) {
+                            document.getElementById("msgTitle").innerText = "Error";
+                            document.getElementById("msgSubtitle").innerText = "Lo sentimos";
+                            document.getElementById("modalMsg").innerText = "Ocurrió un error de parte nuestra. Intenta más tarde o comunicate con info@beong.me";
+                            msgModal.style.display = "block";
+                        }
+                    };
+
+                    xhttp.open("POST", "/voluntariados/{{user.usuario}}/like", true);
+                    xhttp.setRequestHeader("Content-Type", "application/json")
+                    xhttp.send("{\"vol_id\": \" " + id + "\"}");
+                    return false;
+                }
+                function dislike(id) {
+                    var xhttp = new XMLHttpRequest();
+                    xhttp.onreadystatechange = function () {
+                        if (this.readyState == 4 && this.status == 200) {
+                            console.log("Disliked!")
+                        } else if (this.readyState == 4) {
+                            document.getElementById("msgTitle").innerText = "Error";
+                            document.getElementById("msgSubtitle").innerText = "Lo sentimos";
+                            document.getElementById("modalMsg").innerText = "Ocurrió un error de parte nuestra. Intenta más tarde o comunicate con info@beong.me";
+                            msgModal.style.display = "block";
+                        }
+                    };
+
+                    xhttp.open("POST", "/voluntariados/{{user.usuario}}/dislike", true);
+                    xhttp.setRequestHeader("Content-Type", "application/json")
+                    xhttp.send("{\"vol_id\": \" " + id + "\"}");
+                }
+            </script>
+            <script id="applyScript">
+                var msgModal = document.getElementById("notiModal");
+                // Get the button that opens the modal
+                var applyBtn = document.getElementById("applyBtn");
+
+                // Get the <span> element that closes the modal
+                var spanCloseMsg = document.getElementById("closeMsg");
+
+                // When the user clicks on the button, open the modal
+                function apply(id) {
+                    closeDetails();
+                    var xhttp = new XMLHttpRequest();
+                    xhttp.onreadystatechange = function () {
+                        if (this.readyState == 4 && this.status == 200) {
+                            document.getElementById("msgTitle").innerText = "Aplicación exitosa";
+                            document.getElementById("msgSubtitle").innerText = "¿Ahora qué?";
+                            document.getElementById("modalMsg").innerText = "Revisa tu correo, te enviaremos las instrucciones a seguir! Te queremos felicitar por aplicar a un proyecto con BeONG";
+                            msgModal.style.display = "block";
+                        } else if (this.readyState == 4) {
+                            document.getElementById("msgTitle").innerText = "Error";
+                            document.getElementById("msgSubtitle").innerText = "Lo sentimos";
+                            document.getElementById("modalMsg").innerText = "Ocurrió un error de parte nuestra. Intenta más tarde o comunicate con info@beong.me";
+                            msgModal.style.display = "block";
+                        }
+                    };
+
+                    xhttp.open("POST", "/voluntariados/{{user.usuario}}/apply", true);
+                    xhttp.setRequestHeader("Content-Type", "application/json")
+                    xhttp.send("{\"id\": \" " + id + "\"}");
+                    return false;
+                }
+
+                // When the user clicks on <span> (x), close the modal
+                spanCloseMsg.onclick = function () {
+                    msgModal.style.display = "none";
+                }
+
+                // When the user clicks anywhere outside of the modal, close it
+                window.onclick = function (event) {
+                    if (event.target == msgModal) {
+                        msgModal.style.display = "none";
+                    }
+                }
+            </script>
         </div>
         <!-- Procesos -->
         <div id="process" class="row tabcontent">
@@ -158,13 +430,12 @@
                 </div>
                 {% endif %}
             </div>
-            
+
             {% endfor %}
             {% endif%}
 
         </div>
         <style>
-
             #progress {
                 width: auto;
                 margin: 1rem auto;
@@ -260,83 +531,116 @@
         </style>
         <!-- WishList -->
         <div id="wishlist" class="row tabcontent">
+            <div class="row align-items-center">
+                <div class="col-12">
+                    {% if liked %}
+                    <div class="row row-cols-1 row-cols-md-3">
+                        {% for i in liked %}
+                        <div class="col-sm-4 mb-4">
+                            <div data-aos="fade-up" class="card">
+                                <img src={{ i.imagen }} class="card-img-top" alt={{ i.nombre }}>
+                                <div class="card-body">
+                                    <h5 class="card-title text-primary">{{ i.nombre }}</h5>
+                                </div>
+                                <ul class="list-group list-group-flush" id="ul2">
+                                    <li class="list-group-item">{{ i.area }}</li>
+                                    <li class="list-group-item">{{ i.duracion }} día(s)</li>
+                                    <li class="list-group-item">{{ i.lugar }}</li>
+                                </ul>
+                                <div class="card-body text-center">
+                                    <a id="seeMore" href="#"
+                                        onclick="showModal('{{ i.nombre }}', '{{ i.imagen }}', '{{ i.descripcion }}', '{{ i.area }}', '{{ i.lugar }}', '{{ i.duracion }}', '{{ i.precio }}', '{{ i.idiomas }}', '{{ i.id }}'); return false;"
+                                        class="card-link">Ver más</a>
+                                    <a id="dislike" href="#" onclick="dislike('{{i.id}}'); location.reload();"class="card-link">Eliminar</a>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    {% else %}
+                    <div>
+                        <h2>
+                            No hay voluntariados :(
+                        </h2>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+
+            <style>
+                .volName {
+                    top: 50%;
+                    transform: translateY(37.5%);
+                    margin-left: 5%;
+                }
+
+                /* Style the tab */
+                .tab {
+                    overflow: hidden;
+                    border: 1px solid #ccc;
+                    background-color: #f1f1f1;
+                }
+
+                /* Style the buttons that are used to open the tab content */
+                .tab button {
+                    background-color: inherit;
+                    float: left;
+                    border: none;
+                    outline: none;
+                    cursor: pointer;
+                    padding: 14px 16px;
+                    transition: 0.3s;
+                }
+
+                /* Change background color of buttons on hover */
+                .tab button:hover {
+                    background-color: #ddd;
+                }
+
+                /* Create an active/current tablink class */
+                .tab button.active {
+                    background-color: #ccc;
+                }
+
+                /* Style the tab content */
+                .tabcontent {
+                    display: none;
+                    padding: 6px 12px;
+                    border: 1px solid #ccc;
+                    border-top: none;
+                }
+
+                /* Estilo de cada proceso*/
+                .volunteerProcess {
+                    margin-top: 1%;
+                    background-color: white;
+                }
+            </style>
+            <script>
+                function openTab(evt, tabName) {
+                    // Declare all variables
+                    var i, tabcontent, tablinks;
+
+                    // Get all elements with class="tabcontent" and hide them
+                    tabcontent = document.getElementsByClassName("tabcontent");
+                    for (i = 0; i < tabcontent.length; i++) {
+                        tabcontent[i].style.display = "none";
+                    }
+
+                    // Get all elements with class="tablinks" and remove the class "active"
+                    tablinks = document.getElementsByClassName("tablinks");
+                    for (i = 0; i < tablinks.length; i++) {
+                        tablinks[i].className = tablinks[i].className.replace(" active", "");
+                    }
+
+                    // Show the current tab, and add an "active" class to the button that opened the tab
+                    document.getElementById(tabName).style.display = "block";
+                    evt.currentTarget.className += " active";
+                }
+            </script>
 
         </div>
 
-        <style>
-            .volName {
-                top: 50%;
-                transform: translateY(37.5%);
-                margin-left: 5%;
-            }
-
-            /* Style the tab */
-            .tab {
-                overflow: hidden;
-                border: 1px solid #ccc;
-                background-color: #f1f1f1;
-            }
-
-            /* Style the buttons that are used to open the tab content */
-            .tab button {
-                background-color: inherit;
-                float: left;
-                border: none;
-                outline: none;
-                cursor: pointer;
-                padding: 14px 16px;
-                transition: 0.3s;
-            }
-
-            /* Change background color of buttons on hover */
-            .tab button:hover {
-                background-color: #ddd;
-            }
-
-            /* Create an active/current tablink class */
-            .tab button.active {
-                background-color: #ccc;
-            }
-
-            /* Style the tab content */
-            .tabcontent {
-                display: none;
-                padding: 6px 12px;
-                border: 1px solid #ccc;
-                border-top: none;
-            }
-
-            /* Estilo de cada proceso*/
-            .volunteerProcess {
-                margin-top: 1%;
-                background-color: white;
-            }
-        </style>
-        <script>
-            function openTab(evt, tabName) {
-                // Declare all variables
-                var i, tabcontent, tablinks;
-
-                // Get all elements with class="tabcontent" and hide them
-                tabcontent = document.getElementsByClassName("tabcontent");
-                for (i = 0; i < tabcontent.length; i++) {
-                    tabcontent[i].style.display = "none";
-                }
-
-                // Get all elements with class="tablinks" and remove the class "active"
-                tablinks = document.getElementsByClassName("tablinks");
-                for (i = 0; i < tablinks.length; i++) {
-                    tablinks[i].className = tablinks[i].className.replace(" active", "");
-                }
-
-                // Show the current tab, and add an "active" class to the button that opened the tab
-                document.getElementById(tabName).style.display = "block";
-                evt.currentTarget.className += " active";
-            }
-        </script>
-
     </div>
 
-</div>
-
-{% endblock %}
+    {% endblock %}

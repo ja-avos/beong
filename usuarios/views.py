@@ -82,9 +82,13 @@ def generate_login(request):
 def generate_detail(request, username):
     user = Voluntario.objects.get(usuario = username)
     active = services.getActiveProcesses(user)
+    recommend = services.getRecVolunteers(user)
+    liked = services.getLikedVolunteers(user)
     context = {
         "user":user,
-        "active": active
+        "active": active,
+        "recommend": recommend,
+        "liked": liked
     }
     return render(request,"usuarios/detail.html",context)
 

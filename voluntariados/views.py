@@ -45,7 +45,7 @@ def index(request, username):
     latest_volunteers = filter_vol(latest_volunteers, filters)
     liked_vols = []
     if username != 'Visitante':
-        liked_vols = services.getLikedVolunteers(user)
+        liked_vols = [i.id for i in services.getLikedVolunteers(user)]
     context = {'latest_volunteers': latest_volunteers,
                'liked_vols': liked_vols,
                'areas': areas,
@@ -106,9 +106,9 @@ def dislike_volunteer(request, username):
         usuario = Voluntario.objects.get(usuario = username)
         if request.method == 'POST':
             body = json.loads(request.body.decode('utf-8'))
-            vol = Voluntariado.objects.get(id = int(body['vol_id']))
+            vol = Voluntariado.objects.get(id = int(body['vol_id'].strip()))
             services.dislike(usuario, vol)
-    return HttpResponse('Good')
+    return HttpResponseRedirect('/')
 
 @csrf_exempt
 def apply_volunteer(request,username):

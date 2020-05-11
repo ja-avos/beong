@@ -120,13 +120,11 @@ def getVoluntariados(pUsuario):
        voluntariados_finales = []
        for vol_id in voluntarios_idiomas_pUsuarios[:,1]:
            if vol_id in voluntarios_gustos_pUsuarios:
-               voluntariados_finales.append(voluntariados[voluntariados[:,0]==int(vol_id)])
+               voluntariados_finales.append(voluntariados[voluntariados[:,0]==int(vol_id)].tolist())
 
        return voluntariados_finales
 
     except (Exception, psycopg2.Error) as error :
         print ("Error while fetching data from PostgreSQL", error)
-
-print(getVoluntariados('david'))
 
 

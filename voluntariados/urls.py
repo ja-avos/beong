@@ -6,5 +6,6 @@ urlpatterns = [
     path('list', views.getVoluntariados, name='getVoluntariados'),
     path('apply', views.apply_volunteer, name='apply'),
     path('create',views.createVoluntariado,name='createVoluntariado'),
-    path('like', views.save_volunteer, name='like')
+    path('like', views.save_volunteer, name='like'),
+    path('dislike', views.dislike_volunteer, name='dislike'),
 ]

@@ -328,12 +328,17 @@
                                                 <li class="list-group-item">{{ i.duracion }} día(s)</li>
                                                 <li class="list-group-item">{{ i.lugar }}</li>
                                             </ul>
-                                            <div class="card-body">
+                                            <div class="card-body text-center">
+                                                
+                                                {% if user is not None and user.get_class == "voluntario" and i.id not in liked_vols %}
                                                 <a id="seeMore" href="#"
-                                                   onclick="showModal('{{ i.nombre }}', '{{ i.imagen }}', '{{ i.descripcion }}', '{{ i.area }}', '{{ i.lugar }}', '{{ i.duracion }}', '{{ i.precio }}', '{{ i.idiomas }}', '{{ i.id }}'); return false;"
-                                                   class="card-link">Ver más</a>
-                                                {% if user is not None and user.get_class == "voluntario" and i not in liked_vols %}
+                                                onclick="showModal('{{ i.nombre }}', '{{ i.imagen }}', '{{ i.descripcion }}', '{{ i.area }}', '{{ i.lugar }}', '{{ i.duracion }}', '{{ i.precio }}', '{{ i.idiomas }}', '{{ i.id }}', false); return false;"
+                                                class="card-link">Ver más</a>
                                                     <a href="#" onclick="like('{{i.id}}'); return false;" class="card-link">Guardar</a>
+                                                {% else %}
+                                                <a id="seeMore" href="#"
+                                                onclick="showModal('{{ i.nombre }}', '{{ i.imagen }}', '{{ i.descripcion }}', '{{ i.area }}', '{{ i.lugar }}', '{{ i.duracion }}', '{{ i.precio }}', '{{ i.idiomas }}', '{{ i.id }}', true); return false;"
+                                                class="card-link">Ver más</a>
                                                 {% endif %}
                                             </div>
                                         </div>
@@ -369,7 +374,7 @@
                             <p id="modalLang">Idiomas del proyecto ...</p>
                             <h2 class="display-5 text-secondary">Area</h2>
                             <p id="modalArea">Area del proyecto ...</p>
-                            <div id="detailsBtns">
+                            <div id="detailsBtns" class="row text-center">
                                 {% if user is not None and user.get_class == "voluntario" %}
                                     <a id="applyBtn" href="#" onclick="apply(); return false;"
                                    class="card-link">Aplicar</a>
@@ -479,7 +484,7 @@
                     var span = document.getElementsByClassName("close")[0];
 
                     // When the user clicks on the button, open the modal
-                    function showModal(nombre, imagen, descripcion, area, lugar, duracion, precio, idiomas, id) {
+                    function showModal(nombre, imagen, descripcion, area, lugar, duracion, precio, idiomas, id, guard) {
                         var nameel = document.getElementById("modalName");
                         nameel.innerText = nombre;
                         var imgel = document.getElementById("modalImg");
@@ -498,6 +503,11 @@
                         areael.innerText = area;
                         var likbtn = document.getElementById("likeBtn");
                         likbtn.setAttribute("onclick", "like(\"" + id + "\"); return false;");
+                        if(guard) {
+                            likbtn.style.display = "none"
+                        } else {
+                            likbtn.style.display = "block"
+                        }
                         appbtn.setAttribute("onclick", "apply(\"" + id + "\"); return false;");
                         modal.style.display = "block";
                         return false;
@@ -524,7 +534,8 @@
                         var xhttp = new XMLHttpRequest();
                         xhttp.onreadystatechange = function () {
                             if (this.readyState == 4 && this.status == 200) {
-                                console.log("Liked!")
+                                console.log("Liked!");
+                                location.reload();
                             } else if (this.readyState == 4) {
                                 document.getElementById("msgTitle").innerText = "Error";
                                 document.getElementById("msgSubtitle").innerText = "Lo sentimos";

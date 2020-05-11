@@ -6,12 +6,14 @@ from beong.settings import EMAIL_HOST_USER, BASE_DIR
 from django.core.mail import send_mail
 from django.template import loader
 
+from clasifiacion import clasificar
+
 from datetime import date
 
 def getLikedVolunteers(volunteer: Voluntario):
     vols = []
     for i in Postulacion.objects.filter(voluntario = volunteer.usuario):
-        if Postulacion.INTERESTED in i.getHistorial() and Postulacion.NOTINTERESTED not in i.getHistorial():
+        if i.getHistorial().count(Postulacion.INTERESTED) > i.getHistorial().count(Postulacion.NOTINTERESTED):
             prik = i.voluntariado
             vols.append(prik)
     return vols
@@ -44,6 +46,12 @@ def apply(user: Voluntario, vol: Voluntariado):
 def likeVolunteer(user: Voluntario, vol: Voluntariado):
     try:
         postulacion = Postulacion.objects.get(voluntariado=vol.id, voluntario=user.usuario)
+        if postulacion.getHistorial().count(Postulacion.INTERESTED) <= postulacion.getHistorial().count(Postulacion.NOTINTERESTED):
+            postulacion.estado = Postulacion.INTERESTED
+            historial = postulacion.getHistorial()
+            historial.append(Postulacion.INTERESTED)
+            postulacion.setHistorial(historial)
+            postulacion.save()
     except Postulacion.DoesNotExist:
         postulacion = Postulacion(estado = Postulacion.INTERESTED, voluntariado = vol, voluntario = user)
         postulacion.setHistorial([Postulacion.INTERESTED])
@@ -51,11 +59,12 @@ def likeVolunteer(user: Voluntario, vol: Voluntariado):
     except Postulacion.MultipleObjectsReturned:
         #TODO Pasa
         return
+    print(postulacion)
 
 def dislike(user: Voluntario, vol: Voluntariado):
     try:
         postulacion = Postulacion.objects.get(voluntariado=vol.id, voluntario=user.usuario)
-        if Postulacion.INTERESTED in postulacion.getHistorial():
+        if postulacion.getHistorial().count(Postulacion.INTERESTED) > postulacion.getHistorial().count(Postulacion.NOTINTERESTED):
             postulacion.estado = Postulacion.NOTINTERESTED
             historial = postulacion.getHistorial()
             historial.append(Postulacion.NOTINTERESTED)
@@ -77,6 +86,14 @@ def getActiveProcesses(user: Voluntario):
         if i.estado != Postulacion.INTERESTED and i.estado != Postulacion.NOTINTERESTED and i.estado != Postulacion.CANCELLED and Postulacion.CANCELLED not in i.getHistorial():
             active.append(i)
     return active
+
+def getRecVolunteers(user: Voluntario):
+    lista = clasificar.getVoluntariados(user.usuario)
+    lisres = []
+    tmp = [i[0] for i in lista if len(i) == 1]
+    for n in tmp:
+        lisres.append(Voluntariado.objects.get(id=n[0]))
+    return lisres
 
 def send_email(dest_mail, subject, content, html):
     send_mail(subject, content, 'BeONG <support@beong.me>', [dest_mail], html_message=html)
