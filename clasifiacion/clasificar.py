@@ -127,6 +127,6 @@ def getVoluntariados(pUsuario):
     except (Exception, psycopg2.Error) as error :
         print ("Error while fetching data from PostgreSQL", error)
 
-getVoluntariados('david')
+print(getVoluntariados('david'))
 
 
