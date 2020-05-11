@@ -73,18 +73,90 @@
                         {{ i.voluntariado }}
                     </h4>
                 </div>
+                {% if i.estado == 'APPLIED' %}
                 <div class="row mx-auto">
                     <nav id="progress">
                         <ul class="ul-pro">
-                            <li class="li-pro stage completed"><a href=""><span>Aplicado</span></a></li>
-                            <li class="li-pro stage completed"><a href=""><span>Revisión</span></a></li>
-                            <li class="li-pro stage partial"><a href=""><span>Aceptado</span></a></li>
-                            <li class="li-pro stage"><a href=""><span>Pago</span></a></li>
-                            <li class="li-pro stage"><a href=""><span>Realizando</span></a></li>
-                            <li class="li-pro stage"><a href=""><span>Hecho</span></a></li>
+                            <li class="li-pro stage completed"><a><span>Aplicado</span></a></li>
+                            <li class="li-pro stage partial"><a><span>Revisión</span></a></li>
+                            <li class="li-pro stage"><a><span>Aceptado</span></a></li>
+                            <li class="li-pro stage"><a><span>Pago</span></a></li>
+                            <li class="li-pro stage"><a><span>Realizando</span></a></li>
+                            <li class="li-pro stage"><a><span>Hecho</span></a></li>
                         </ul>
                     </nav>
                 </div>
+                {% endif %}
+                {% if i.estado == 'REVISION' %}
+                <div class="row mx-auto">
+                    <nav id="progress">
+                        <ul class="ul-pro">
+                            <li class="li-pro stage completed"><a><span>Aplicado</span></a></li>
+                            <li class="li-pro stage completed"><a><span>Revisión</span></a></li>
+                            <li class="li-pro stage partial"><a><span>Aceptado</span></a></li>
+                            <li class="li-pro stage"><a><span>Pago</span></a></li>
+                            <li class="li-pro stage"><a><span>Realizando</span></a></li>
+                            <li class="li-pro stage"><a><span>Hecho</span></a></li>
+                        </ul>
+                    </nav>
+                </div>
+                {% endif %}
+                {% if i.estado == 'ACCEPTED' %}
+                <div class="row mx-auto">
+                    <nav id="progress">
+                        <ul class="ul-pro">
+                            <li class="li-pro stage completed"><a><span>Aplicado</span></a></li>
+                            <li class="li-pro stage completed"><a><span>Revisión</span></a></li>
+                            <li class="li-pro stage completed"><a><span>Aceptado</span></a></li>
+                            <li class="li-pro stage partial"><a><span>Pago</span></a></li>
+                            <li class="li-pro stage"><a><span>Realizando</span></a></li>
+                            <li class="li-pro stage"><a><span>Hecho</span></a></li>
+                        </ul>
+                    </nav>
+                </div>
+                {% endif %}
+                {% if i.estado == 'PAYSUC' %}
+                <div class="row mx-auto">
+                    <nav id="progress">
+                        <ul class="ul-pro">
+                            <li class="li-pro stage completed"><a><span>Aplicado</span></a></li>
+                            <li class="li-pro stage completed"><a><span>Revisión</span></a></li>
+                            <li class="li-pro stage completed"><a><span>Aceptado</span></a></li>
+                            <li class="li-pro stage completed"><a><span>Pago</span></a></li>
+                            <li class="li-pro stage partial"><a><span>Realizando</span></a></li>
+                            <li class="li-pro stage"><a><span>Hecho</span></a></li>
+                        </ul>
+                    </nav>
+                </div>
+                {% endif %}
+                {% if i.estado == 'ONVOL' %}
+                <div class="row mx-auto">
+                    <nav id="progress">
+                        <ul class="ul-pro">
+                            <li class="li-pro stage completed"><a><span>Aplicado</span></a></li>
+                            <li class="li-pro stage completed"><a><span>Revisión</span></a></li>
+                            <li class="li-pro stage completed"><a><span>Aceptado</span></a></li>
+                            <li class="li-pro stage completed"><a><span>Pago</span></a></li>
+                            <li class="li-pro stage completed"><a><span>Realizando</span></a></li>
+                            <li class="li-pro stage partial"><a><span>Hecho</span></a></li>
+                        </ul>
+                    </nav>
+                </div>
+                {% endif %}
+                {% if i.estado == 'DONE' %}
+                <div class="row mx-auto">
+                    <nav id="progress">
+                        <ul class="ul-pro">
+                            <li class="li-pro stage completed"><a><span>Aplicado</span></a></li>
+                            <li class="li-pro stage completed"><a><span>Revisión</span></a></li>
+                            <li class="li-pro stage completed"><a><span>Aceptado</span></a></li>
+                            <li class="li-pro stage completed"><a><span>Pago</span></a></li>
+                            <li class="li-pro stage completed"><a><span>Realizando</span></a></li>
+                            <li class="li-pro stage completed"><a><span>Hecho</span></a></li>
+                        </ul>
+                    </nav>
+                </div>
+                {% endif %}
             </div>
             
             {% endfor %}

@@ -122,7 +122,7 @@ def apply_volunteer(request,username):
             services.apply(user, voluntariado)
         return HttpResponse('Good')
 
-
+@csrf_exempt
 def createVoluntariado(request,username):
     user = None
     if username != "Visitante":
@@ -135,7 +135,7 @@ def createVoluntariado(request,username):
         if form.is_valid():
             create_Voluntariado(form)
             messages.add_message(request, messages.SUCCESS, 'Voluntariado satisfactoriamente creado')
-            return HttpResponseRedirect(reverse('createVoluntariado'))
+            return HttpResponseRedirect('/voluntariados/' + username)
         else:
             print(form.errors)
     else:
