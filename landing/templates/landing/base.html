@@ -59,18 +59,36 @@
                 <div class="mx-auto text-center">
                     <nav class="site-navigation position-relative text-right" role="navigation">
                         <ul class="site-menu main-menu js-clone-nav mx-auto d-none d-lg-block  m-0 p-0">
-                            <li><a href="/" class="nav-link">Inicio</a></li>
-                            <li><a href="/acerca" class="nav-link">Sobre nosotros</a></li>
-                            <li><a href="/experiencias" class="nav-link">Experiencias</a></li>
+                                <li><a href="/" class="nav-link">Inicio</a></li>
+                            {% if user is not None %}
+                                <li><a href="/acerca/{{ user.usuario }}" class="nav-link">Sobre nosotros</a></li>
+                                <li><a href="/experiencias/{{ user.usuario }}" class="nav-link">Experiencias</a></li>
+                                <li><a href="/voluntariados/{{ user.usuario }}" class="nav-link">Voluntariados</a></li>
+                            {% else %}
+                                <li><a href="/acerca/Visitante" class="nav-link">Sobre nosotros</a></li>
+                                <li><a href="/experiencias/Visitante" class="nav-link">Experiencias</a></li>
+                                <li><a href="/voluntariados/Visitante" class="nav-link">Voluntariados</a></li>
+                            {% endif %}
+
                         </ul>
                     </nav>
                 </div>
 
-                <div class="ml-auto w-25">
+                <div class="ml-auto w-auto">
                     <nav class="site-navigation position-relative text-right" role="navigation">
                         <ul class="site-menu main-menu site-menu-dark js-clone-nav mr-auto d-none d-lg-block m-0 p-0">
-                            <li class="cta"><a href="usuarios/register/" class="nav-link"><span>Regístrate</span></a>
+                            {% if user is not None %}
+                                <li class="cta"><a href="/usuarios/detail/{{ user.usuario }}" class="nav-link"><span>Bienvenido {{user.nombre|truncatewords:1}}</span></a>
+                                    <a href="/usuarios/detail/{{ user.usuario }}">
+                        <img src="{% static "/images/Mi perfil.png" %}" alt="Logo" height="40">
+
+                    </a>
+                            {% else  %}
+                                <li class="cta"><a href="/usuarios/login/" class="nav-link"><span>Ingresar</span></a>
+                                <li class="cta"><a href="/usuarios/register/" class="nav-link"><span>Regístrate</span></a>
+
                             </li>
+                            {% endif %}
                         </ul>
                     </nav>
                     <a href="#" class="d-inline-block d-lg-none site-menu-toggle js-menu-toggle text-black float-right"><span

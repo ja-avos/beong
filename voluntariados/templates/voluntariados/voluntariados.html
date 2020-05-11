@@ -2,439 +2,568 @@
 {% load static %}
 {% block content %}
 
-<script src="{% static "js/jquery-3.3.1.min.js" %}"></script>
-<script src="{% static "js/jquery-ui.js" %}"></script>
-<script src="{% static "js/jQAllRangeSliders-min.js" %}"></script>
-<link rel="stylesheet" href="{% static "css/iThing.css" %}" />
-<div class="vol-section" id="home-section">
+    <script src="{% static "js/jquery-3.3.1.min.js" %}"></script>
+    <script src="{% static "js/jquery-ui.js" %}"></script>
+    <script src="{% static "js/jQAllRangeSliders-min.js" %}"></script>
+    <link rel="stylesheet" href="{% static "css/iThing.css" %}"/>
+    <div class="vol-section" id="home-section">
 
-    <style>
-        .parallax {
-            /* The image used */
-            /* background-image: url("img_parallax.jpg"); */
+        <style>
 
-            /* Set a specific height */
-            min-height: 300px;
+            [type='range'] {
+                padding: 0;
+                font: 1em/1 arial, sans-serif;
+            }
 
-            /* Create the parallax scrolling effect */
-            background-attachment: fixed;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-        }
+            [type='range'], [type='range']::-webkit-slider-thumb {
+                -webkit-appearance: none;
+            }
 
-        input {
-            box-sizing: border-box;
-            border-top: 2rem;
-            border-left: 2rem;
-            border-right: 2rem;
-            background-color: transparent;
-            font-size: 2rem;
-            display: block;
-            caret-color: white;
-            color: white;
-        }
+            /**
+            [type='range']::-webkit-slider-runnable-track {
+                box-sizing: border-box;
+                border: none;
+                width: 12.5em;
+                height: 0.25em;
+                background: #ccc;
+            }
 
-        input:focus {
-            outline: none !important;
-        }
+            [type='range']::-moz-range-track {
+                box-sizing: border-box;
+                border: none;
+                width: 12.5em;
+                height: 0.25em;
+                background: #000000;
+            }
 
-        ul {
-            list-style: none;
-            text-align: center;
-            margin: 0;
-            padding: 0;
-        }
+            [type='range']::-ms-track {
+                box-sizing: border-box;
+                border: none;
+                width: 12.5em;
+                height: 0.25em;
+                background: #ccc;
+            }
 
-        #filter-section {
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            text-align: center;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            z-index: 10;
-        }
+            [type='range']::-webkit-slider-thumb {
+                margin-top: -0.625em;
+                box-sizing: border-box;
+                border: none;
+                width: 1.5em;
+                height: 1.5em;
+                border-radius: 50%;
+                background: #f90;
+            }
 
-        .input-group {
-            left: 50%;
-            transform: translateX(-18%);
-        }
-    </style>
+            [type='range']::-moz-range-thumb {
+                box-sizing: border-box;
+                border: none;
+                width: 1.5em;
+                height: 1.5em;
+                border-radius: 50%;
+                background: #f90;
+            }
 
-    <div class="slide-1 parallax" style="background-image: url('{% static 'images/volunteers.webp' %}');">
-        <div class="container" style="height: auto;">
-            <!-- Filters section -->
-            <form class="container-fluid align-items-center" id="filter-section">
-                <div class="input-group">
-                    <input id="finder" type="text" placeholder="Buscar..." name="name">
-                    <div class="input-group-append">
-                        <a href="#" onclick="document.getElementById('filter-section').submit(); return false;">
-                            <img src="https://credicelu.net/tienda/wp-content/uploads/2019/10/lupa-blanca.png"
-                                style="width: 8vh; height: 8vh;">
-                        </a>
-                    </div>
-                </div>
-                <a href="#filters" data-toggle="collapse">Más filtros</a>
-                <div id="filters" class="collapse">
-                    <div class="form-row bg-transparent h-auto">
-                        <div class="col-auto">
-                        <label for="areaSelect">Area</label>
-                        <select class="form-control" id="areaSelect" name="area">
-                            <option value="">Area</option>
-                            {% if areas %}
-                            {% for a in areas %}
-                            <option value="{{a}}">{{a}}</option>
-                            {% endfor %}
-                            {% endif %}
-                        </select>
-                    </div>
-                    <div class="col-auto">
-                        <label for="lugarSelect">Lugar</label>
-                        <select class="form-control" id="lugarSelect" name="location">
-                            <option value="">Lugar</option>
-                            {% if locations %}
-                            {% for l in locations %}
-                            <option value="{{l}}">{{l}}</option>
-                            {% endfor %}
-                            {% endif %}
-                        </select>
-                    </div>
-                    <div class="col-auto">
-                        <label for="priceRange">Precio</label>
-                        <span class="form-control multi-range" id="priceRange">
-                            <input type="range" class="interval-rangeA" id="rangeA" min="0" max="50" value="5"
-                                id="lower">
-                            <input type="range" class="interval-rangeB" id="rangeB" min="0" max="50" value="45"
-                                id="upper">
-                        </span>
-                    </div>
-                    <div class="col-auto">
-                        <label for="longRange">Duración</label>
-                        <span class="form-control multi-range" id="longRange">
-                            <input type="range" class="interval-rangeA" id="rangeA" min="0" max="50" value="5"
-                                id="lower">
-                            <input type="range" class="interval-rangeB" id="rangeB" min="0" max="50" value="45"
-                                id="upper">
-                        </span>
-                    </div>
-                    <div class="col-auto">
-                        <button class="btn btn-primary">Aplicar</button>
-                    </div>
-                        <style>
-                            form label {
-                                color: white;
-                            }
+            [type='range']::-ms-thumb {
+                margin-top: 0;
+                box-sizing: border-box;
+                border: none;
+                width: 1.5em;
+                height: 1.5em;
+                border-radius: 50%;
+                background: #f90;
+            }
 
-                            form button {
-                                position: relative;
-                                top: 100% !important;
-                                transform: translateY(-100%);
-                            }
+            [type='range']::-ms-tooltip {
+                display: none;
+            }
 
-                            .multi-range {
-                                position: relative;
-                            }
+            */
 
-                            .interval-rangeA {
-                                position: relative;
-                                pointer-events: none;
-                                outline: none;
-                                top: 0px;
-                            }
+            .parallax {
+                /* The image used */
+                /* background-image: url("img_parallax.jpg"); */
 
-                            .interval-rangeB {
-                                position: relative;
-                                pointer-events: none;
-                                outline: none;
-                                transform: translateY(-100%);
-                            }
+                /* Set a specific height */
+                min-height: 300px;
 
-                            .interval-rangeA::-webkit-slider-thumb {
-                                height: 28px;
-                                z-index: 1000;
-                                width: 28px;
-                                border-radius: 28px;
-                                background-color: #fff;
-                                position: relative;
-                                margin: 5px 0;
-                                /* Add some margin to ensure box shadow is shown */
-                                cursor: pointer;
-                                appearance: none;
-                                pointer-events: all;
-                                box-shadow: 0 1px 4px 0.5px rgba(0, 0, 0, 0.25);
-                            }
+                /* Create the parallax scrolling effect */
+                background-attachment: fixed;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
 
-                            .interval-rangeB::-webkit-slider-thumb {
-                                height: 28px;
-                                z-index: 1000;
-                                width: 28px;
-                                border-radius: 28px;
-                                background-color: #fff;
-                                position: relative;
-                                margin: 5px 0;
-                                /* Add some margin to ensure box shadow is shown */
-                                cursor: pointer;
-                                appearance: none;
-                                pointer-events: all;
-                                box-shadow: 0 1px 4px 0.5px rgba(0, 0, 0, 0.25);
-                            }
-                        </style>
-                    </div>
-                </div>
-            </form>
-            <script id="filterScript">
-                function filter() {
+            input {
+                box-sizing: border-box;
+                border-top: 2rem;
+                border-left: 2rem;
+                border-right: 2rem;
+                background-color: transparent;
+                font-size: 2rem;
+                display: block;
+                caret-color: white;
+                color: white;
+            }
 
-                }
-            </script>
-            <div class="row align-items-center">
-                <div class="col-12">
-                    {% if latest_volunteers %}
-                    <div class="row row-cols-1 row-cols-md-3" style="padding-top: 7rem; ">
-                        {% for i in latest_volunteers %}
-                        <div class="col-sm-4 mb-4">
-                            <div data-aos="fade-up" class="card">
-                                <img src={{i.imagen}} class="card-img-top" alt={{i.nombre}}>
-                                <div class="card-body">
-                                    <h5 class="card-title text-primary">{{i.nombre}}</h5>
-                                    <p class="card-text text-secondary">{{i.descripcion}}</p>
-                                </div>
-                                <ul class="list-group list-group-flush">
-                                    <li class="list-group-item">{{i.area}}</li>
-                                    <li class="list-group-item">{{i.duracion}}</li>
-                                    <li class="list-group-item">{{i.lugar}}</li>
-                                </ul>
-                                <div class="card-body">
-                                    <a id="seeMore" href="#"
-                                        onclick="showModal('{{i.nombre}}', '{{i.imagen}}', '{{i.descripcion}}', '{{i.area}}', '{{i.lugar}}', '{{i.duracion}}', '{{i.precio}}', '{{i.idiomas}}'); return false;"
-                                        class="card-link">Ver más</a>
-                                    <a href="#" class="card-link">Guardar</a>
-                                </div>
+            input:focus {
+                outline: none !important;
+            }
+
+            #ul2 {
+                list-style: none;
+                text-align: center;
+                margin: 0;
+                padding: 0;
+            }
+
+            #filter-section {
+                position: relative;
+                display: flex;
+                flex-direction: column;
+                text-align: center;
+                align-items: center;
+                justify-content: center;
+                height: 100vh;
+                z-index: 10;
+            }
+
+            .input-group2 {
+                align-items: center;
+            }
+        </style>
+        <div class="slide-1 parallax" style="background-image: url('{% static 'images/volunteers.webp' %}');">
+            <div class="container" style="height: auto;">
+                <!-- Filters section -->
+                <form class="container align-items-center" id="filter-section">
+                    <div class="row">
+                        <div class="input-group, input-group2, col">
+                            <input id="finder" type="text" placeholder="Buscar..." name="name">
+                            <div class="input-group-append, col">
+                                <a href="#" onclick="document.getElementById('filter-section').submit(); return false;">
+                                    <img src="https://credicelu.net/tienda/wp-content/uploads/2019/10/lupa-blanca.png"
+                                         style="width: 6vh;">
+                                </a>
                             </div>
                         </div>
-                        {% endfor %}
                     </div>
-                    {% else %}
-                    <div>
-                        <h2>
-                            No hay voluntariados :(.
-                        </h2>
-                    </div>
-                    {% endif %}
-                </div>
+                    <br>
+                    <a href="#filters" data-toggle="collapse" style="color: #ACFF65">Más filtros</a>
+                    <div id="filters" class="collapse">
+                        <div class="form-row bg-transparent h-auto">
+                            <div class="col-auto">
+                                <label for="areaSelect">Area</label>
+                                <select class="form-control" id="areaSelect" name="area">
+                                    <option value="">Área</option>
+                                    {% if areas %}
+                                        {% for a in areas %}
+                                            <option value="{{ a }}">{{ a }}</option>
+                                        {% endfor %}
+                                    {% endif %}
+                                </select>
+                            </div>
+                            <div class="col-auto">
+                                <label for="lugarSelect">Lugar</label>
+                                <select class="form-control" id="lugarSelect" name="location">
+                                    <option value="">Lugar</option>
+                                    {% if locations %}
+                                        {% for l in locations %}
+                                            <option value="{{ l }}">{{ l }}</option>
+                                        {% endfor %}
+                                    {% endif %}
+                                </select>
+                            </div>
+                            <div class="col-auto">
+                                <label for="priceRange">Precio</label>
+                                <span class="form-control multi-range" id="priceRange">
+                                    <input type="range" class="interval-rangeA" id="rangeA" min="0" max="15000"
+                                           value="0" step="1000" id="lower" name="pricemin">
+                                    <input type="range" class="interval-rangeB" id="rangeB" min="0" max="15000"
+                                           value="15000" step="1000" id="upper" name="pricemax">
+                                </span>
+                                <div class="row">
+                                    <div class="col" style="text-align: left">
+                                        <span style="color:white;">$</span>
+                                        <span id="i1" style="font-weight:bold;color:white;"></span>
+                                    </div>
+                                    <div class="col" style="text-align: right">
+                                        <span style="color:white;">$</span>
+                                        <span id="i2" style="font-weight:bold;color:white;"></span>
+                                    </div>
+                                </div>
+                                <script>
+                                    var slide1 = document.getElementById("rangeA");
+                                    var slide2 = document.getElementById("rangeB");
+                                    var y = document.getElementById("i1");
+                                    var z = document.getElementById("i2");
+                                    y.innerHTML = slide1.value;
+                                    z.innerHTML = slide2.value;
 
-            </div>
-            <div id="detailModal" class="modal">
-                <!-- Modal content -->
-                <div class="modal-content">
-                    <span class="close">&times;</span>
-                    <h1 class="display-4 text-secondary text-center" id="modalName">Proyecto</h1>
-                    <img src="" id="modalImg" class="img-fluid rounded">
-                    <div id="propertiesModal">
-                        <h2 class="display-5 text-secondary">Descripción</h1>
-                            <p id="modalDesc">Descripción del proyecto ...</p>
-                            <h2 class="display-5 text-secondary">Duración</h1>
-                                <p id="modalDura">Duración del proyecto ...</p>
-                                <h2 class="display-5 text-secondary">Lugar</h1>
-                                    <p id="modalLugar">Lugar del proyecto ...</p>
-                                    <h2 class="display-5 text-secondary">Precio</h1>
-                                        <p id="modalPrice">Precio del proyecto ...</p>
-                                        <h2 class="display-5 text-secondary">Idiomas requeridos</h1>
-                                            <p id="modalLang">Idiomas del proyecto ...</p>
-                                            <h2 class="display-5 text-secondary">Area</h1>
-                                                <p id="modalArea">Area del proyecto ...</p>
-                                                <div id="detailsBtns">
-                                                    <a id="applyBtn" href="#" onclick="apply(); return false;"
-                                                        class="card-link">Aplicar</a>
+                                    slide1.oninput = function () {
+                                        y.innerHTML = this.value;
+                                    }
+
+                                    slide2.oninput = function () {
+                                        z.innerHTML = this.value;
+                                    }
+                                </script>
+                            </div>
+                            <div class="col-auto">
+                                <label for="longRange">Duración</label>
+                                <span class="form-control multi-range" id="longRange">
+                                <input type="range" class="interval-rangeA" id="rangeC" min="1" max="90" value="1"
+                                       id="lower" name="duramin">
+                                <input type="range" class="interval-rangeB" id="rangeD" min="1" max="90" value="90"
+                                       id="upper" name="duramax">
+                                 </span>
+                                <div class="row">
+                                    <div class="col" style="text-align: left">
+                                        <span id="i3" style="font-weight:bold;color:white;"></span>
+                                        <span style="color:white;"> día(s)</span>
+                                    </div>
+                                    <div class="col" style="text-align: right">
+                                        <span id="i4" style="font-weight:bold;color:white;"></span>
+                                        <span style="color:white;"> día(s)</span>
+                                    </div>
+                                </div>
+                                <script>
+                                    var slide3 = document.getElementById("rangeC");
+                                    var slide4 = document.getElementById("rangeD");
+                                    var a = document.getElementById("i3");
+                                    var b = document.getElementById("i4");
+                                    a.innerHTML = slide3.value;
+                                    b.innerHTML = slide4.value;
+
+                                    slide3.oninput = function () {
+                                        a.innerHTML = this.value;
+                                    }
+
+                                    slide4.oninput = function () {
+                                        b.innerHTML = this.value;
+                                    }
+                                </script>
+                            </div>
+                            <div class="col-2">
+
+                            </div>
+                            <div class="col-auto" style="display: flex; align-items: center; ">
+                                <button class="btn btn-primary">Aplicar</button>
+                            </div>
+                            <style>
+                                form label {
+                                    color: white;
+                                }
+
+                                form button {
+                                    position: relative;
+                                    top: 2.5% !important;
+                                }
+
+                                .multi-range {
+                                    position: relative;
+                                }
+
+                                .interval-rangeA {
+                                    position: relative;
+                                    pointer-events: none;
+                                    outline: none;
+                                    top: 0px;
+                                }
+
+                                .interval-rangeB {
+                                    position: relative;
+                                    pointer-events: none;
+                                    outline: none;
+                                    transform: translateY(-100%);
+                                }
+
+                                .interval-rangeA::-webkit-slider-thumb {
+                                    height: 28px;
+                                    z-index: 1000;
+                                    width: 28px;
+                                    border-radius: 28px;
+                                    background-color: #fff;
+                                    position: relative;
+                                    margin: 5px 0;
+                                    /* Add some margin to ensure box shadow is shown */
+                                    cursor: pointer;
+                                    appearance: none;
+                                    pointer-events: all;
+                                    box-shadow: 0 1px 4px 0.5px rgba(0, 0, 0, 0.25);
+                                }
+
+                                .interval-rangeB::-webkit-slider-thumb {
+                                    height: 28px;
+                                    z-index: 1000;
+                                    width: 28px;
+                                    border-radius: 28px;
+                                    background-color: #fff;
+                                    position: relative;
+                                    margin: 5px 0;
+                                    /* Add some margin to ensure box shadow is shown */
+                                    cursor: pointer;
+                                    appearance: none;
+                                    pointer-events: all;
+                                    box-shadow: 0 1px 4px 0.5px rgba(0, 0, 0, 0.25);
+                                }
+                            </style>
+                        </div>
+                    </div>
+                    {% if user.get_class == "ong" %}
+                        <a href="./create">Inscribir voluntariado</a>
+                    {% endif %}
+                </form>
+                <div class="row align-items-center">
+                    <div class="col-12">
+                        {% if latest_volunteers %}
+                            <div class="row row-cols-1 row-cols-md-3" style="padding-top: 7rem; ">
+                                {% for i in latest_volunteers %}
+                                    <div class="col-sm-4 mb-4">
+                                        <div data-aos="fade-up" class="card">
+                                            <img src={{ i.imagen }} class="card-img-top" alt={{ i.nombre }}>
+                                            <div class="card-body">
+                                                <h5 class="card-title text-primary">{{ i.nombre }}</h5>
+                                            </div>
+                                            <ul class="list-group list-group-flush" id="ul2">
+                                                <li class="list-group-item">{{ i.area }}</li>
+                                                <li class="list-group-item">{{ i.duracion }} día(s)</li>
+                                                <li class="list-group-item">{{ i.lugar }}</li>
+                                            </ul>
+                                            <div class="card-body">
+                                                <a id="seeMore" href="#"
+                                                   onclick="showModal('{{ i.nombre }}', '{{ i.imagen }}', '{{ i.descripcion }}', '{{ i.area }}', '{{ i.lugar }}', '{{ i.duracion }}', '{{ i.precio }}', '{{ i.idiomas }}'); return false;"
+                                                   class="card-link">Ver más</a>
+                                                {% if user is not None and user.get_class == "voluntario" %}
                                                     <a href="#" class="card-link">Guardar</a>
-                                                </div>
+                                                {% endif %}
+                                            </div>
+                                        </div>
+                                    </div>
+                                {% endfor %}
+                            </div>
+                        {% else %}
+                            <div>
+                                <h2>
+                                    No hay voluntariados :(
+                                </h2>
+                            </div>
+                        {% endif %}
+                    </div>
+
+                </div>
+                <div id="detailModal" class="modal">
+                    <!-- Modal content -->
+                    <div class="modal-content">
+                        <span class="close">&times;</span>
+                        <h1 class="display-4 text-secondary text-center" id="modalName">Proyecto</h1>
+                        <img src="" id="modalImg" class="img-fluid rounded">
+                        <div id="propertiesModal">
+                            <h2 class="display-5 text-secondary">Descripción</h2>
+                            <p id="modalDesc">Descripción del proyecto ...</p>
+                            <h2 class="display-5 text-secondary">Duración</h2>
+                            <p id="modalDura">Duración del proyecto ...</p>
+                            <h2 class="display-5 text-secondary">Lugar</h2>
+                            <p id="modalLugar">Lugar del proyecto ...</p>
+                            <h2 class="display-5 text-secondary">Precio</h2>
+                            <p id="modalPrice">Precio del proyecto ...</p>
+                            <h2 class="display-5 text-secondary">Idiomas requeridos</h2>
+                            <p id="modalLang">Idiomas del proyecto ...</p>
+                            <h2 class="display-5 text-secondary">Area</h2>
+                            <p id="modalArea">Area del proyecto ...</p>
+                            <div id="detailsBtns">
+                                {% if user is not None and user.get_class == "voluntario" %}
+                                    <a id="applyBtn" href="#" onclick="apply(); return false;"
+                                   class="card-link">Aplicar</a>
+                                    <a href="#" class="card-link">Guardar</a>
+                                {% else %}
+                                    <a id="applyBtn" href="#" onclick="apply(); return false;"
+                                   class="card-link"></a>
+
+                                {% endif %}
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div id="notiModal" class="modal">
-                <!-- Modal content -->
-                <div class="modal-content">
-                    <span class="close" id="closeMsg">&times;</span>
-                    <h1 class="display-4 text-secondary text-center" id="msgTitle">Aplicación exitosa</h1>
-                    <div id="messageModal">
-                        <h2 class="display-5 text-secondary" id="msgSubtitle">¿Ahora qué?</h1>
+                <div id="notiModal" class="modal">
+                    <!-- Modal content -->
+                    <div class="modal-content">
+                        <span class="close" id="closeMsg">&times;</span>
+                        <h1 class="display-4 text-secondary text-center" id="msgTitle">Aplicación exitosa</h1>
+                        <div id="messageModal">
+                            <h2 class="display-5 text-secondary" id="msgSubtitle">¿Ahora qué?</h2>
                             <p id="modalMsg">Revisa tu correo, te enviaremos las instrucciones a seguir! Te queremos
                                 felicitar por aplicar a un proyecto con BeONG</p>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <style>
-                /* The Modal (background) */
-                .modal {
-                    display: none;
-                    /* Hidden by default */
-                    position: fixed;
-                    /* Stay in place */
-                    z-index: 2000;
-                    /* Sit on top */
-                    left: 0;
-                    top: 0;
-                    width: 100%;
-                    /* Full width */
-                    height: 100%;
-                    /* Full height */
-                    overflow: auto;
-                    /* Enable scroll if needed */
-                    background-color: rgb(0, 0, 0);
-                    /* Fallback color */
-                    background-color: rgba(0, 0, 0, 0.4);
-                    /* Black w/ opacity */
-                }
+                <style>
+                    /* The Modal (background) */
+                    .modal {
+                        display: none;
+                        /* Hidden by default */
+                        position: fixed;
+                        /* Stay in place */
+                        z-index: 2000;
+                        /* Sit on top */
+                        left: 0;
+                        top: 0;
+                        width: 100%;
+                        /* Full width */
+                        height: 100%;
+                        /* Full height */
+                        overflow: auto;
+                        /* Enable scroll if needed */
+                        background-color: rgb(0, 0, 0);
+                        /* Fallback color */
+                        background-color: rgba(0, 0, 0, 0.4);
+                        /* Black w/ opacity */
+                    }
 
-                /* Modal Content/Box */
-                .modal-content {
-                    background-color: #fefefe;
-                    margin: 15% auto;
-                    /* 15% from the top and centered */
-                    padding: 20px;
-                    border: 1px solid #888;
-                    width: 80%;
-                    max-width: 700px;
-                    /* Could be more or less, depending on screen size */
-                }
+                    /* Modal Content/Box */
+                    .modal-content {
+                        background-color: #fefefe;
+                        margin: 5% auto;
+                        /* 15% from the top and centered */
+                        padding: 20px;
+                        border: 1px solid #888;
+                        width: 80%;
+                        max-width: 700px;
+                        /* Could be more or less, depending on screen size */
+                    }
 
-                .modal-content p {
-                    color: darkgray;
-                }
+                    .modal-content p {
+                        color: darkgray;
+                    }
 
-                .modal-content img {
-                    margin-left: 5%;
-                    margin-right: 5%;
-                }
+                    .modal-content img {
+                        margin-left: 5%;
+                        margin-right: 5%;
+                    }
 
-                .modal-content #propertiesModal {
-                    margin-left: 5%;
-                    margin-right: 5%;
-                }
+                    .modal-content #propertiesModal {
+                        margin-left: 5%;
+                        margin-right: 5%;
+                    }
 
-                .modal-content #messageModal {
-                    margin-left: 5%;
-                    margin-right: 5%;
-                }
+                    .modal-content #messageModal {
+                        margin-left: 5%;
+                        margin-right: 5%;
+                    }
 
-                .modal-content h2 {
-                    margin-top: 2%;
-                }
+                    .modal-content h2 {
+                        margin-top: 2%;
+                    }
 
-                /* The Close Button */
-                .close {
-                    color: #aaa;
-                    float: right;
-                    right: 0px;
-                    font-size: 28px;
-                    font-weight: bold;
-                }
+                    /* The Close Button */
+                    .close {
+                        color: #aaa;
+                        float: right;
+                        right: 0px;
+                        font-size: 28px;
+                        font-weight: bold;
+                    }
 
-                .close:hover,
-                .close:focus {
-                    color: black;
-                    text-decoration: none;
-                    cursor: pointer;
-                }
-            </style>
-            <script id="detailScript">
-                var modal = document.getElementById("detailModal");
-                // Get the button that opens the modal
-                var btn = document.getElementById("seeMore");
-                var appbtn = document.getElementById("applyBtn");
+                    .close:hover,
+                    .close:focus {
+                        color: black;
+                        text-decoration: none;
+                        cursor: pointer;
+                    }
+                </style>
+                <script id="detailScript">
+                    var modal = document.getElementById("detailModal");
+                    // Get the button that opens the modal
+                    var btn = document.getElementById("seeMore");
+                    var appbtn = document.getElementById("applyBtn");
 
-                // Get the <span> element that closes the modal
-                var span = document.getElementsByClassName("close")[0];
+                    // Get the <span> element that closes the modal
+                    var span = document.getElementsByClassName("close")[0];
 
-                // When the user clicks on the button, open the modal
-                function showModal(nombre, imagen, descripcion, area, lugar, duracion, precio, idiomas) {
-                    var nameel = document.getElementById("modalName");
-                    nameel.innerText = nombre;
-                    var imgel = document.getElementById("modalImg");
-                    imgel.src = imagen;
-                    var descel = document.getElementById("modalDesc");
-                    descel.innerText = descripcion;
-                    var durael = document.getElementById("modalDura");
-                    durael.innerText = duracion;
-                    var lugarel = document.getElementById("modalLugar");
-                    lugarel.innerText = lugar;
-                    var priceel = document.getElementById("modalPrice");
-                    priceel.innerText = precio + " USD";
-                    var langel = document.getElementById("modalLang");
-                    langel.innerText = idiomas == "" ? "No hay restricción" : idiomas;
-                    var areael = document.getElementById("modalArea");
-                    areael.innerText = area;
-                    appbtn.setAttribute("onclick", "apply(\"" + nombre + "\"); return false;");
-                    modal.style.display = "block";
-                    return false;
-                }
+                    // When the user clicks on the button, open the modal
+                    function showModal(nombre, imagen, descripcion, area, lugar, duracion, precio, idiomas) {
+                        var nameel = document.getElementById("modalName");
+                        nameel.innerText = nombre;
+                        var imgel = document.getElementById("modalImg");
+                        imgel.src = imagen;
+                        var descel = document.getElementById("modalDesc");
+                        descel.innerText = descripcion;
+                        var durael = document.getElementById("modalDura");
+                        durael.innerText = duracion;
+                        var lugarel = document.getElementById("modalLugar");
+                        lugarel.innerText = lugar;
+                        var priceel = document.getElementById("modalPrice");
+                        priceel.innerText = precio + " USD";
+                        var langel = document.getElementById("modalLang");
+                        langel.innerText = idiomas == "" ? "No hay restricción" : idiomas;
+                        var areael = document.getElementById("modalArea");
+                        areael.innerText = area;
+                        appbtn.setAttribute("onclick", "apply(\"" + nombre + "\"); return false;");
+                        modal.style.display = "block";
+                        return false;
+                    }
 
-                // When the user clicks on <span> (x), close the modal
-                span.onclick = function () {
-                    modal.style.display = "none";
-                }
-
-                function closeDetails() {
-                    modal.style.display = "none";
-                }
-
-                // When the user clicks anywhere outside of the modal, close it
-                window.onclick = function (event) {
-                    if (event.target == modal) {
+                    // When the user clicks on <span> (x), close the modal
+                    span.onclick = function () {
                         modal.style.display = "none";
                     }
-                }
 
-            </script>
-            <script id="applyScript">
-                var msgModal = document.getElementById("notiModal");
-                // Get the button that opens the modal
-                var applyBtn = document.getElementById("applyBtn");
+                    function closeDetails() {
+                        modal.style.display = "none";
+                    }
 
-                // Get the <span> element that closes the modal
-                var spanCloseMsg = document.getElementById("closeMsg");
-
-                // When the user clicks on the button, open the modal
-                function apply(nombre) {
-                    closeDetails();
-                    var xhttp = new XMLHttpRequest();
-                    xhttp.onreadystatechange = function () {
-                        if (this.readyState == 4 && this.status == 200) {
-                            document.getElementById("msgTitle").innerText = "Aplicación exitosa";
-                            document.getElementById("msgSubtitle").innerText = "¿Ahora qué?";
-                            document.getElementById("modalMsg").innerText = "Revisa tu correo, te enviaremos las instrucciones a seguir! Te queremos felicitar por aplicar a un proyecto con BeONG";
-                            msgModal.style.display = "block";
-                        } else if(this.readyState == 4){
-                            document.getElementById("msgTitle").innerText = "Error";
-                            document.getElementById("msgSubtitle").innerText = "Lo sentimos";
-                            document.getElementById("modalMsg").innerText = "Ocurrió un error de parte nuestra. Intenta más tarde o comunicate con info@beong.me";
-                            msgModal.style.display = "block";
+                    // When the user clicks anywhere outside of the modal, close it
+                    window.onclick = function (event) {
+                        if (event.target == modal) {
+                            modal.style.display = "none";
                         }
-                    };
+                    }
+                </script>
+                <script id="applyScript">
+                    var msgModal = document.getElementById("notiModal");
+                    // Get the button that opens the modal
+                    var applyBtn = document.getElementById("applyBtn");
 
-                    xhttp.open("POST", "apply", true);
-                    xhttp.setRequestHeader("Content-Type", "application/json")
-                    xhttp.send("{\"saludo\": \" " + nombre + "\"}");
-                    return false;
-                }
+                    // Get the <span> element that closes the modal
+                    var spanCloseMsg = document.getElementById("closeMsg");
 
-                // When the user clicks on <span> (x), close the modal
-                spanCloseMsg.onclick = function () {
-                    msgModal.style.display = "none";
-                }
+                    // When the user clicks on the button, open the modal
+                    function apply(nombre) {
+                        closeDetails();
+                        var xhttp = new XMLHttpRequest();
+                        xhttp.onreadystatechange = function () {
+                            if (this.readyState == 4 && this.status == 200) {
+                                document.getElementById("msgTitle").innerText = "Aplicación exitosa";
+                                document.getElementById("msgSubtitle").innerText = "¿Ahora qué?";
+                                document.getElementById("modalMsg").innerText = "Revisa tu correo, te enviaremos las instrucciones a seguir! Te queremos felicitar por aplicar a un proyecto con BeONG";
+                                msgModal.style.display = "block";
+                            } else if (this.readyState == 4) {
+                                document.getElementById("msgTitle").innerText = "Error";
+                                document.getElementById("msgSubtitle").innerText = "Lo sentimos";
+                                document.getElementById("modalMsg").innerText = "Ocurrió un error de parte nuestra. Intenta más tarde o comunicate con info@beong.me";
+                                msgModal.style.display = "block";
+                            }
+                        };
 
-                // When the user clicks anywhere outside of the modal, close it
-                window.onclick = function (event) {
-                    if (event.target == msgModal) {
+                        xhttp.open("POST", "apply", true);
+                        xhttp.setRequestHeader("Content-Type", "application/json")
+                        xhttp.send("{\"saludo\": \" " + nombre + "\"}");
+                        return false;
+                    }
+
+                    // When the user clicks on <span> (x), close the modal
+                    spanCloseMsg.onclick = function () {
                         msgModal.style.display = "none";
                     }
-                }
-            </script>
+
+                    // When the user clicks anywhere outside of the modal, close it
+                    window.onclick = function (event) {
+                        if (event.target == msgModal) {
+                            msgModal.style.display = "none";
+                        }
+                    }
+                </script>
+            </div>
         </div>
     </div>
-</div>
 
 {% endblock %}
 

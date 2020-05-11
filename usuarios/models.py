@@ -30,10 +30,17 @@ class Voluntario(Usuario):
     ciudad=models.CharField(max_length=20, blank=True)
     departamento=models.CharField(max_length=20, blank=True)
     imagen = models.CharField(max_length=150, null= True,blank=True)
+    correo = models.EmailField(max_length=254, null = True, blank= True)
+
+    def get_class(self):
+        return "voluntario"
 
 class ONG(Usuario):
     pais = models.CharField(max_length=25)
     voluntariados= models.ManyToManyField(Voluntariado, blank=True)
+
+    def get_class(self):
+        return "ong"
 
 
 

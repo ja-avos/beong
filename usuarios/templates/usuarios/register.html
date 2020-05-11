@@ -8,7 +8,6 @@
               integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
               crossorigin="anonymous">
         <style>
-
             h1 {
                 position: absolute;
                 margin: 0;
@@ -34,7 +33,7 @@
                 width: 100%;
                 padding: 20px;
                 border-radius: 6px;
-                background: #fff;
+                background: #354463;
                 box-shadow: 0 0 8px #669999;
             }
 
@@ -75,6 +74,12 @@
             textarea {
                 width: calc(100% - 12px);
                 padding: 5px;
+                      border-radius:25px;
+    background:rgba(255,255,255,.1);
+    color:#fff;
+            }
+            placeholder.textarea{
+            color:##fff;
             }
 
             label.radio, label.checkbox {
@@ -207,14 +212,17 @@
             }
 
             button {
-                width: 150px;
-                padding: 10px;
-                border: none;
-                border-radius: 5px;
-                background: #669999;
-                font-size: 16px;
-                color: #fff;
-                cursor: pointer;
+               border-color: #C1F7D5;
+                padding: 14px 20px;
+                color: #354463;
+                background: #C1F7D5;
+                border-radius: 30px;
+                font-size: .7rem;
+                font-weight: 900;
+                text-transform: uppercase;
+                -webkit-transition: .3s all ease;
+                -o-transition: .3s all ease;
+                transition: .3s all ease;
             }
 
             button:hover {
@@ -241,62 +249,98 @@
                     padding-bottom: 5px;
                 }
             }
+            .fondo{
+             background: #354463;
+
+
+                    }
+                        input{
+     border-radius:25px;
+    background:rgba(255,255,255,.1);
+    color:#fff;
+    text-color:white;
+     }
+     input::placeholder {
+  color: white;
+
+}
+     textarea::placeholder {
+  color: white;
+
+}
+
+     .fondocool
+     {
+      border-radius:25px;
+    background:rgba(255,255,255,.1);
+    color:#fff;
+     }
+
         </style>
     </head>
     <body>
-    <div class="testbox">
+    <div class="testbox fondo">
         <form method="POST">
             <div class="banner">
                 <h1 class = "text-white">¡Te necesitamos!</h1>
             </div>
             <br/>
-            <p class = "text-black">BeONG busca voluntarios para que puedan mejorar el mundo ayudando a los demás. Llena toda la información
+            <p class = "text-white">BeONG busca voluntarios para que puedan mejorar el mundo ayudando a los demás. Llena toda la información
                 para poder ser parte de magníficos proyectos</p>
             <br/>
-            <div class="colums">
+            <div class="colums ">
                 <div class="item">
-                    <label for="name" class = "text-black">Nombre<span>*</span></label>
+                    <label for="name" class = "text-white">Nombre<span>*</span></label>
                     {{ form.nombre }}
                 </div>
-                <div class="item">
-                    <label for="eaddress" class = "text-black">Usuario<span>*</span></label>
+                <div class="item ">
+                    <label for="eaddress" class = "text-white">Usuario<span>*</span></label>
+
                     {{ form.usuario }}
                 </div>
                 <div class="item">
-                    <label for="phone" class = "text-black">Contraseña<span>*</span></label>
+                    <label for="phone" class = "text-white">Contraseña<span>*</span></label>
                     {{ form.contrasenia }}
                 </div>
                 <div class="item">
-                    <label for="street" class = "text-black">País<span>*</span></label>
+                    <label for="street" class = "text-white">País<span>*</span></label>
                     {{ form.pais }}
                 </div>
                 <div class="item">
-                    <label for="city" class = "text-black">Ciudad<span>*</span></label>
+                    <label for="city" class = "text-white">Ciudad<span>*</span></label>
                     {{ form.ciudad }}
                 </div>
                 <div class="item">
-                    <label for="state" class = "text-black">Departamento/Estado/Provincia<span>*</span></label>
+                    <label for="state" class = "text-white">Departamento/Estado/Provincia<span>*</span></label>
                     {{ form.departamento }}
                 </div>
                 <div class="item">
-                    <label for="zip" class = "text-black">Ocupación<span>*</span></label>
+                    <label for="zip" class = "text-white">Ocupación<span>*</span></label>
                     {{ form.ocupacion }}
                 </div>
                 <div class="item">
-                    <label for="zip" class = "text-black">Edad<span>*</span></label>
+                    <label for="zip" class = "text-white">Edad<span>*</span></label>
                     {{ form.edad }}
                 </div>
-            </div>
-            <div class="item">
-                <p class = "text-black">Idiomas</p>
+                 <div class="item">
+                    <label for="correo" class = "text-white">Correo<span>*</span></label>
+                    {{ form.correo }}
+                </div>
+                <div class = "item">
+
+                </div>
+                <div class="item">
+                <p class = "text-white">Idiomas</p>
                 {{ form.idiomas }}
-            </div>
-            <div class="item">
-                <p class = "text-black">Gustos</p>
+                </div>
+                <div class="item">
+                <p class = "text-white">Gustos</p>
                 {{ form.gustos }}
+                </div>
             </div>
+
             <div class="item">
-                <label for="visit" class = "text-black">Descripción</label>
+                <label for="visit" class = "text-white">Descripción</label>
                 {{ form.descripcion }}
             </div>
             <div class="btn-block">

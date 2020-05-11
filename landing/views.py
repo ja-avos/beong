@@ -4,16 +4,43 @@ from django.http import HttpResponse
 from django.http import HttpResponseBadRequest
 from django.http import HttpResponseServerError
 from .models import Person
+import sys
+sys.path.append("..")
+from usuarios.models import  Voluntario, ONG
+
 import json
 
 def index(request):
-    return render(request, 'landing/index.html')
+    context = {
+        "user":None
 
-def about(request):
-    return render(request, 'landing/about.html')
+    }
+    return render(request, 'landing/index.html', context)
 
-def experiences(request):
-    return render(request, 'landing/experiences.html')
+def about(request, username):
+    user = None
+    if username != "Visitante":
+        try:
+            user = Voluntario.objects.get(usuario = username)
+        except:
+            user = ONG.objects.get(usuario = username)
+    context = {
+        "user":user
+    }
+
+    return render(request, 'landing/about.html',context)
+
+def experiences(request, username ):
+    user = None
+    if username != "Visitante":
+        try:
+            user = Voluntario.objects.get(usuario=username)
+        except:
+            user = ONG.objects.get(usuario=username)
+    context = {
+        "user":user
+    }
+    return render(request, 'landing/experiences.html', context)
 
 @csrf_exempt
 def addPerson(request):

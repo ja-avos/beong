@@ -1,4 +1,3 @@
-
 from django.shortcuts import render
 from .models import Voluntariado
 from django.http import JsonResponse, HttpResponse
@@ -13,23 +12,14 @@ from django.urls import reverse
 from .forms import VoluntariadoForm
 from django.contrib import messages
 from django.http import HttpResponseRedirect
-import datetime
-import sys
-sys.path.append("..")
-from usuarios.models import  Voluntario,ONG
+
 
 def getVoluntariados(request):
     volunteers = Voluntariado.objects.all()
     return JsonResponse(volunteers)
 
 
-def index(request, username):
-    user = None
-    if username != "Visitante":
-        try:
-            user = Voluntario.objects.get(usuario=username)
-        except:
-            user = ONG.objects.get(usuario=username)
+def index(request):
     latest_volunteers = Voluntariado.objects.order_by('nombre')
     areas = set([])
     locations = set([])
@@ -49,8 +39,7 @@ def index(request, username):
     context = {'latest_volunteers': latest_volunteers,
                'areas': areas,
                'locations': locations,
-               "user":user,
-               }
+               }ssh ubuntu@beong.me -i "C:\Users\javel\OneDrive - Universidad de Los Andes\Documentos\University\FifthSemester\ArquiSoft\privKey.pem"
     return render(request, 'voluntariados/voluntariados.html', context)
 
 
@@ -108,35 +97,22 @@ def save_volunteer(request):
 
 
 @csrf_exempt
-def apply_volunteer(request,username):
-    user = None
-    if username != "Visitante":
-        Usuario = Voluntario.objects.get(usuario = username)
-        correo = Usuario.correo
-        # TODO Apply to specified volunteer
-        if request.method == 'POST':
-            body = json.loads(request.body.decode('utf-8'))
-            send_email(correo, 'Aplicación Exitosa' + body['saludo'], "Aplicación",
-                       loader.render_to_string('mail/apply_mail.html', {'voluntariado': 'Prueba'}))
-            send_email('gd.martinez@beong.me', 'Aplicación Exitosa' + body['saludo'], "Aplicación",
-                       loader.render_to_string('mail/apply_mail.html', {'voluntariado': 'Prueba'}))
-        return HttpResponse('Good')
-
-
-
+def apply_volunteer(request):
+    # TODO Apply to specified volunteer
+    if request.method == 'POST':
+        body = json.loads(request.body.decode('utf-8'))
+        send_email('javelino2311@gmail.com', 'Aplicación Exitosa' + body['saludo'], "Aplicación",
+                   loader.render_to_string('mail/apply_mail.html', {'voluntariado': 'Prueba'}))
+        send_email('gd.martinez@beong.me', 'Aplicación Exitosa' + body['saludo'], "Aplicación",
+                   loader.render_to_string('mail/apply_mail.html', {'voluntariado': 'Prueba'}))
+    return HttpResponse('Good')
 
 
 def send_email(dest_mail, subject, content, html):
-    send_mail(subject, content, 'BeONG <support@beong.me>', [dest_mail], html_message=html)
+    send_mail(subject, content, EMAIL_HOST_USER, [dest_mail], html_message=html)
 
 
-def createVoluntariado(request,username):
-    user = None
-    if username != "Visitante":
-        try:
-            user = ONG.objects.get(usuario=username)
-        except:
-            user = ONG.objects.get(usuario=username)
+def createVoluntariado(request):
     if request.method == 'POST':
         form = VoluntariadoForm(request.POST)
         if form.is_valid():
@@ -149,7 +125,6 @@ def createVoluntariado(request,username):
         form = VoluntariadoForm()
 
     context = {
-        "user": user,
         'form': form,
     }
     return render(request, 'voluntariados/create.html', context)

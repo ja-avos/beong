@@ -25,6 +25,8 @@ SECRET_KEY = 'o5s^$l5%h7pihxn3689dz_l=bggmi=g-o9ihj-b)g_&g-a(+w#'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+ALLOWED_HOSTS = ['backend', 'localhost', '127.0.0.1']
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -135,4 +137,4 @@ EMAIL_HOST = 'smtp.zoho.com'
 EMAIL_USE_TLS = True
 EMAIL_PORT = 587
 EMAIL_HOST_USER = 'ja.avelino@beong.me'
-EMAIL_HOST_PASSWORD = 'juanBeong2311'
+EMAIL_HOST_PASSWORD = 'beongPMC2020'

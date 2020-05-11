@@ -3662,10 +3662,10 @@ input[type="button"].btn-block {
   -webkit-box-flex: 1;
   -ms-flex: 1 1 auto;
   flex: 1 1 auto;
-  padding: 1.25rem; }
+  padding: 0.75rem; }
 
 .card-title {
-  margin-bottom: 0.75rem; }
+  margin-bottom: 0.25rem; }
 
 .card-subtitle {
   margin-top: -0.375rem;

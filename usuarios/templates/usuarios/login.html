@@ -1,0 +1,66 @@
+
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<style>
+    button {
+               border-color: #C1F7D5;
+                padding: 14px 20px;
+                color: #354463;
+                background: #C1F7D5;
+                border-radius: 30px;
+                font-size: .7rem;
+                font-weight: 900;
+                text-transform: uppercase;
+                -webkit-transition: .3s all ease;
+                -o-transition: .3s all ease;
+                transition: .3s all ease;
+            }
+     input{
+     border-radius:25px;
+    background:rgba(255,255,255,.1);
+    color:#fff;
+
+     }
+</style>
+<div class="site-section courses-title" id="experiences-section">
+    <div class = "container mt-5">
+        <div class = "row">
+            <div class ="col-sm" data-aos="flip-left" data-aos-delay="300">
+                <img src="{% static "images/hero_1.jpg" %}" class="card-img-top" alt="...">
+            </div>
+            <div class="col-md-6" data-aos="flip-left">
+            <p class="text-white text-center ">Bienvenido aventurero!</p>
+            <form method="POST" >
+                <div class = "text-center pt-3" >
+                    <p class="text-white">Usuario</p>
+                    {% csrf_token %}
+                    {{ form.usuario}}
+                    <br>
+                    <br>
+                    <p class = "text-white">Contraseña</p>
+                    {{ form.password }}
+                    <br>
+                    <br>
+                    <div class = "text-white">
+                    {{ form.ong }}
+                     {{ form.ong.label}}
+                        </div>
+                    <br>
+                    <br>
+
+                    <button type="submit"  href="/" >Entrar</button>
+
+
+                </div>
+                </form>
+            </div>
+
+            <br>
+            <br>
+            <br>
+            <br>
+            </div>
+        </div>
+    </div>
+{% endblock %}

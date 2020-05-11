@@ -16,12 +16,12 @@ class VoluntariadoForm(forms.ModelForm):
             'imagen',
         ]
         widgets = {
-            "nombre": forms.TextInput(attrs={"placeholder": "Ingresa el nombre de tu voluntariado"}),
-            "area": forms.TextInput(attrs={"placeholder": "Ingresa el area de tu voluntariado"}),
-            "duracion": forms.TextInput(attrs={"placeholder": "Ingresa la duración de tu voluntariado"}),
-            "descripcion": forms.Textarea(attrs={"placeholder": "Ingresa una descripción de tu voluntariado",
+            "nombre": forms.TextInput(attrs={"placeholder": "Nombre del voluntariado"}),
+            "area": forms.TextInput(attrs={"placeholder": "Área del voluntariado"}),
+            "duracion": forms.TextInput(attrs={"placeholder": "Duración del voluntariado"}),
+            "descripcion": forms.Textarea(attrs={"placeholder": "Descripción del voluntariado",
                                                  "rows":4, "cols":50}),
-            "lugar": forms.TextInput(attrs={"placeholder": "Ingresa el lugar de tu voluntariado"}),
-            "precio": forms.NumberInput(attrs={"placeholder": "Ingresa el precio de tu voluntariado"}),
-            "imagen": forms.TextInput(attrs={"placeholder": "Ingresa una imagen de tu voluntariado"}),
+            "lugar": forms.TextInput(attrs={"placeholder": "Lugar del voluntariado"}),
+            "precio": forms.NumberInput(attrs={"placeholder": "Precio del voluntariado"}),
+            "imagen": forms.TextInput(attrs={"placeholder": "Imagen del voluntariado"}),
         }
