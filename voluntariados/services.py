@@ -37,7 +37,7 @@ def apply(user: Voluntario, vol: Voluntariado):
         volun = vol.nombre
         send_email(correo, 'Aplicación Exitosa ' + date.today().strftime("%d-%m-%y"), "Aplicación",
                        loader.render_to_string('mail/apply_mail.html', {'voluntariado': volun}))
-        send_email('gd.martinez@beong.me', 'Aplicación Exitosa ' + date.today().strftime("DD-MM-YYYY"), "Aplicación",
+        send_email('gd.martinez@beong.me', 'Aplicación Exitosa ' + date.today().strftime("%d-%m-%y"), "Aplicación",
                        loader.render_to_string('mail/apply_mail.html', {'voluntariado': volun}))
     return changed
 
@@ -69,6 +69,14 @@ def dislike(user: Voluntario, vol: Voluntariado):
 
 def getOrgVoluntariados(ong: ONG):
     return Voluntariado.objects.filter(organizacion = ong.usuario)
+
+def getActiveProcesses(user: Voluntario):
+    process = Postulacion.objects.filter(voluntario = user.usuario)
+    active = []
+    for i in process:
+        if i.estado != Postulacion.INTERESTED and i.estado != Postulacion.NOTINTERESTED and i.estado != Postulacion.CANCELLED and Postulacion.CANCELLED not in i.getHistorial():
+            active.append(i)
+    return active
 
 def send_email(dest_mail, subject, content, html):
     send_mail(subject, content, 'BeONG <support@beong.me>', [dest_mail], html_message=html)

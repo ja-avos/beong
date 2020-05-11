@@ -5,6 +5,7 @@ from django.contrib import messages
 from django.urls import  reverse
 from .models import Voluntario
 from .models import ONG
+from voluntariados import services
 
 def voluntario_create(request):
     if request.method == 'POST':
@@ -80,8 +81,10 @@ def generate_login(request):
 
 def generate_detail(request, username):
     user = Voluntario.objects.get(usuario = username)
+    active = services.getActiveProcesses(user)
     context = {
-        "user":user
+        "user":user,
+        "active": active
     }
     return render(request,"usuarios/detail.html",context)
 
