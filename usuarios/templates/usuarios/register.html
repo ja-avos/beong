@@ -74,6 +74,12 @@
             textarea {
                 width: calc(100% - 12px);
                 padding: 5px;
+                      border-radius:25px;
+    background:rgba(255,255,255,.1);
+    color:#fff;
+            }
+            placeholder.textarea{
+            color:##fff;
             }
 
             label.radio, label.checkbox {
@@ -248,6 +254,28 @@
 
 
                     }
+                        input{
+     border-radius:25px;
+    background:rgba(255,255,255,.1);
+    color:#fff;
+    text-color:white;
+     }
+     input::placeholder {
+  color: white;
+
+}
+     textarea::placeholder {
+  color: white;
+
+}
+
+     .fondocool
+     {
+      border-radius:25px;
+    background:rgba(255,255,255,.1);
+    color:#fff;
+     }
+
         </style>
     </head>
     <body>
@@ -260,13 +288,14 @@
             <p class = "text-white">BeONG busca voluntarios para que puedan mejorar el mundo ayudando a los demás. Llena toda la información
                 para poder ser parte de magníficos proyectos</p>
             <br/>
-            <div class="colums fondo">
+            <div class="colums ">
                 <div class="item">
                     <label for="name" class = "text-white">Nombre<span>*</span></label>
                     {{ form.nombre }}
                 </div>
-                <div class="item">
+                <div class="item ">
                     <label for="eaddress" class = "text-white">Usuario<span>*</span></label>
+
                     {{ form.usuario }}
                 </div>
                 <div class="item">

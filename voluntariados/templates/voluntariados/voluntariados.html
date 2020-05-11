@@ -332,7 +332,9 @@
                                                 <a id="seeMore" href="#"
                                                    onclick="showModal('{{ i.nombre }}', '{{ i.imagen }}', '{{ i.descripcion }}', '{{ i.area }}', '{{ i.lugar }}', '{{ i.duracion }}', '{{ i.precio }}', '{{ i.idiomas }}'); return false;"
                                                    class="card-link">Ver más</a>
-                                                <a href="#" class="card-link">Guardar</a>
+                                                {% if user is not None and user.get_class == "voluntario" %}
+                                                    <a href="#" class="card-link">Guardar</a>
+                                                {% endif %}
                                             </div>
                                         </div>
                                     </div>
@@ -368,7 +370,7 @@
                             <h2 class="display-5 text-secondary">Area</h2>
                             <p id="modalArea">Area del proyecto ...</p>
                             <div id="detailsBtns">
-                                {% if user is not None %}
+                                {% if user is not None and user.get_class == "voluntario" %}
                                     <a id="applyBtn" href="#" onclick="apply(); return false;"
                                    class="card-link">Aplicar</a>
                                     <a href="#" class="card-link">Guardar</a>
