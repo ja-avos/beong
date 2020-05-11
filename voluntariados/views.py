@@ -13,10 +13,10 @@ from django.urls import reverse
 from .forms import VoluntariadoForm
 from django.contrib import messages
 from django.http import HttpResponseRedirect
+import datetime
 import sys
 sys.path.append("..")
-from usuarios.models import  Voluntario
-
+from usuarios.models import  Voluntario,ONG
 
 def getVoluntariados(request):
     volunteers = Voluntariado.objects.all()
@@ -26,7 +26,10 @@ def getVoluntariados(request):
 def index(request, username):
     user = None
     if username != "Visitante":
-        user = Voluntario.objects.get(usuario=username)
+        try:
+            user = Voluntario.objects.get(usuario=username)
+        except:
+            user = ONG.objects.get(usuario=username)
     latest_volunteers = Voluntariado.objects.order_by('nombre')
     areas = set([])
     locations = set([])
@@ -127,7 +130,13 @@ def send_email(dest_mail, subject, content, html):
     send_mail(subject, content, 'BeONG <support@beong.me>', [dest_mail], html_message=html)
 
 
-def createVoluntariado(request):
+def createVoluntariado(request,username):
+    user = None
+    if username != "Visitante":
+        try:
+            user = ONG.objects.get(usuario=username)
+        except:
+            user = ONG.objects.get(usuario=username)
     if request.method == 'POST':
         form = VoluntariadoForm(request.POST)
         if form.is_valid():
@@ -140,6 +149,7 @@ def createVoluntariado(request):
         form = VoluntariadoForm()
 
     context = {
+        "user": user,
         'form': form,
     }
     return render(request, 'voluntariados/create.html', context)

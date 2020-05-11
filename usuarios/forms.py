@@ -12,6 +12,7 @@ class ONGForm(forms.ModelForm):
 class VoluntarioForm(forms.ModelForm):
     class Meta:
         model = Voluntario
+
         required_css_class = 'bold'
         fields = (
             "nombre",
@@ -36,6 +37,7 @@ class VoluntarioForm(forms.ModelForm):
             "ocupacion":forms.TextInput(attrs = { "placeholder":"Cuéntanos a qué te dedicas"}),
             "ciudad":forms.TextInput(attrs = {"placeholder": "Ciudad"}),
             "departamento":forms.TextInput(attrs={"placeholder":"Departamento"}),
+
         }
         labels = {
             "nombre" : "Nombre",
@@ -54,6 +56,9 @@ class VoluntarioForm(forms.ModelForm):
 class Voluntariologin(forms.Form):
     usuario = forms.CharField(label = "Usuario")
     password = forms.CharField(widget=forms.PasswordInput())
+    ong = forms.BooleanField(label=("Soy ONG"), required=False)
+
+
 
 
 

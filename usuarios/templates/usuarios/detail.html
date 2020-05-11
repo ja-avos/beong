@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class = "site-section courses-title">
+    <div class = "container mt-5">
+        <!--Unicamente el nombre-->
+        <div class = "row justify-content-center">
+             <div class="text-center" data-aos="fade-up" data-aos-delay="">
+                    <p class="badge badge-pill section-title2">{{ user.nombre }}</p>
+             </div>
+        </div>
+        <!-- Informacion Personal -->
+        <div class = "row "  >
+            <div class = "col-md-6 text-white">
+                <p>Usuario: {{user.usuario}}</p>
+                <p>Edad: {{user.edad}}</p>
+                <p>País: {{user.pais}}</p>
+                <p>Ciudad: {{user.ciudad}}</p>
+                <p>Departamento: {{user.departamento}}</p>
+                <p>Ocupación: {{user.ocupacion}}</p>
+            </div>
+            <div class = "col-md-6 text-white">
+                <p>Gustos:</p>
+                {% for gusto in user.gustos.all %}
+                 <p>{{gusto}}</p>
+                {% endfor %}
+                <p>Idiomas:</p>
+                {% for idioma in user.idiomas.all %}
+                <p>{{idioma}}</p>
+                {% endfor %}
+                <p>Correo: {{user.correo}}</p>
+                <p>Descripcion: {{user.descripcion}}</p>
+            </div>
+
+        </div>
+        <!--Postulaciones hechas ( No sé porque de primeo)-->
+        <div class = "row mt-5">
+            <!-- Ojo que el if necesita identacion xd -->
+            {% if user.postulaciones.all %}
+                {% for voluntariado in user.postulaciones.all %}
+                    <div>
+                        <!-- aqui puede hacer su magia -->
+                    </div>
+                {% endfor %}
+            {% else %}
+                <div class="col-lg-12">
+                    <p class = "text-white text-center">Parece que no te has postulado a un voluntariado¡Tenemos unos recomendados para ti!</p>
+                    <h1 class = "text-white text-center">Aqui va la maquinaria</h1>
+                </div>
+
+            {% endif %}
+
+
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}
