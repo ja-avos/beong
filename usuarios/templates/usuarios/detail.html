@@ -1,17 +1,26 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
-<div class = "site-section courses-title">
-    <div class = "container mt-5">
+<div class="site-section courses-title">
+    <div class="container mt-5">
         <!--Unicamente el nombre-->
-        <div class = "row justify-content-center">
-             <div class="text-center" data-aos="fade-up" data-aos-delay="">
-                    <p class="badge badge-pill section-title2">{{ user.nombre }}</p>
-             </div>
+        <div class="row justify-content-center">
+            <div class="text-center" data-aos="fade-up" data-aos-delay="">
+                <p class="badge badge-pill section-title2">{{ user.nombre }}</p>
+            </div>
+        </div>
+
+
+        <!-- Tab links -->
+        <div class="tab">
+            <button class="tablinks" onclick="openTab(event, 'info')">Información Personal</button>
+            <button class="tablinks" onclick="openTab(event, 'recom')">Recomendaciones</button>
+            <button class="tablinks" onclick="openTab(event, 'process')">Procesos</button>
+            <button class="tablinks" onclick="openTab(event, 'wishlist')">WishList</button>
         </div>
         <!-- Informacion Personal -->
-        <div class = "row "  >
-            <div class = "col-md-6 text-white">
+        <div id="info" class="row tabcontent">
+            <div class="col-md-6 text-white">
                 <p>Usuario: {{user.usuario}}</p>
                 <p>Edad: {{user.edad}}</p>
                 <p>País: {{user.pais}}</p>
@@ -19,10 +28,10 @@
                 <p>Departamento: {{user.departamento}}</p>
                 <p>Ocupación: {{user.ocupacion}}</p>
             </div>
-            <div class = "col-md-6 text-white">
+            <div class="col-md-6 text-white">
                 <p>Gustos:</p>
                 {% for gusto in user.gustos.all %}
-                 <p>{{gusto}}</p>
+                <p>{{gusto}}</p>
                 {% endfor %}
                 <p>Idiomas:</p>
                 {% for idioma in user.idiomas.all %}
@@ -33,26 +42,95 @@
             </div>
 
         </div>
-        <!--Postulaciones hechas ( No sé porque de primeo)-->
-        <div class = "row mt-5">
+        <!--Recomendaciones-->
+        <div id="recom" class="row tabcontent">
             <!-- Ojo que el if necesita identacion xd -->
             {% if user.postulaciones.all %}
-                {% for voluntariado in user.postulaciones.all %}
-                    <div>
-                        <!-- aqui puede hacer su magia -->
-                    </div>
-                {% endfor %}
+            {% for voluntariado in user.postulaciones.all %}
+            <div>
+                <!-- aqui puede hacer su magia -->
+            </div>
+            {% endfor %}
             {% else %}
-                <div class="col-lg-12">
-                    <p class = "text-white text-center">Parece que no te has postulado a un voluntariado¡Tenemos unos recomendados para ti!</p>
-                    <h1 class = "text-white text-center">Aqui va la maquinaria</h1>
-                </div>
+            <div class="col-lg-12">
+                <p class="text-white text-center">Parece que no te has postulado a un voluntariado¡Tenemos unos
+                    recomendados para ti!</p>
+                <h1 class="text-white text-center">Aqui va la maquinaria</h1>
+            </div>
 
             {% endif %}
 
 
 
         </div>
+        <!-- Procesos -->
+        <div id="process" class="row tabcontent">
+
+        </div>
+        <!-- WishList -->
+        <div id="wishlist" class="row tabcontent">
+
+        </div>
+
+        <style>
+            /* Style the tab */
+            .tab {
+                overflow: hidden;
+                border: 1px solid #ccc;
+                background-color: #f1f1f1;
+            }
+
+            /* Style the buttons that are used to open the tab content */
+            .tab button {
+                background-color: inherit;
+                float: left;
+                border: none;
+                outline: none;
+                cursor: pointer;
+                padding: 14px 16px;
+                transition: 0.3s;
+            }
+
+            /* Change background color of buttons on hover */
+            .tab button:hover {
+                background-color: #ddd;
+            }
+
+            /* Create an active/current tablink class */
+            .tab button.active {
+                background-color: #ccc;
+            }
+
+            /* Style the tab content */
+            .tabcontent {
+                display: none;
+                padding: 6px 12px;
+                border: 1px solid #ccc;
+                border-top: none;
+            }
+        </style>
+        <script>
+            function openTab(evt, tabName) {
+                // Declare all variables
+                var i, tabcontent, tablinks;
+
+                // Get all elements with class="tabcontent" and hide them
+                tabcontent = document.getElementsByClassName("tabcontent");
+                for (i = 0; i < tabcontent.length; i++) {
+                    tabcontent[i].style.display = "none";
+                }
+
+                // Get all elements with class="tablinks" and remove the class "active"
+                tablinks = document.getElementsByClassName("tablinks");
+                for (i = 0; i < tablinks.length; i++) {
+                    tablinks[i].className = tablinks[i].className.replace(" active", "");
+                }
+
+                // Show the current tab, and add an "active" class to the button that opened the tab
+                document.getElementById(tabName).style.display = "block";
+                evt.currentTarget.className += " active";
+            }
+        </script>
 
     </div>
 
