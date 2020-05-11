@@ -1,6 +1,7 @@
 from django.db import models
 from intereses.models import Gusto, Idioma
 from calificaciones.models import Calificacion
+from usuarios.models import ONG
 
 
 class Voluntariado(models.Model):
@@ -14,6 +15,7 @@ class Voluntariado(models.Model):
     idiomasRequeridos = models.ManyToManyField(Idioma)
     calificaciones = models.ManyToManyField(Calificacion, blank=True)
     imagen = models.CharField(max_length=150, blank=True)
+    organizacion = models.ForeignKey(ONG, on_delete=models.CASCADE, default = None, blank=True, null=True)
 
     def __str__(self):
         return '%s' % self.nombre

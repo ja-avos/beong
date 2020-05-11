@@ -136,9 +136,9 @@
                 <!-- Filters section -->
                 <form class="container align-items-center" id="filter-section">
                     <div class="row">
-                        <div class="input-group, input-group2, col">
+                        <div class="input-group">
                             <input id="finder" type="text" placeholder="Buscar..." name="name">
-                            <div class="input-group-append, col">
+                            <div class="input-group-append">
                                 <a href="#" onclick="document.getElementById('filter-section').submit(); return false;">
                                     <img src="https://credicelu.net/tienda/wp-content/uploads/2019/10/lupa-blanca.png"
                                          style="width: 6vh;">
@@ -330,10 +330,10 @@
                                             </ul>
                                             <div class="card-body">
                                                 <a id="seeMore" href="#"
-                                                   onclick="showModal('{{ i.nombre }}', '{{ i.imagen }}', '{{ i.descripcion }}', '{{ i.area }}', '{{ i.lugar }}', '{{ i.duracion }}', '{{ i.precio }}', '{{ i.idiomas }}'); return false;"
+                                                   onclick="showModal('{{ i.nombre }}', '{{ i.imagen }}', '{{ i.descripcion }}', '{{ i.area }}', '{{ i.lugar }}', '{{ i.duracion }}', '{{ i.precio }}', '{{ i.idiomas }}', '{{ i.id }}'); return false;"
                                                    class="card-link">Ver más</a>
-                                                {% if user is not None and user.get_class == "voluntario" %}
-                                                    <a href="#" class="card-link">Guardar</a>
+                                                {% if user is not None and user.get_class == "voluntario" and i not in liked_vols %}
+                                                    <a href="#" onclick="like('{{i.id}}'); return false;" class="card-link">Guardar</a>
                                                 {% endif %}
                                             </div>
                                         </div>
@@ -373,7 +373,7 @@
                                 {% if user is not None and user.get_class == "voluntario" %}
                                     <a id="applyBtn" href="#" onclick="apply(); return false;"
                                    class="card-link">Aplicar</a>
-                                    <a href="#" class="card-link">Guardar</a>
+                                    <a id="likeBtn" href="#" class="card-link">Guardar</a>
                                 {% else %}
                                     <a id="applyBtn" href="#" onclick="apply(); return false;"
                                    class="card-link"></a>
@@ -479,7 +479,7 @@
                     var span = document.getElementsByClassName("close")[0];
 
                     // When the user clicks on the button, open the modal
-                    function showModal(nombre, imagen, descripcion, area, lugar, duracion, precio, idiomas) {
+                    function showModal(nombre, imagen, descripcion, area, lugar, duracion, precio, idiomas, id) {
                         var nameel = document.getElementById("modalName");
                         nameel.innerText = nombre;
                         var imgel = document.getElementById("modalImg");
@@ -496,7 +496,9 @@
                         langel.innerText = idiomas == "" ? "No hay restricción" : idiomas;
                         var areael = document.getElementById("modalArea");
                         areael.innerText = area;
-                        appbtn.setAttribute("onclick", "apply(\"" + nombre + "\"); return false;");
+                        var likbtn = document.getElementById("likeBtn");
+                        likbtn.setAttribute("onclick", "like(\"" + id + "\"); return false;");
+                        appbtn.setAttribute("onclick", "apply(\"" + id + "\"); return false;");
                         modal.style.display = "block";
                         return false;
                     }
@@ -515,6 +517,26 @@
                         if (event.target == modal) {
                             modal.style.display = "none";
                         }
+                    }
+                </script>
+                <script id="likeScript">
+                    function like(id) {
+                        var xhttp = new XMLHttpRequest();
+                        xhttp.onreadystatechange = function () {
+                            if (this.readyState == 4 && this.status == 200) {
+                                console.log("Liked!")
+                            } else if (this.readyState == 4) {
+                                document.getElementById("msgTitle").innerText = "Error";
+                                document.getElementById("msgSubtitle").innerText = "Lo sentimos";
+                                document.getElementById("modalMsg").innerText = "Ocurrió un error de parte nuestra. Intenta más tarde o comunicate con info@beong.me";
+                                msgModal.style.display = "block";
+                            }
+                        };
+
+                        xhttp.open("POST", "like", true);
+                        xhttp.setRequestHeader("Content-Type", "application/json")
+                        xhttp.send("{\"vol_id\": \" " + id + "\"}");
+                        return false;
                     }
                 </script>
                 <script id="applyScript">
