@@ -3,8 +3,6 @@ from django.shortcuts import render
 from .models import Voluntariado
 from django.http import JsonResponse, HttpResponse
 from django.views.decorators.csrf import csrf_exempt
-from beong.settings import EMAIL_HOST_USER, BASE_DIR
-from django.core.mail import send_mail
 from django.template import loader
 import os
 import json
@@ -13,10 +11,9 @@ from django.urls import reverse
 from .forms import VoluntariadoForm
 from django.contrib import messages
 from django.http import HttpResponseRedirect
-import sys
-sys.path.append("..")
-from usuarios.models import  Voluntario
-
+import datetime
+from usuarios.models import  Voluntario,ONG
+from voluntariados import services
 
 def getVoluntariados(request):
     volunteers = Voluntariado.objects.all()
@@ -26,7 +23,10 @@ def getVoluntariados(request):
 def index(request, username):
     user = None
     if username != "Visitante":
-        user = Voluntario.objects.get(usuario=username)
+        try:
+            user = Voluntario.objects.get(usuario=username)
+        except:
+            user = ONG.objects.get(usuario=username)
     latest_volunteers = Voluntariado.objects.order_by('nombre')
     areas = set([])
     locations = set([])
@@ -43,7 +43,11 @@ def index(request, username):
     filters['duramax'] = request.GET.get('duramax', '')
 
     latest_volunteers = filter_vol(latest_volunteers, filters)
+    liked_vols = []
+    if username != 'Visitante':
+        liked_vols = services.getLikedVolunteers(user)
     context = {'latest_volunteers': latest_volunteers,
+               'liked_vols': liked_vols,
                'areas': areas,
                'locations': locations,
                "user":user,
@@ -82,52 +86,50 @@ def filter_vol(vols, filters):
         vols = vols.filter(duracion__gte=int(filters['duramin']))
     if filters['duramax'] != '':
         vols = vols.filter(duracion__lte=int(filters['duramax']))
-    #if filters['duramin'] != '' or filters['duramax'] != '':
-    #    volsd = []
-    #    for v in vols:
-    #        durS = v.duracion
-    #        if filters['duramin'] != '' and filters['duramax'] == '' and convertDuration(durS) >= convertDuration(
-    #                filters['duramin']):
-    #            volsd.append(v)
-    #        elif filters['duramin'] == '' and filters['duramax'] != '' and convertDuration(durS) <= convertDuration(
-    #                filters['duramax']):
-    #            volsd.append(v)
-    #        elif filters['duramin'] != '' and filters['duramax'] != '' and convertDuration(durS) >= convertDuration(
-    #                filters['duramin']) and convertDuration(durS) <= convertDuration(filters['duramax']):
-    #            volsd.append(v)
-    #    return volsd
     return vols
 
+@csrf_exempt
+def save_volunteer(request, username):
+    user = None
+    if username != "Visitante":
+        usuario = Voluntario.objects.get(usuario = username)
+        if request.method == 'POST':
+            body = json.loads(request.body.decode('utf-8'))
+            vol = Voluntariado.objects.get(id = int(body['vol_id']))
+            services.likeVolunteer(usuario, vol)
+    return HttpResponse('Good')
 
-def save_volunteer(request):
-    # TODO Save volunteer to user wishlist
-    return request
-
+@csrf_exempt
+def dislike_volunteer(request, username):
+    user = None
+    if username != "Visitante":
+        usuario = Voluntario.objects.get(usuario = username)
+        if request.method == 'POST':
+            body = json.loads(request.body.decode('utf-8'))
+            vol = Voluntariado.objects.get(id = int(body['vol_id']))
+            services.dislike(usuario, vol)
+    return HttpResponse('Good')
 
 @csrf_exempt
 def apply_volunteer(request,username):
     user = None
     if username != "Visitante":
-        Usuario = Voluntario.objects.get(usuario = username)
-        correo = Usuario.correo
+        user = Voluntario.objects.get(usuario = username)
         # TODO Apply to specified volunteer
         if request.method == 'POST':
             body = json.loads(request.body.decode('utf-8'))
-            send_email(correo, 'Aplicación Exitosa' + body['saludo'], "Aplicación",
-                       loader.render_to_string('mail/apply_mail.html', {'voluntariado': 'Prueba'}))
-            send_email('gd.martinez@beong.me', 'Aplicación Exitosa' + body['saludo'], "Aplicación",
-                       loader.render_to_string('mail/apply_mail.html', {'voluntariado': 'Prueba'}))
+            voluntariado = Voluntariado.objects.get(id = int(body["id"]))
+            services.apply(user, voluntariado)
         return HttpResponse('Good')
 
 
-
-
-
-def send_email(dest_mail, subject, content, html):
-    send_mail(subject, content, 'BeONG <support@beong.me>', [dest_mail], html_message=html)
-
-
-def createVoluntariado(request):
+def createVoluntariado(request,username):
+    user = None
+    if username != "Visitante":
+        try:
+            user = ONG.objects.get(usuario=username)
+        except:
+            user = ONG.objects.get(usuario=username)
     if request.method == 'POST':
         form = VoluntariadoForm(request.POST)
         if form.is_valid():
@@ -140,8 +142,7 @@ def createVoluntariado(request):
         form = VoluntariadoForm()
 
     context = {
+        "user": user,
         'form': form,
     }
     return render(request, 'voluntariados/create.html', context)
-
-# Create your views here.
