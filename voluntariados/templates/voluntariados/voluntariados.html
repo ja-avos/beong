@@ -548,7 +548,7 @@
                     var spanCloseMsg = document.getElementById("closeMsg");
 
                     // When the user clicks on the button, open the modal
-                    function apply(nombre) {
+                    function apply(id) {
                         closeDetails();
                         var xhttp = new XMLHttpRequest();
                         xhttp.onreadystatechange = function () {
@@ -567,7 +567,7 @@
 
                         xhttp.open("POST", "apply", true);
                         xhttp.setRequestHeader("Content-Type", "application/json")
-                        xhttp.send("{\"saludo\": \" " + nombre + "\"}");
+                        xhttp.send("{\"id\": \" " + id + "\"}");
                         return false;
                     }
 

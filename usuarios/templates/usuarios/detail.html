@@ -65,6 +65,120 @@
         </div>
         <!-- Procesos -->
         <div id="process" class="row tabcontent">
+            <div class="volunteerProcess container-fluid row">
+                <div class="volName" class="col-4">
+                    <h4>
+                        Nombre de voluntariado
+                    </h4>
+                </div>
+                <div class="col-8">
+                    <nav id="progress">
+                        <ul>
+                            <li class="stage completed"><a href=""><span>Aplicado</span></a></li>
+                            <li class="stage completed"><a href=""><span>Revisión</span></a></li>
+                            <li class="stage partial"><a href=""><span>Aceptado</span></a></li>
+                            <li class="stage"><a href=""><span>Pago</span></a></li>
+                            <li class="stage"><a href=""><span>Realizando</span></a></li>
+                            <li class="stage"><a href=""><span>Hecho</span></a></li>
+                        </ul>
+                    </nav>
+                    <style>
+
+                        #progress {
+                            width: auto;
+                            margin: 1rem auto;
+                            padding: 1rem;
+                        }
+
+                        ul {
+                            text-align: center;
+                            font-size: 0;
+                        }
+
+                        li {
+                            font-size: 1rem;
+                            list-style: none;
+                            display: inline-block;
+                            width: 5rem;
+                            position: relative;
+                        }
+
+                        li.stage {
+                            border-bottom: 2px solid lightgrey;
+                        }
+
+                        .stage a {
+                            text-decoration: none;
+                            color: black;
+                            font-weight: bold;
+                            display: block;
+                            line-height: 1.5rem;
+                            position: relative;
+                        }
+
+                        .stage a:before {
+                            position: absolute;
+                            content: "";
+                            height: 2px;
+                            left: 0;
+                            top: 100%;
+                        }
+
+                        .stage.completed a:before {
+                            width: 100%;
+                            background-color: green;
+                        }
+
+                        .stage.partial a:before {
+                            width: 66%;
+                            background-color: orange;
+                        }
+
+                        /* the rings */
+
+                        .stage a span {
+                            position: relative;
+                            display: inline-block;
+                            width: 100%;
+                            height: 100%;
+                            padding-bottom: 0.5rem;
+                        }
+
+                        .stage a span:after {
+                            position: absolute;
+                            left: 100%;
+                            top: 100%;
+                            transform: translate(-50%, -50%);
+                            content: " ";
+                            width: 8px;
+                            height: 8px;
+                            background-color: white;
+                            border-radius: 50%;
+                            border: 4px solid lightgrey;
+                            z-index: 1;
+                        }
+
+                        li:first-child.stage a span:before {
+                            position: absolute;
+                            left: 0;
+                            top: 100%;
+                            transform: translate(-50%, -50%);
+                            content: " ";
+                            width: 8px;
+                            height: 8px;
+                            background-color: white;
+                            border-radius: 50%;
+                            border: 4px solid lightgrey;
+                        }
+
+                        li.stage.completed a span:after,
+                        li.stage.completed a span:before {
+                            background-color: lightgreen;
+                            border-color: green;
+                        }
+                    </style>
+                </div>
+            </div>
 
         </div>
         <!-- WishList -->
@@ -73,6 +187,12 @@
         </div>
 
         <style>
+            .volName {
+                top: 50%;
+                transform: translateY(37.5%);
+                margin-left: 5%;
+            }
+
             /* Style the tab */
             .tab {
                 overflow: hidden;
@@ -107,6 +227,11 @@
                 padding: 6px 12px;
                 border: 1px solid #ccc;
                 border-top: none;
+            }
+
+            /* Estilo de cada proceso*/
+            .volunteerProcess {
+                background-color: white;
             }
         </style>
         <script>
