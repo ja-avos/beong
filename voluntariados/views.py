@@ -52,7 +52,6 @@ def index(request, username):
                'locations': locations,
                "user":user,
                }
-    print(services.getLikedVolunteers(Voluntario.objects.get(usuario = username)))
     return render(request, 'voluntariados/voluntariados.html', context)
 
 
