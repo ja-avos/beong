@@ -83,10 +83,10 @@ WSGI_APPLICATION = 'beong.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'beongDB',
-        'USER': 'beonguser',
-        'PASSWORD': 'beong2020',
-        'HOST':'beong-db.cq9blh97b4vq.us-east-1.rds.amazonaws.com',
+        'NAME': '',
+        'USER': ',
+        'PASSWORD':,
+        'HOST':,
         'PORT':'5432',
     }
 }
@@ -133,8 +133,8 @@ STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 EMAIL_BACKEND ='django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.zoho.com'
+EMAIL_HOST = ''
 EMAIL_USE_TLS = True
 EMAIL_PORT = 587
-EMAIL_HOST_USER = 'ja.avelino@beong.me'
-EMAIL_HOST_PASSWORD = 'beongPMC2020'
+EMAIL_HOST_USER = ''
+EMAIL_HOST_PASSWORD = ''
